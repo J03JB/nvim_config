@@ -1,0 +1,6 @@
+require("freesec.settings")
+require("freesec.packer")
+require("freesec.key_mappings")
+require("freesec.colorscheme")
+require("freesec.utils")
+require("freesec.autocmds")
