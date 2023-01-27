@@ -29,6 +29,12 @@ return require("packer").startup(function(use)
 	})
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("nvim-telescope/telescope-packer.nvim")
+	use("nvim-telescope/telescope-file-browser.nvim")
+	use("nvim-telescope/telescope-ui-select.nvim")
+	use({
+		"benfowler/telescope-luasnip.nvim",
+		module = "telescope._extensions.luasnip", -- if you wish to lazy-load
+	})
 
 	-- Quality of Life
 	use("navarasu/onedark.nvim")
@@ -82,8 +88,16 @@ return require("packer").startup(function(use)
 			-- Snippets
 			{ "L3MON4D3/LuaSnip" }, -- Required
 			{ "rafamadriz/friendly-snippets" }, -- Optional
+			{ "hrsh7th/vim-vsnip" },
 		},
 	})
+	-- cmp extras
+	use("hrsh7th/cmp-cmdline")
+	use("hrsh7th/cmp-vsnip")
+	use("lukas-reineke/cmp-under-comparator")
+
+	-- yanky
+	use("gbprod/yanky.nvim")
 
 	-- NvimTree
 	use({

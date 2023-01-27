@@ -18,12 +18,30 @@ require("telescope").setup({
 				height = 0.5,
 			},
 		},
-		-- ["ui-select"] = {
-		--   require("telescope.themes").get_dropdown
-		-- }
+		file_browser = {
+			theme = "ivy",
+			hijack_netrw = true,
+			cwd_to_path = true,
+		},
+		luasnip = {
+			theme = "ivy",
+		},
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({
+				-- even more opts
+			}),
+		},
 	},
 	defaults = {
-		vimgrep_arguments = { "rg", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
+		vimgrep_arguments = {
+			"rg",
+			"--no-heading",
+			"--with-filename",
+			"--hidden",
+			"--line-number",
+			"--column",
+			"--smart-case",
+		},
 		prompt_prefix = " 🔎 ",
 		-- prompt_prefix = "  ",
 		selection_caret = " ",
@@ -83,3 +101,6 @@ require("telescope").setup({
 })
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("packer")
+require("telescope").load_extension("file_browser")
+require("telescope").load_extension("ui-select")
+require("telescope").load_extension("luasnip")
