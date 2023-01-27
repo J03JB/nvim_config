@@ -91,13 +91,11 @@ return require("packer").startup(function(use)
 			{ "hrsh7th/vim-vsnip" },
 		},
 	})
+
 	-- cmp extras
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-vsnip")
 	use("lukas-reineke/cmp-under-comparator")
-
-	-- yanky
-	use("gbprod/yanky.nvim")
 
 	-- NvimTree
 	use({
