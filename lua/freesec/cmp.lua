@@ -88,14 +88,15 @@ cmp.setup({
 			local icons = require("freesec.kind").icons
 			vim_item.kind = icons[vim_item.kind]
 			vim_item.menu = ({
-				nvim_lsp = "(LSP)",
-				emoji = "(Emoji)",
-				path = "(Path)",
-				calc = "(Calc)",
-				cmp_tabnine = "(Tabnine)",
-				vsnip = "(Snippet)",
-				luasnip = "(Luasnip)",
-				buffer = "(Buffer)",
+				nvim_lsp = "[LSP]",
+				emoji = "[Emoji]",
+				path = "[Path]",
+				calc = "[Calc]",
+				cmp_tabnine = "[Tabnine]",
+				vsnip = "[Vsnip]",
+				luasnip = "[Luasnip]",
+				buffer = "[Buffer]",
+				latex_symbols = "[LaTeX]",
 			})[entry.source.name]
 			vim_item.dup = ({
 				buffer = 1,
