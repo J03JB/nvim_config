@@ -47,8 +47,6 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("davidgranstrom/nvim-markdown-preview")
 	use("norcalli/nvim-colorizer.lua")
-	-- use({ "gennaro-tedesco/nvim-possession", requires = { "ibhagwan/fzf-lua" } })
-
 	use({
 		"jedrzejboczar/possession.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
