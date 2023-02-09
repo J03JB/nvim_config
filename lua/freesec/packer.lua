@@ -45,7 +45,14 @@ return require("packer").startup(function(use)
 	use("numToStr/FTerm.nvim")
 	use("windwp/nvim-autopairs")
 	use("lukas-reineke/indent-blankline.nvim")
+	use("davidgranstrom/nvim-markdown-preview")
+	use("norcalli/nvim-colorizer.lua")
+	-- use({ "gennaro-tedesco/nvim-possession", requires = { "ibhagwan/fzf-lua" } })
 
+	use({
+		"jedrzejboczar/possession.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 	-- formatting
 	use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
