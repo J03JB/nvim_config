@@ -38,6 +38,7 @@ return require("packer").startup(function(use)
 
 	-- Quality of Life
 	use("navarasu/onedark.nvim")
+	use("folke/tokyonight.nvim")
 	use("folke/which-key.nvim")
 	use("kdav5758/TrueZen.nvim")
 	use("terrortylor/nvim-comment")

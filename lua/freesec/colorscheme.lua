@@ -13,11 +13,13 @@
 -- }
 
 -- vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme("tokyonight-night")
+-- vim.cmd.colorscheme("tokyonight-moon")
 
-require("onedark").setup({
-	style = "darker",
-	highlight_linenumber = true,
-	variable_style = "italic",
-})
+-- require("onedark").setup({
+-- 	style = "darker",
+-- 	highlight_linenumber = true,
+-- 	variable_style = "italic",
+-- })
 
-require("onedark").load()
+-- require("onedark").load()

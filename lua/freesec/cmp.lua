@@ -43,7 +43,7 @@ cmp.setup({
 			return commit_characters
 		end,
 	},
-	min_length = 0, -- allow for `from package import _` in Python
+	min_length = 3, -- allow for `from package import _` in Python
 	mapping = {
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
