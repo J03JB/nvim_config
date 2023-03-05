@@ -117,6 +117,20 @@ key_mapper("n", "<leader>pu", ":PackerUpdate <CR>")
 key_mapper("n", "<TAB>", ":BufferLineCycleNext<CR>")
 key_mapper("n", "<S-TAB>", ":BufferLineCyclePrev<CR>")
 
+-- Codium
+-- key_mapper("i", "<C-g>", function()
+-- 	return vim.fn["codeium#Accept"]()
+-- end, { expr = true })
+-- key_mapper("i", "<c-;>", function()
+-- 	return vim.fn["codeium#CycleCompletions"](1)
+-- end, { expr = true })
+-- key_mapper("i", "<c-,>", function()
+-- 	return vim.fn["codeium#CycleCompletions"](-1)
+-- end, { expr = true })
+-- key_mapper("i", "<c-x>", function()
+-- 	return vim.fn["codeium#Clear"]()
+-- end, { expr = true })
+
 -- comment
 key_mapper("n", "<leader>/", ":CommentToggle<CR>")
 key_mapper("v", "<leader>/", ":CommentToggle<CR>")
