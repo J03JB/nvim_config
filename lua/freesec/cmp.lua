@@ -10,7 +10,6 @@ local feedkey = function(key, mode)
 end
 
 local cmp = require("cmp")
-local cmp_compare = require("freesec.cmp_compare")
 
 cmp.setup({
 	snippet = {
@@ -20,16 +19,6 @@ cmp.setup({
 	},
 	sorting = {
 		priority_weight = 100,
-		comparators = {
-			cmp.config.compare.offset,
-			cmp.config.compare.exact,
-			cmp.config.compare.score,
-			require("cmp-under-comparator").under,
-			cmp_compare.kind,
-			cmp.config.compare.sort_text,
-			cmp.config.compare.length,
-			cmp.config.compare.order,
-		},
 	},
 	window = {
 		-- completion = cmp.config.window.bordered(),
@@ -45,6 +34,16 @@ cmp.setup({
 	},
 	min_length = 3, -- allow for `from package import _` in Python
 	mapping = {
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.close(),
+		["<CR>"] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = false,
+		}),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -63,25 +62,6 @@ cmp.setup({
 				feedkey("<Plug>(vsnip-jump-prev)", "")
 			end
 		end, { "i", "s" }),
-		["<CR>"] = function(fallback)
-			if cmp.visible() then
-				return cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
-				})(fallback)
-			else
-				return fallback()
-			end
-		end,
-		["<C-Space>"] = cmp.mapping.complete(),
-		-- use escape to close completion window
-		["<ESC>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.abort()
-			else
-				return fallback()
-			end
-		end),
 	},
 	formatting = {
 		format = function(entry, vim_item)

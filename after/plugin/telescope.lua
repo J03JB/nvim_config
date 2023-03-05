@@ -28,7 +28,9 @@ require("telescope").setup({
 		},
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
-				-- even more opts
+				layout_config = {
+					prompt_position = "top",
+				},
 			}),
 		},
 	},
@@ -42,8 +44,7 @@ require("telescope").setup({
 			"--column",
 			"--smart-case",
 		},
-		prompt_prefix = " 🔎 ",
-		-- prompt_prefix = "  ",
+		prompt_prefix = "  ",
 		selection_caret = " ",
 		entry_prefix = "  ",
 		initial_mode = "insert",
@@ -52,7 +53,7 @@ require("telescope").setup({
 		layout_strategy = "horizontal",
 		layout_config = {
 			width = 0.75,
-			prompt_position = "bottom",
+			-- prompt_position = "bottom",
 			preview_cutoff = 120,
 			horizontal = { mirror = false },
 			vertical = { mirror = true },
@@ -99,9 +100,9 @@ require("telescope").setup({
 		},
 	},
 })
+require("telescope").load_extension("ui-select")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("packer")
 require("telescope").load_extension("file_browser")
-require("telescope").load_extension("ui-select")
 require("telescope").load_extension("luasnip")
 require("telescope").load_extension("possession")

@@ -72,7 +72,7 @@ return require("packer").startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
-	-- Codium
+	-- Codeium
 	use("Exafunction/codeium.vim")
 
 	-- Git

@@ -77,8 +77,8 @@ key_mapper("v", ">", ">gv")
 key_mapper("v", "<", "<gv")
 
 -- Copy to Clipboard
-key_mapper("n", "<leader>y", '"+y')
-key_mapper("n", "<leader>Y", '"+yg_')
+-- key_mapper("n", "<leader>y", '"+y')
+-- key_mapper("n", "<leader>Y", '"+yg_')
 
 -- Copy to end of line from current position
 key_mapper("n", "Y", "yg$")
@@ -90,8 +90,6 @@ key_mapper("v", "K", ":move '<-2<CR>gv=gv")
 -- jj as Escape key
 key_mapper("i", "jk", "<Esc>")
 key_mapper("i", "jj", "<Esc>")
-
-key_mapper("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/freesec/packer.lua<CR>")
 
 -- *************************************************************************************
 -- Python bits
@@ -117,19 +115,21 @@ key_mapper("n", "<leader>pu", ":PackerUpdate <CR>")
 key_mapper("n", "<TAB>", ":BufferLineCycleNext<CR>")
 key_mapper("n", "<S-TAB>", ":BufferLineCyclePrev<CR>")
 
--- Codium
--- key_mapper("i", "<C-g>", function()
--- 	return vim.fn["codeium#Accept"]()
--- end, { expr = true })
--- key_mapper("i", "<c-;>", function()
--- 	return vim.fn["codeium#CycleCompletions"](1)
--- end, { expr = true })
--- key_mapper("i", "<c-,>", function()
--- 	return vim.fn["codeium#CycleCompletions"](-1)
--- end, { expr = true })
--- key_mapper("i", "<c-x>", function()
--- 	return vim.fn["codeium#Clear"]()
--- end, { expr = true })
+-- Codeium
+key_mapper("n", "<leader>ce", ":Codeium EnableBuffer<CR>")
+key_mapper("n", "<leader>ce", ":Codeium DisableBuffer<CR>")
+vim.keymap.set("i", "<C-g>", function()
+	return vim.fn["codeium#Accept"]()
+end, { expr = true })
+vim.keymap.set("i", "<c-;>", function()
+	return vim.fn["codeium#CycleCompletions"](1)
+end, { expr = true })
+vim.keymap.set("i", "<c-,>", function()
+	return vim.fn["codeium#CycleCompletions"](-1)
+end, { expr = true })
+vim.keymap.set("i", "<c-x>", function()
+	return vim.fn["codeium#Clear"]()
+end, { expr = true })
 
 -- comment
 key_mapper("n", "<leader>/", ":CommentToggle<CR>")
@@ -171,7 +171,7 @@ key_mapper("n", "<leader>fc", ":Telescope git_commits<cr>")
 key_mapper("n", "<leader>fgw", ":Telescope grep_string<cr>")
 key_mapper("n", "<leader>fp", ":Telescope packer<CR>")
 key_mapper("n", "<leader>fy", ":Telescope yank_history<CR>")
-key_mapper("n", "<leader>fs", ":Telescope possession list<CR>")
+key_mapper("n", "<leader>fs", ":Telescope possession list theme=dropdown<CR>")
 key_mapper("n", "<leader>fr", ":Telescope oldfiles theme=dropdown<CR>")
 
 -- Toggle Markdown Preview
