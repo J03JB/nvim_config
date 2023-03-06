@@ -9,8 +9,6 @@ require("telescope").setup({
 			fuzzy = true, -- false will only do exact matching
 			override_generic_sorter = true, -- override the generic sorter
 			override_file_sorter = true, -- override the file sorter
-			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			-- the default case_mode is "smart_case"
 		},
 		packer = {
 			theme = "ivy",
@@ -23,9 +21,6 @@ require("telescope").setup({
 			hijack_netrw = true,
 			cwd_to_path = true,
 		},
-		luasnip = {
-			theme = "ivy",
-		},
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
 				layout_config = {
@@ -37,7 +32,6 @@ require("telescope").setup({
 	defaults = {
 		vimgrep_arguments = {
 			"rg",
-			"--no-heading",
 			"--with-filename",
 			"--hidden",
 			"--line-number",
@@ -59,7 +53,7 @@ require("telescope").setup({
 			vertical = { mirror = true },
 		},
 		file_sorter = require("telescope.sorters").get_fzy_sorter,
-		file_ignore_patterns = { "go/", "node_modules/", ".gem", "Pictures" },
+		file_ignore_patterns = { "gtk/**/*", ".git", "go/", "node_modules/", ".gem", "Pictures" },
 		generic_sorter = require("telescope.sorters").get_fzy_sorter,
 		path_display = { "full" },
 		winblend = 0,
@@ -80,18 +74,8 @@ require("telescope").setup({
 				["<C-c>"] = actions.close,
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
-				-- To disable a keymap, put [map] = false
-				-- So, to not map "<C-n>", just put
-				-- ["<c-x>"] = false,
 				["<esc>"] = actions.close,
-				-- Otherwise, just set the mapping to the function that you want it to be.
-				-- ["<C-i>"] = actions.select_horizontal,
-
-				-- Add up multiple actions
 				["<CR>"] = actions.select_default + actions.center,
-
-				-- You can perform as many actions in a row as you like
-				-- ["<CR>"] = actions.select_default + actions.center + my_cool_custom_action,
 			},
 			n = {
 				["<C-j>"] = actions.move_selection_next,
@@ -103,6 +87,4 @@ require("telescope").setup({
 require("telescope").load_extension("ui-select")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("packer")
-require("telescope").load_extension("file_browser")
-require("telescope").load_extension("luasnip")
 require("telescope").load_extension("possession")

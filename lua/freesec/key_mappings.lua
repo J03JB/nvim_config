@@ -159,7 +159,7 @@ key_mapper("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 key_mapper("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Telescope
-key_mapper("n", "<leader>ff", ":Telescope find_files<CR>")
+key_mapper("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
 key_mapper("n", "<leader>fb", ":Telescope file_browser<CR>")
 key_mapper("n", "<leader>fl", ":Telescope live_grep<CR>")
 key_mapper("n", "<leader>bb", ":Telescope buffers theme=dropdown<CR>")
