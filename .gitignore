@@ -1,4 +1,4 @@
 backups/
 plugins/
 Session.vim
-plugin/
+/plugin

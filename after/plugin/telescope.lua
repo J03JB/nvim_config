@@ -4,6 +4,22 @@ local actions = require("telescope.actions")
 ------------------------------
 -- '--color=never',
 require("telescope").setup({
+	pickers = {
+		find_files = {
+			layout_config = {
+				height = 0.75,
+				width = 0.75,
+			},
+		},
+		oldfiles = {
+			theme = "dropdown",
+			previewer = false,
+			layout_config = {
+				prompt_position = "bottom",
+			},
+			winblend = 20,
+		},
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
@@ -20,6 +36,16 @@ require("telescope").setup({
 			theme = "ivy",
 			hijack_netrw = true,
 			cwd_to_path = true,
+		},
+		aerial = {
+			-- Display symbols as <root>.<parent>.<symbol>
+			show_nesting = {
+				["_"] = false, -- This key will be the default
+				json = true, -- You can set the option for specific filetypes
+				yaml = true,
+				lua = true,
+				python = true,
+			},
 		},
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
@@ -49,7 +75,7 @@ require("telescope").setup({
 			-- prompt_position = "bottom",
 			preview_cutoff = 120,
 			horizontal = { mirror = false },
-			vertical = { mirror = true },
+			vertical = { mirror = false },
 		},
 		file_sorter = require("telescope.sorters").get_fzy_sorter,
 		file_ignore_patterns = { "gtk/**/*", ".git", "go/", "node_modules/", ".gem", "Pictures" },
@@ -88,3 +114,4 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("packer")
 require("telescope").load_extension("possession")
+require("telescope").load_extension("aerial")

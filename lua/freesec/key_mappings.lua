@@ -170,9 +170,9 @@ key_mapper("n", "<leader>fx", ":Telescope git_status<cr>")
 key_mapper("n", "<leader>fc", ":Telescope git_commits<cr>")
 key_mapper("n", "<leader>fgw", ":Telescope grep_string<cr>")
 key_mapper("n", "<leader>fp", ":Telescope packer<CR>")
-key_mapper("n", "<leader>fy", ":Telescope yank_history<CR>")
 key_mapper("n", "<leader>fs", ":Telescope possession list theme=dropdown<CR>")
-key_mapper("n", "<leader>fr", ":Telescope oldfiles theme=dropdown<CR>")
+key_mapper("n", "<leader>fr", ":Telescope oldfiles <CR>")
+key_mapper("n", "<leader>fa", ":Telescope aerial theme=dropdown<CR>")
 
 -- Toggle Markdown Preview
 key_mapper("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
