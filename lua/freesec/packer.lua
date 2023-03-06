@@ -20,51 +20,66 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-----------------------------------------------------------------------------------------------
 	-- Telescope
+	-----------------------------------------------------------------------------------------------
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
-		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("nvim-telescope/telescope-packer.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
-	use({
-		"benfowler/telescope-luasnip.nvim",
-		module = "telescope._extensions.luasnip", -- if you wish to lazy-load
-	})
 
+	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
-	use("navarasu/onedark.nvim")
-	use("folke/tokyonight.nvim")
+	-----------------------------------------------------------------------------------------------
 	use("folke/which-key.nvim")
 	use("kdav5758/TrueZen.nvim")
 	use("terrortylor/nvim-comment")
 	use("tpope/vim-surround")
-	use("numToStr/FTerm.nvim")
 	use("windwp/nvim-autopairs")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("davidgranstrom/nvim-markdown-preview")
+	use("numToStr/FTerm.nvim")
 	use("mbbill/undotree")
 	use("brenoprata10/nvim-highlight-colors")
+	use("davidgranstrom/nvim-markdown-preview")
+
+	-----------------------------------------------------------------------------------------------
+	-- Theming
+	-----------------------------------------------------------------------------------------------
+	use("navarasu/onedark.nvim")
+	use("folke/tokyonight.nvim")
+
+	-----------------------------------------------------------------------------------------------
+	-- Sessions
+	-----------------------------------------------------------------------------------------------
 	use({
 		"jedrzejboczar/possession.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
 
+	-----------------------------------------------------------------------------------------------
 	-- formatting
+	-----------------------------------------------------------------------------------------------
 	use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
+	-----------------------------------------------------------------------------------------------
 	-- Bufferline
+	-----------------------------------------------------------------------------------------------
 	use("akinsho/nvim-bufferline.lua")
 
+	-----------------------------------------------------------------------------------------------
 	-- Lualine
+	-----------------------------------------------------------------------------------------------
 	use("hoob3rt/lualine.nvim")
 	use("arkav/lualine-lsp-progress")
 
+	-----------------------------------------------------------------------------------------------
 	-- Treesitter
+	-----------------------------------------------------------------------------------------------
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
 	use("p00f/nvim-ts-rainbow")
@@ -72,14 +87,20 @@ return require("packer").startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
+	-----------------------------------------------------------------------------------------------
 	-- Codeium
+	-----------------------------------------------------------------------------------------------
 	use("Exafunction/codeium.vim")
 
+	-----------------------------------------------------------------------------------------------
 	-- Git
+	-----------------------------------------------------------------------------------------------
 	use("lewis6991/gitsigns.nvim")
 	use("tpope/vim-fugitive")
 
+	-----------------------------------------------------------------------------------------------
 	-- LSP
+	-----------------------------------------------------------------------------------------------
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
@@ -104,12 +125,16 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-----------------------------------------------------------------------------------------------
 	-- cmp extras
+	-----------------------------------------------------------------------------------------------
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-vsnip")
 	use("lukas-reineke/cmp-under-comparator")
 
+	-----------------------------------------------------------------------------------------------
 	-- NvimTree
+	-----------------------------------------------------------------------------------------------
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {
