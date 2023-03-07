@@ -76,10 +76,6 @@ key_mapper("n", "<leader>O", "moo<ESC>k")
 key_mapper("v", ">", ">gv")
 key_mapper("v", "<", "<gv")
 
--- Copy to Clipboard
--- key_mapper("n", "<leader>y", '"+y')
--- key_mapper("n", "<leader>Y", '"+yg_')
-
 -- Copy to end of line from current position
 key_mapper("n", "Y", "yg$")
 
@@ -90,6 +86,12 @@ key_mapper("v", "K", ":move '<-2<CR>gv=gv")
 -- jj as Escape key
 key_mapper("i", "jk", "<Esc>")
 key_mapper("i", "jj", "<Esc>")
+
+-- 2xleader to source file.
+key_mapper("n", "<leader><leader>", ":so<CR>")
+
+key_mapper("n", "Q", "<nop>")
+key_mapper("n", "U", "<nop>")
 
 -- *************************************************************************************
 -- Python bits
