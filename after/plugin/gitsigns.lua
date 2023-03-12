@@ -32,7 +32,7 @@ require("gitsigns").setup({
 	update_debounce = 100,
 	attach_to_untracked = true,
 	status_formatter = nil, -- Use default
-	-- diff_opt = true -- If luajit is present
+	diff_opt = true, -- If luajit is present
 	preview_config = {
 		border = "single",
 		style = "minimal",
