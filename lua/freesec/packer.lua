@@ -135,6 +135,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-vsnip")
 	use("lukas-reineke/cmp-under-comparator")
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
 
 	-----------------------------------------------------------------------------------------------
 	-- NvimTree

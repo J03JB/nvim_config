@@ -90,19 +90,11 @@ key_mapper("i", "jj", "<Esc>")
 -- 2xleader to source file.
 -- key_mapper("n", "<leader><leader>", ":so<CR>")
 
+-- space + x to make file executable
+key_mapper("n", "<leader>x", "<cmd>!chmod +x %<CR>")
+
 key_mapper("n", "Q", "<nop>")
 key_mapper("n", "U", "<nop>")
-
--- *************************************************************************************
--- Python bits
--- *************************************************************************************
--- Run python code
-key_mapper("i", "<F5>", "<ESC>:!python % <CR>")
-key_mapper("n", "<leader>rr", ":update<CR>:exec '!python3' shellescape(@%, 1)<CR>")
--- debug python with pdb
-key_mapper("n", "<leader>rd", ":update<CR>:sp term://python3 -m pdb %<CR>")
--- monitor python code with nodemon
-key_mapper("n", "<leader>rm", ":update<CR>:sp term://nodemon -e py %<CR>")
 
 -- *************************************************************************************
 -- Plugin Bindings
