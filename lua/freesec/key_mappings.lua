@@ -88,7 +88,7 @@ key_mapper("i", "jk", "<Esc>")
 key_mapper("i", "jj", "<Esc>")
 
 -- 2xleader to source file.
-key_mapper("n", "<leader><leader>", ":so<CR>")
+-- key_mapper("n", "<leader><leader>", ":so<CR>")
 
 key_mapper("n", "Q", "<nop>")
 key_mapper("n", "U", "<nop>")
