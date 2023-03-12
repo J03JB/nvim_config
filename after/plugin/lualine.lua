@@ -1,8 +1,6 @@
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		-- theme = "catppuccin",
-		-- theme = "onedark",
 		theme = "auto",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
@@ -13,6 +11,7 @@ require("lualine").setup({
 		lualine_b = { "branch", "diff" },
 		lualine_c = { "filename" },
 		lualine_x = {
+			"searchcount",
 			{ "diagnostics", sources = { "nvim_diagnostic" } },
 			"filetype",
 			"encoding",
