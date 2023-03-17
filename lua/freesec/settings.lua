@@ -66,8 +66,8 @@ opt.undofile = true
 opt.updatetime = 100 -- Trigger cursorhold faster
 opt.wrap = false -- wrap lines
 opt.writebackup = false
-vim.o.completeopt = "menu,menuone,noselect"
-vim.o.confirm = true
+opt.completeopt = "menu,menuone,noselect"
+opt.confirm = true
 -- Messages
 opt.shortmess = table.concat({
 	"f",
