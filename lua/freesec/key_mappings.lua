@@ -85,7 +85,6 @@ key_mapper("v", "K", ":move '<-2<CR>gv=gv")
 
 -- jj as Escape key
 key_mapper("i", "jk", "<Esc>")
-key_mapper("i", "jj", "<Esc>")
 
 -- 2xleader to source file.
 -- key_mapper("n", "<leader><leader>", ":so<CR>")
@@ -106,8 +105,8 @@ key_mapper("n", "<Leader>pi", ":PackerInstall <CR>")
 key_mapper("n", "<leader>pu", ":PackerUpdate <CR>")
 
 -- Bufferline
-key_mapper("n", "<TAB>", ":BufferLineCycleNext<CR>")
-key_mapper("n", "<S-TAB>", ":BufferLineCyclePrev<CR>")
+key_mapper("n", "<A-]>", ":BufferLineCycleNext<CR>")
+key_mapper("n", "<A-[>", ":BufferLineCyclePrev<CR>")
 
 -- Codeium
 key_mapper("n", "<leader>ce", ":Codeium EnableBuffer<CR>")

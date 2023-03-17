@@ -138,6 +138,15 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
 
 	-----------------------------------------------------------------------------------------------
+	-- tabout
+	-----------------------------------------------------------------------------------------------
+	use({
+		"abecodes/tabout.nvim",
+		wants = { "nvim-treesitter" }, -- or require if not used so far
+		after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
+	})
+
+	-----------------------------------------------------------------------------------------------
 	-- NvimTree
 	-----------------------------------------------------------------------------------------------
 	use({
