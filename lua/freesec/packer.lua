@@ -46,6 +46,8 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use("brenoprata10/nvim-highlight-colors")
 	use("davidgranstrom/nvim-markdown-preview")
+	use("simrat39/rust-tools.nvim")
+	use("preservim/tagbar")
 
 	-----------------------------------------------------------------------------------------------
 	-- Theming
@@ -70,6 +72,11 @@ return require("packer").startup(function(use)
 	-- Bufferline
 	-----------------------------------------------------------------------------------------------
 	use("akinsho/nvim-bufferline.lua")
+
+	-----------------------------------------------------------------------------------------------
+	-- Debugging
+	-----------------------------------------------------------------------------------------------
+	use("mfussenegger/nvim-dap")
 
 	-----------------------------------------------------------------------------------------------
 	-- Lualine

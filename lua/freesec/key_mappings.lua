@@ -151,6 +151,9 @@ key_mapper("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 -- Nvim Tree Toggle
 key_mapper("n", "<leader>e", ":NvimTreeToggle<CR>")
 
+-- Tagbar
+key_mapper("n", "<F8>", ":TagbarToggle<CR>")
+
 -- Telescope
 key_mapper("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
 key_mapper("n", "<leader>fb", ":Telescope file_browser<CR>")

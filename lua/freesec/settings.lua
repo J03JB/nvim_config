@@ -98,6 +98,10 @@ vim.g.floating_window_border_dark = {
 	{ "│", "FloatBorderDark" },
 }
 
+-- Treesitter folding
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- Codeium
 vim.g.codeium_enabled = false -- Enable Codeium
 vim.g.codeium_config_file = vim.fn.expand("~/.config/codeium/config.yaml")
