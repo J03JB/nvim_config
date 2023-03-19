@@ -48,6 +48,9 @@ return require("packer").startup(function(use)
 	use("davidgranstrom/nvim-markdown-preview")
 	use("simrat39/rust-tools.nvim")
 	use("preservim/tagbar")
+	use("lewis6991/impatient.nvim")
+	use("RRethy/vim-illuminate")
+	use("folke/todo-comments.nvim")
 
 	-----------------------------------------------------------------------------------------------
 	-- Theming
@@ -77,6 +80,7 @@ return require("packer").startup(function(use)
 	-- Debugging
 	-----------------------------------------------------------------------------------------------
 	use("mfussenegger/nvim-dap")
+	use("folke/trouble.nvim")
 
 	-----------------------------------------------------------------------------------------------
 	-- Lualine
