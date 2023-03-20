@@ -81,6 +81,10 @@ return require("packer").startup(function(use)
 	-----------------------------------------------------------------------------------------------
 	use("mfussenegger/nvim-dap")
 	use("folke/trouble.nvim")
+	use("rcarriga/nvim-dap-ui")
+	use("mfussenegger/nvim-dap-python")
+	use("theHamsta/nvim-dap-virtual-text")
+	use("nvim-telescope/telescope-dap.nvim")
 
 	-----------------------------------------------------------------------------------------------
 	-- Lualine
@@ -99,16 +103,10 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
 	-----------------------------------------------------------------------------------------------
-	-- Aerial.nvim
-	-----------------------------------------------------------------------------------------------
-	use("stevearc/aerial.nvim")
-
-	-----------------------------------------------------------------------------------------------
 	-- Git
 	-----------------------------------------------------------------------------------------------
 	use("lewis6991/gitsigns.nvim")
 	use("tpope/vim-fugitive")
-	use("rawnly/gist.nvim")
 
 	-----------------------------------------------------------------------------------------------
 	-- LSP
