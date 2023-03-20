@@ -37,16 +37,6 @@ require("telescope").setup({
 			hijack_netrw = true,
 			cwd_to_path = true,
 		},
-		aerial = {
-			-- Display symbols as <root>.<parent>.<symbol>
-			show_nesting = {
-				["_"] = false, -- This key will be the default
-				json = true, -- You can set the option for specific filetypes
-				yaml = true,
-				lua = true,
-				python = true,
-			},
-		},
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
 				layout_config = {
@@ -114,4 +104,3 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("packer")
 require("telescope").load_extension("possession")
-require("telescope").load_extension("aerial")
