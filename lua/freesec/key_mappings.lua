@@ -108,6 +108,7 @@ key_mapper("n", "<leader>pu", ":PackerUpdate <CR>")
 key_mapper("n", "<A-]>", ":BufferLineCycleNext<CR>")
 key_mapper("n", "<A-[>", ":BufferLineCyclePrev<CR>")
 key_mapper("n", "<TAB>", ":BufferLineCycleNext<CR>")
+key_mapper("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
 
 -- Comment
 key_mapper("n", "<leader>/", ":CommentToggle<CR>")
@@ -164,7 +165,6 @@ key_mapper("n", "<leader>fgw", ":Telescope grep_string<cr>")
 key_mapper("n", "<leader>fp", ":Telescope packer<CR>")
 key_mapper("n", "<leader>fs", ":Telescope possession list theme=dropdown<CR>")
 key_mapper("n", "<leader>fr", ":Telescope oldfiles <CR>")
-key_mapper("n", "<leader>fa", ":Telescope aerial theme=dropdown<CR>")
 
 -- Toggle Markdown Preview
 key_mapper("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
