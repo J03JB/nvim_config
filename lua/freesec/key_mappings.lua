@@ -19,15 +19,19 @@ end
 -- Map leader to space
 vim.g.mapleader = " "
 
+-- 'qq' to record instead of 'q'
+key_mapper("n", "qq", "q")
+key_mapper("n", "q", "<nop>")
+
 -- Faster scrolling
 key_mapper("n", "<c-DOWN>", "3<c-e>")
 key_mapper("n", "<c-UP>", "3<c-y>")
 
---whenever you're in parentheses, you can simple invoke dp or cp to wipe it's contents (same for brackets, but db or cb).
+-- whenever you're in parentheses, you can simple invoke dp or cp to wipe it's contents (same for brackets, but db or cb).
 key_mapper("o", "p", 'i"')
 key_mapper("o", "b", "i(|")
 
---PAGEUP/PAGEDN ONLY HALF PAGE AT A TIME
+-- pageup/pagedn only half page at a time
 key_mapper("n", "<PageUp>", "<C-U>")
 key_mapper("n", "<PageDown>", "<C-D>")
 
@@ -39,31 +43,40 @@ key_mapper("n", "<leader>y", '"+y')
 key_mapper("x", "<leader>y", '"+y')
 key_mapper("n", "<leader>Y", '"+Y')
 
-key_mapper("n", "Q", "<nop>")
-
--- Change word to uppercase(ctrl+u) or lower(space+l)
-key_mapper("n", "<leader>l", "viwgui<ESC>")
-key_mapper("n", "<leader>u", "viwUi<ESC>")
+--- toggle capitalisation
+key_mapper("n", "<leader>w", "g~iw")
+key_mapper("v", "<leader>w", "~")
 
 -- Window Navigation
 key_mapper("n", "<C-h>", "<C-w>h")
 key_mapper("n", "<C-l>", "<C-w>l")
 
+-- easier navigation
+key_mapper("n", "E", "5e")
+key_mapper("n", "B", "5b")
+key_mapper("n", "H", "^")
+key_mapper("v", "H", "^")
+key_mapper("n", "L", "$")
+key_mapper("v", "L", "$")
+
 -- Kill buffer with leader bd
 key_mapper("n", "<leader>bd", ":bdelete<CR>")
-
--- reload luafile
-key_mapper("n", "<leader>lf", ":luafile %<CR>")
 
 -- Move line up or down
 key_mapper("n", "<C-k>", ":m-2<cr>")
 key_mapper("n", "<C-j>", ":m+<cr>")
 
--- DITCH THOSE ARROW KEYS --> MOVE UP AND DOWN IN INSERT MODE WITH HJKL BY SIMPLY HOLDING CONTROL
+-- ditch those arrow keys --> move up and down in insert mode with hjkl by simply holding control
 key_mapper("i", "<c-j>", "<esc>ji")
 key_mapper("i", "<c-k>", "<esc>ki")
 key_mapper("i", "<c-h>", "<esc>i")
 key_mapper("i", "<c-l>", "<esc>la")
+
+-- replace a word with yanked text
+key_mapper("n", "rw", "viwpyiw")
+
+-- replace till the end of line with yanked text
+key_mapper("n", "rl", 'Pl"_D')
 
 -- Clear highlights
 key_mapper("n", "<leader>h", ":noh<CR>")
@@ -72,7 +85,7 @@ key_mapper("n", "<leader>h", ":noh<CR>")
 key_mapper("n", "<leader>o", "moO<ESC>k ")
 key_mapper("n", "<leader>O", "moo<ESC>k")
 
--- Better indentaion (tab)
+-- Better indentaion
 key_mapper("v", ">", ">gv")
 key_mapper("v", "<", "<gv")
 
@@ -85,9 +98,6 @@ key_mapper("v", "K", ":move '<-2<CR>gv=gv")
 
 -- jj as Escape key
 key_mapper("i", "jk", "<Esc>")
-
--- 2xleader to source file.
--- key_mapper("n", "<leader><leader>", ":so<CR>")
 
 -- space + x to make file executable
 key_mapper("n", "<leader>x", "<cmd>!chmod +x %<CR>")
