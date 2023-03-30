@@ -24,7 +24,7 @@ lsp.configure("lua_ls", {
 
 -- call custom cmp setup. (not sure if this bit is needed)
 lsp.defaults.cmp_config({
-	require("freesec.cmp"),
+	require("freesec.plugin_config.cmp"),
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -50,6 +50,13 @@ lsp.on_attach(function(client, bufnr)
 		vim.diagnostic.goto_prev()
 	end, opts)
 end)
+
+lsp.set_sign_icons({
+	error = "✘",
+	warn = "▲",
+	hint = "⚑",
+	info = "»",
+})
 
 lsp.setup()
 
