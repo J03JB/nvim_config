@@ -10,6 +10,7 @@ require("null-ls").setup({
 		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.formatting.jq,
 		null_ls.builtins.formatting.shfmt,
+		null_ls.builtins.code_actions.gitsigns,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
