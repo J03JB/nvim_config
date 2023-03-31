@@ -40,6 +40,7 @@ local plugins = {
 	"simrat39/rust-tools.nvim",
 	"preservim/tagbar",
 	"folke/todo-comments.nvim",
+	"ojroques/nvim-osc52",
 
 	-----------------------------------------------------------------------------------------------
 	-- Theming

@@ -98,10 +98,6 @@ vim.g.floating_window_border_dark = {
 	{ "│", "FloatBorderDark" },
 }
 
--- Treesitter folding
--- vim.wo.foldmethod = "expr"
--- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-
 -- Sessions
 vim.g.autoload_last_session = false
 
