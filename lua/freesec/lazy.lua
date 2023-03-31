@@ -35,7 +35,6 @@ local plugins = {
 	"windwp/nvim-autopairs",
 	"lukas-reineke/indent-blankline.nvim",
 	"numToStr/FTerm.nvim",
-	"mbbill/undotree",
 	"brenoprata10/nvim-highlight-colors",
 	"davidgranstrom/nvim-markdown-preview",
 	"simrat39/rust-tools.nvim",
@@ -47,14 +46,6 @@ local plugins = {
 	-----------------------------------------------------------------------------------------------
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
-
-	-----------------------------------------------------------------------------------------------
-	-- Sessions
-	-----------------------------------------------------------------------------------------------
-	{
-		"jedrzejboczar/possession.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
 
 	-----------------------------------------------------------------------------------------------
 	-- formatting
@@ -72,12 +63,7 @@ local plugins = {
 	-----------------------------------------------------------------------------------------------
 	-- Debugging
 	-----------------------------------------------------------------------------------------------
-	"mfussenegger/nvim-dap",
 	"folke/trouble.nvim",
-	"rcarriga/nvim-dap-ui",
-	"mfussenegger/nvim-dap-python",
-	"theHamsta/nvim-dap-virtual-text",
-	"nvim-telescope/telescope-dap.nvim",
 
 	-----------------------------------------------------------------------------------------------
 	-- Lualine
