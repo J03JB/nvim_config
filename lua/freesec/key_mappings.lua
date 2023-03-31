@@ -155,14 +155,6 @@ key_mapper("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 -- Nvim Tree Toggle
 key_mapper("n", "<leader>e", ":NvimTreeToggle<CR>")
 
---OSC52 (copy paste over ssh)
-vim.keymap.set("n", "<leader>c", require("osc52").copy_operator, { expr = true })
-vim.keymap.set("n", "<leader>cc", "<leader>c_", { remap = true })
-vim.keymap.set("v", "<leader>c", require("osc52").copy_visual)
--- key_mapper("n", "<leader>c", require("osc52").copy_operator)
--- key_mapper("n", "<leader>cc", "<leader>c_")
--- key_mapper("v", "<leader>c", require("osc52").copy_visual)
-
 -- Tagbar
 key_mapper("n", "<F8>", ":TagbarToggle<CR>")
 
