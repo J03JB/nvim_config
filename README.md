@@ -1,26 +1,24 @@
 # Config for Neovim 0.8
 
-**Install Packer**:
-
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-```
+> Switched from `packer` to `lazy.nvim` package manager > 31/03/23
 
 ## Plugins:
 
 - LSPZero (autocompletion, lsp config)
 - null-ls (formatting)
-- NvimTree
-- Tree sitter
+- Nvim-Tree
+- Treesitter
 - gitsigns
 - lualine
 - telescope
 - truezen
-- auto pairs
+- autopairs
 - bufferline
 - indent blankline
+- todo.nvim (highlight TODO: etc.)
+- trouble.nvim
+- git fugitive
+- comment.nvim
 
 ## Coloring
 
