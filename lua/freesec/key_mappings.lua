@@ -35,6 +35,9 @@ key_mapper("o", "b", "i(|")
 key_mapper("n", "<PageUp>", "<C-U>")
 key_mapper("n", "<PageDown>", "<C-D>")
 
+-- Reselect the text that has just been pasted, see also https://stackoverflow.com/a/4317090/6064933.
+key_mapper("n", "<leader>v", "printf('`[%s`]', getregtype()[0])")
+
 -- "greatest remap ever" thePrimagen
 key_mapper("x", "<leader>p", '"_dP')
 
@@ -89,6 +92,9 @@ key_mapper("v", "<", "<gv")
 -- Copy to end of line from current position
 key_mapper("n", "Y", "yg$")
 
+-- Copy entire buffer.
+key_mapper("n", "<leader>y", "<cmd>%yank<cr>")
+
 -- Move selected line / block of text in visual mode
 key_mapper("v", "J", ":move '>+1<CR>gv=gv")
 key_mapper("v", "K", ":move '<-2<CR>gv=gv")
@@ -98,6 +104,13 @@ key_mapper("i", "jk", "<Esc>")
 
 -- space + x to make file executable
 key_mapper("n", "<leader>x", "<cmd>!chmod +x %<CR>")
+
+-- insert semicolon in the end
+key_mapper("i", "<A-;>", "<Esc>miA;<Esc>`ii")
+
+-- Toggle spell checking
+key_mapper("n", "<F11>", "<cmd>set spell!<cr>")
+key_mapper("i", "<F11>", "<c-o><cmd>set spell!<cr>")
 
 key_mapper("n", "Q", "<nop>")
 key_mapper("n", "U", "<nop>")
@@ -127,7 +140,7 @@ key_mapper("n", "<C-b>", [[:lua require'dap'.toggle_breakpoint()<CR>]])
 key_mapper("n", "<C-c>", [[:lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>]])
 key_mapper("n", "<C-l>", [[:lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log Point Msg: '))<CR>]])
 key_mapper("n", "<F10>", [[:lua require'dap'.step_over()<CR>]])
-key_mapper("n", "<F11>", [[:lua require'dap'.step_into()<CR>]])
+-- key_mapper("n", "<F11>", [[:lua require'dap'.step_into()<CR>]])
 key_mapper("n", "<F12>", [[:lua require'dap'.step_out()<CR>]])
 key_mapper("n", "<F6>", [[:lua require'dap'.repl.open()<CR>]])
 key_mapper("n", "dl", [[:lua require'dap'.run_last()<CR>]])
@@ -135,6 +148,9 @@ key_mapper("n", "dl", [[:lua require'dap'.run_last()<CR>]])
 -- FTerm
 key_mapper("n", "<leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
 key_mapper("t", "<leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+-- Fugitive
+key_mapper("n", "<leader>gs", "<CMD>Git<CR>")
 
 -- cmp
 key_mapper("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")

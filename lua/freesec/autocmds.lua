@@ -21,8 +21,6 @@ require("freesec.utils").create_augroups({
 		{ "BufWritePost", "*.json", ":%!jq ." },
 		-- don't continue comment on next line
 		{ "FileType", "*", "setlocal formatoptions-=cro" },
-		-- Strip trailing whitespaces on save
-		-- { "BufWritePre", "*", "%s/\\s\\+$//e" },
 		-- set spell for certain files
 		{ "BufRead", { "*.txt", "*.md", "*.tex" }, "setlocal spell" },
 	},

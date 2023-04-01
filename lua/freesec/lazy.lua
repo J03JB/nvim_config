@@ -42,6 +42,7 @@ local plugins = {
 	"folke/todo-comments.nvim",
 	"ojroques/nvim-osc52",
 	"abecodes/tabout.nvim",
+	"ThePrimeagen/harpoon",
 
 	-- Lualine
 	"nvim-lualine/lualine.nvim",
