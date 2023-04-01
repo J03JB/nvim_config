@@ -13,8 +13,8 @@
 -- }
 
 -- vim.cmd.colorscheme "catppuccin"
-vim.cmd.colorscheme("tokyonight-night")
--- vim.cmd.colorscheme("tokyonight-moon")
+-- vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("tokyonight-moon")
 
 -- require("onedark").setup({
 -- 	style = "darker",

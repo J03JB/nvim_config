@@ -1,5 +1,6 @@
 require("freesec.plugin_config.treesitter")
 require("freesec.plugin_config.lsp")
+require("freesec.plugin_config.telescope")
 require("freesec.plugin_config.lualine")
 require("freesec.plugin_config.autopairs")
 require("freesec.plugin_config.nvim-tree")
