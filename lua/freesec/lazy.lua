@@ -77,7 +77,7 @@ local plugins = {
 	-----------------------------------------------------------------------------------------------
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"nvim-treesitter/playground",
-	"p00f/nvim-ts-rainbow",
+	"HiPhish/nvim-ts-rainbow2",
 	"windwp/nvim-ts-autotag",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
