@@ -4,7 +4,6 @@ require("lualine").setup({
 		theme = "auto",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
-		disabled_filetypes = { "packer" },
 	},
 	sections = {
 		lualine_a = { "mode" },

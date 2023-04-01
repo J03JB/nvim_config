@@ -41,17 +41,28 @@ local plugins = {
 	"preservim/tagbar",
 	"folke/todo-comments.nvim",
 	"ojroques/nvim-osc52",
+	"abecodes/tabout.nvim",
+
+	-- Lualine
+	"nvim-lualine/lualine.nvim",
+	"arkav/lualine-lsp-progress",
+
+	-- Git
+	"lewis6991/gitsigns.nvim",
+	"tpope/vim-fugitive",
+
+	-- formatting
+	{ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+
+	-- NvimTree
+	"nvim-tree/nvim-tree.lua",
+	"nvim-tree/nvim-web-devicons", -- optional, for file icon
 
 	-----------------------------------------------------------------------------------------------
 	-- Theming
 	-----------------------------------------------------------------------------------------------
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
-
-	-----------------------------------------------------------------------------------------------
-	-- formatting
-	-----------------------------------------------------------------------------------------------
-	{ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 
 	-----------------------------------------------------------------------------------------------
 	-- Bufferline
@@ -67,12 +78,6 @@ local plugins = {
 	"folke/trouble.nvim",
 
 	-----------------------------------------------------------------------------------------------
-	-- Lualine
-	-----------------------------------------------------------------------------------------------
-	"nvim-lualine/lualine.nvim",
-	"arkav/lualine-lsp-progress",
-
-	-----------------------------------------------------------------------------------------------
 	-- Treesitter
 	-----------------------------------------------------------------------------------------------
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -81,12 +86,6 @@ local plugins = {
 	"windwp/nvim-ts-autotag",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
-
-	-----------------------------------------------------------------------------------------------
-	-- Git
-	-----------------------------------------------------------------------------------------------
-	"lewis6991/gitsigns.nvim",
-	"tpope/vim-fugitive",
 
 	-----------------------------------------------------------------------------------------------
 	-- LSP
@@ -127,16 +126,6 @@ local plugins = {
 	"hrsh7th/cmp-vsnip",
 	"lukas-reineke/cmp-under-comparator",
 	"hrsh7th/cmp-nvim-lsp-signature-help",
-
-	-----------------------------------------------------------------------------------------------
-	-- tabout
-	-----------------------------------------------------------------------------------------------
-	"abecodes/tabout.nvim",
-	-----------------------------------------------------------------------------------------------
-	-- NvimTree
-	-----------------------------------------------------------------------------------------------
-	"nvim-tree/nvim-tree.lua",
-	"nvim-tree/nvim-web-devicons", -- optional, for file icon
 }
 
 local opts = {}

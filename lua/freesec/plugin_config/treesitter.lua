@@ -4,7 +4,6 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 	highlight = {
 		enable = true,
-		language_tree = true,
 	},
 	rainbow = {
 		enable = true,
