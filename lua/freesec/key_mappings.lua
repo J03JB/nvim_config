@@ -93,7 +93,7 @@ key_mapper("v", "<", "<gv")
 key_mapper("n", "Y", "yg$")
 
 -- Copy entire buffer.
-key_mapper("n", "<leader>y", "<cmd>%yank<cr>")
+key_mapper("n", "<leader>yb", "<cmd>%yank<cr>")
 
 -- Move selected line / block of text in visual mode
 key_mapper("v", "J", ":move '>+1<CR>gv=gv")

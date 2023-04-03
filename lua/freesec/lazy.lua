@@ -24,7 +24,6 @@ local plugins = {
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	"nvim-telescope/telescope-file-browser.nvim",
 	"nvim-telescope/telescope-ui-select.nvim",
-
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
 	-----------------------------------------------------------------------------------------------
@@ -43,28 +42,23 @@ local plugins = {
 	"ojroques/nvim-osc52",
 	"abecodes/tabout.nvim",
 	"ThePrimeagen/harpoon",
-
 	-- Lualine
 	"nvim-lualine/lualine.nvim",
 	"arkav/lualine-lsp-progress",
-
 	-- Git
 	"lewis6991/gitsigns.nvim",
 	"tpope/vim-fugitive",
-
 	-- formatting
 	{ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-
 	-- NvimTree
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons", -- optional, for file icon
-
 	-----------------------------------------------------------------------------------------------
 	-- Theming
 	-----------------------------------------------------------------------------------------------
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
-
+	"Mofiqul/dracula.nvim",
 	-----------------------------------------------------------------------------------------------
 	-- Bufferline
 	-----------------------------------------------------------------------------------------------
@@ -72,12 +66,10 @@ local plugins = {
 		"akinsho/bufferline.nvim",
 		version = "v3.*",
 	},
-
 	-----------------------------------------------------------------------------------------------
 	-- Debugging
 	-----------------------------------------------------------------------------------------------
 	"folke/trouble.nvim",
-
 	-----------------------------------------------------------------------------------------------
 	-- Treesitter
 	-----------------------------------------------------------------------------------------------
@@ -87,7 +79,6 @@ local plugins = {
 	"windwp/nvim-ts-autotag",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
-
 	-----------------------------------------------------------------------------------------------
 	-- LSP
 	-----------------------------------------------------------------------------------------------
@@ -119,7 +110,6 @@ local plugins = {
 			{ "hrsh7th/vim-vsnip" },
 		},
 	},
-
 	-----------------------------------------------------------------------------------------------
 	-- cmp extras
 	-----------------------------------------------------------------------------------------------
