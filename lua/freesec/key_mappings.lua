@@ -27,9 +27,12 @@ key_mapper("n", "q", "<nop>")
 key_mapper("n", "<c-DOWN>", "3<c-e>")
 key_mapper("n", "<c-UP>", "3<c-y>")
 
--- whenever you're in parentheses, you can simple invoke dp or cp to wipe it's contents (same for brackets, but db or cb).
+-- delete inside of ",',(.[.{ using db, dp etc.
 key_mapper("o", "p", 'i"')
-key_mapper("o", "b", "i(|")
+key_mapper("o", "q", "i'")
+key_mapper("o", "b", "i(")
+key_mapper("o", "k", "i{|")
+key_mapper("o", "s", "i[|")
 
 -- pageup/pagedn only half page at a time
 key_mapper("n", "<PageUp>", "<C-U>")
