@@ -59,6 +59,7 @@ local plugins = {
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
 	"Mofiqul/dracula.nvim",
+	{ "catppuccin/nvim", name = "catppuccin" },
 	-----------------------------------------------------------------------------------------------
 	-- Bufferline
 	-----------------------------------------------------------------------------------------------
