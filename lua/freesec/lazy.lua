@@ -57,8 +57,10 @@ local plugins = {
 	-- Theming
 	-----------------------------------------------------------------------------------------------
 	"navarasu/onedark.nvim",
+	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 	"folke/tokyonight.nvim",
 	"Mofiqul/dracula.nvim",
+	"marko-cerovac/material.nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 	-----------------------------------------------------------------------------------------------
 	-- Bufferline
@@ -66,6 +68,7 @@ local plugins = {
 	{
 		"akinsho/bufferline.nvim",
 		version = "v3.*",
+		dependencies = { "catppuccin" },
 	},
 	-----------------------------------------------------------------------------------------------
 	-- Debugging
