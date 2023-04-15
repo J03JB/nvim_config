@@ -5,7 +5,7 @@ require("bufferline").setup({
 			return string.format("%s", opts.raise(opts.ordinal))
 		end,
 		separator_style = "thick",
-		highlights = require("catppuccin.groups.integrations.bufferline").get(),
+		-- highlights = require("catppuccin.groups.integrations.bufferline").get(),
 		offsets = {
 			{
 				filetype = "NvimTree",
