@@ -137,6 +137,10 @@ key_mapper("n", "<leader>bd", ":bdelete<CR>")
 key_mapper("n", "<leader>/", ":CommentToggle<CR>")
 key_mapper("v", "<leader>/", ":CommentToggle<CR>")
 
+-- Crates
+key_mapper("n", "<leader>ct", ":lua require('crates').toggle()<cr>")
+key_mapper("n", "<leader>cr", ":lua require('crates').reload()<cr>")
+
 -- nvim-dap keymappings
 key_mapper("n", "<F5>", [[:lua require'dap'.continue()<CR>]])
 key_mapper("n", "<C-b>", [[:lua require'dap'.toggle_breakpoint()<CR>]])
@@ -200,4 +204,4 @@ key_mapper("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
 key_mapper("n", "<leader>tz", ":TZAtaraxis <CR>")
 
 -- Which-Key
-key_mapper("n", "<C-w>", ":WhichKey<CR>")
+-- key_mapper("n", "<C-w>", ":WhichKey<CR>")

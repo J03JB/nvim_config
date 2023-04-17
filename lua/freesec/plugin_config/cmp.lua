@@ -86,6 +86,7 @@ cmp.setup({
 		{ name = "emoji", priority_weight = 10 },
 		{ name = "nvim_lua", priority_weight = 90 },
 		{ name = "nvim_lsp_signature_help" },
+		{ name = "crates" },
 	},
 })
 
