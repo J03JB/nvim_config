@@ -37,6 +37,7 @@ local plugins = {
 	"brenoprata10/nvim-highlight-colors",
 	"davidgranstrom/nvim-markdown-preview",
 	"simrat39/rust-tools.nvim",
+	"saecki/crates.nvim",
 	"preservim/tagbar",
 	"folke/todo-comments.nvim",
 	"ojroques/nvim-osc52",
