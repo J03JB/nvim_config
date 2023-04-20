@@ -23,5 +23,7 @@ require("freesec.utils").create_augroups({
 		{ "FileType", "*", "setlocal formatoptions-=cro" },
 		-- set spell for certain files
 		{ "BufRead", { "*.txt", "*.md", "*.tex" }, "setlocal spell" },
+		-- changes window-local to current directory (may remove.)
+		{ "BufEnter", "* silent!", "lcd %:p:h" },
 	},
 })

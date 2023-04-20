@@ -38,16 +38,29 @@ key_mapper("o", "s", "i[|")
 key_mapper("n", "<PageUp>", "<C-U>")
 key_mapper("n", "<PageDown>", "<C-D>")
 
--- Reselect the text that has just been pasted, see also https://stackoverflow.com/a/4317090/6064933.
+-- replace a word with yanked text
+key_mapper("n", "rw", "viwpyiw")
+
+-- replace to the end of line with yanked text
+key_mapper("n", "rl", 'Pl"_D')
+
+-- Reselect the text that has just been pasted,
+-- see also https://stackoverflow.com/a/4317090/6064933.
 key_mapper("n", "<leader>v", "printf('`[%s`]', getregtype()[0])")
 
 -- "greatest remap ever" thePrimagen
 key_mapper("x", "<leader>p", '"_dP')
 
--- next greatest remap: asbjornHaland
+--  next greatest remap: asbjornHaland
 key_mapper("n", "<leader>y", '"+y')
 key_mapper("x", "<leader>y", '"+y')
 key_mapper("n", "<leader>Y", '"+Y')
+
+-- Copy to end of line from current position
+key_mapper("n", "Y", "yg$")
+
+-- Copy entire buffer.
+key_mapper("n", "<leader>yb", "<cmd>%yank<cr>")
 
 --- toggle capitalisation
 key_mapper("n", "<leader>w", "g~iw")
@@ -58,16 +71,10 @@ key_mapper("n", "<C-h>", "<C-w>h")
 key_mapper("n", "<C-l>", "<C-w>l")
 
 -- easier navigation
-key_mapper("n", "E", "5e")
-key_mapper("n", "B", "5b")
 key_mapper("n", "H", "^")
 key_mapper("v", "H", "^")
 key_mapper("n", "L", "$")
 key_mapper("v", "L", "$")
-
--- Move line up or down
-key_mapper("n", "<C-k>", ":m-2<cr>")
-key_mapper("n", "<C-j>", ":m+<cr>")
 
 -- ditch those arrow keys --> move up and down in insert mode with hjkl by simply holding control
 key_mapper("i", "<c-j>", "<esc>ji")
@@ -75,14 +82,8 @@ key_mapper("i", "<c-k>", "<esc>ki")
 key_mapper("i", "<c-h>", "<esc>i")
 key_mapper("i", "<c-l>", "<esc>la")
 
--- replace a word with yanked text
-key_mapper("n", "rw", "viwpyiw")
-
--- replace till the end of line with yanked text
-key_mapper("n", "rl", 'Pl"_D')
-
 -- Clear highlights
-key_mapper("n", "<leader>h", ":noh<CR>")
+key_mapper("n", "<leader>h", ":nohlsearch<CR>")
 
 -- insert new line above without enerting insert mode.
 key_mapper("n", "<leader>o", "moO<ESC>k ")
@@ -92,31 +93,36 @@ key_mapper("n", "<leader>O", "moo<ESC>k")
 key_mapper("v", ">", ">gv")
 key_mapper("v", "<", "<gv")
 
--- Copy to end of line from current position
-key_mapper("n", "Y", "yg$")
-
--- Copy entire buffer.
-key_mapper("n", "<leader>yb", "<cmd>%yank<cr>")
+-- Move line up or down
+key_mapper("n", "<C-k>", ":m-2<cr>")
+key_mapper("n", "<C-j>", ":m+<cr>")
 
 -- Move selected line / block of text in visual mode
 key_mapper("v", "J", ":move '>+1<CR>gv=gv")
 key_mapper("v", "K", ":move '<-2<CR>gv=gv")
 
--- jj as Escape key
+-- jk as Escape key
 key_mapper("i", "jk", "<Esc>")
 
--- space + x to make file executable
+-- make file executable
 key_mapper("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
--- insert semicolon in the end
+-- insert semicolon at the end of line
 key_mapper("i", "<A-;>", "<Esc>miA;<Esc>`ii")
 
--- Toggle spell checking
-key_mapper("n", "<F11>", "<cmd>set spell!<cr>")
-key_mapper("i", "<F11>", "<c-o><cmd>set spell!<cr>")
+-- could just use ctrl+j but meh.
+key_mapper("i", "<C-CR>", "<Esc>o")
 
-key_mapper("n", "Q", "<nop>")
 key_mapper("n", "U", "<nop>")
+
+-- dd doesn't yank empty line to default register
+vim.keymap.set("n", "dd", function()
+	if vim.api.nvim_get_current_line():match("^%s*$") then
+		return '"_dd'
+	else
+		return "dd"
+	end
+end, { expr = true })
 
 -- *************************************************************************************
 -- Plugin Bindings
@@ -126,20 +132,13 @@ key_mapper("n", "U", "<nop>")
 key_mapper("n", "<Leader>ls", ":Lazy sync <CR>")
 
 -- Bufferline
-key_mapper("n", "<A-]>", ":BufferLineCycleNext<CR>")
-key_mapper("n", "<A-[>", ":BufferLineCyclePrev<CR>")
 key_mapper("n", "<TAB>", ":BufferLineCycleNext<CR>")
 key_mapper("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
--- Kill buffer with leader bd
 key_mapper("n", "<leader>bd", ":bdelete<CR>")
 
 -- Comment
 key_mapper("n", "<leader>/", ":CommentToggle<CR>")
 key_mapper("v", "<leader>/", ":CommentToggle<CR>")
-
--- Crates
-key_mapper("n", "<leader>ct", ":lua require('crates').toggle()<cr>")
-key_mapper("n", "<leader>cr", ":lua require('crates').reload()<cr>")
 
 -- nvim-dap keymappings
 key_mapper("n", "<F5>", [[:lua require'dap'.continue()<CR>]])
@@ -197,11 +196,5 @@ key_mapper("n", "<leader>fx", ":Telescope git_status<cr>")
 key_mapper("n", "<leader>fgw", ":Telescope grep_string<cr>")
 key_mapper("n", "<leader>lh", ":Telescope lazy<CR>")
 
--- Toggle Markdown Preview
-key_mapper("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
-
 -- TrueZen
 key_mapper("n", "<leader>tz", ":TZAtaraxis <CR>")
-
--- Which-Key
--- key_mapper("n", "<C-w>", ":WhichKey<CR>")
