@@ -1,4 +1,4 @@
-# Config for Neovim 0.8
+# Config for Neovim
 
 > Switched from `packer` to `lazy.nvim` package manager > 31/03/23
 
