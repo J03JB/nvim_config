@@ -43,6 +43,7 @@ local plugins = {
 	"ojroques/nvim-osc52",
 	"abecodes/tabout.nvim",
 	"ThePrimeagen/harpoon",
+	"stevearc/oil.nvim",
 	-- Lualine
 	"nvim-lualine/lualine.nvim",
 	"arkav/lualine-lsp-progress",
