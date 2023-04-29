@@ -158,6 +158,9 @@ key_mapper("v", "<leader>/", ":CommentToggle<CR>")
 key_mapper("n", "<leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
 key_mapper("t", "<leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
+-- Fzf-lua
+key_mapper("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>")
+
 -- Fugitive
 key_mapper("n", "<leader>gs", "<CMD>Git<CR>")
 
