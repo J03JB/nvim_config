@@ -44,6 +44,7 @@ local plugins = {
 	"abecodes/tabout.nvim",
 	"ThePrimeagen/harpoon",
 	"stevearc/oil.nvim",
+	"ibhagwan/fzf-lua",
 	-- Lualine
 	"nvim-lualine/lualine.nvim",
 	"arkav/lualine-lsp-progress",
