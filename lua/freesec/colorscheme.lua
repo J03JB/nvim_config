@@ -10,23 +10,23 @@
 -- vim.cmd.colorscheme("catppuccin")
 -- require("freesec.plugin_config.catppuccin")
 
-vim.cmd.colorscheme("tokyonight-night")
+-- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("tokyonight-moon")
--- require("onedark").setup({
--- 	style = "deep", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
--- 	highlight_linenumber = true,
--- 	term_colors = true,
--- 	code_style = {
--- 		comments = "italic",
--- 		key_words = "italic,bold",
--- 		variables = "italic",
--- 	},
--- 	-- Plugins Config --
--- 	diagnostics = {
--- 		darker = true, -- darker colors for diagnostic
--- 		undercurl = true, -- use undercurl instead of underline for diagnostics
--- 		background = false, -- use background color for virtual text
--- 	},
--- })
+require("onedark").setup({
+	style = "deep", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	highlight_linenumber = true,
+	term_colors = true,
+	code_style = {
+		comments = "italic",
+		key_words = "italic,bold",
+		variables = "italic",
+	},
+	-- Plugins Config --
+	diagnostics = {
+		darker = true, -- darker colors for diagnostic
+		undercurl = true, -- use undercurl instead of underline for diagnostics
+		background = false, -- use background color for virtual text
+	},
+})
 
--- require("onedark").load()
+require("onedark").load()
