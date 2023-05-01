@@ -7,13 +7,14 @@
 --
 -- ###################################################################################
 
+-- Catppuccin
 -- vim.cmd.colorscheme("catppuccin")
 -- require("freesec.plugin_config.catppuccin")
 
 -- vim.cmd.colorscheme("tokyonight-night")
--- vim.cmd.colorscheme("tokyonight-moon")
+
 require("onedark").setup({
-	style = "deep", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "dark", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 	highlight_linenumber = true,
 	term_colors = true,
 	code_style = {
