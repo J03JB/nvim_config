@@ -127,6 +127,9 @@ end, { expr = true })
 -- change to cwd
 vim.keymap.set("n", "<leader><F9>", ":lcd %:p:h<CR>")
 
+-- Search and replace word under cursor
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- *************************************************************************************
 -- Plugin Bindings
 -- *************************************************************************************
