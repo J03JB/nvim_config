@@ -9,7 +9,7 @@
 -- ###################################################################################
 
 local key_mapper = function(mode, key, result)
-	vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true })
+	vim.api.nvim_set_keymap(mode, key, result, { noremap = true })
 end
 
 -- ***********************************************************************************
@@ -128,7 +128,7 @@ end, { expr = true })
 vim.keymap.set("n", "<leader><F9>", ":lcd %:p:h<CR>")
 
 -- Search and replace word under cursor
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+key_mapper("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- *************************************************************************************
 -- Plugin Bindings
