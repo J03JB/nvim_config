@@ -30,7 +30,6 @@ local plugins = {
 	"folke/which-key.nvim",
 	"kdav5758/TrueZen.nvim",
 	"terrortylor/nvim-comment",
-	"tpope/vim-surround",
 	"windwp/nvim-autopairs",
 	"lukas-reineke/indent-blankline.nvim",
 	"numToStr/FTerm.nvim",
@@ -40,11 +39,18 @@ local plugins = {
 	"saecki/crates.nvim",
 	"preservim/tagbar",
 	"folke/todo-comments.nvim",
-	"ojroques/nvim-osc52",
+	{ "ojroques/nvim-osc52", event = "VeryLazy" },
 	"abecodes/tabout.nvim",
 	"ThePrimeagen/harpoon",
 	"stevearc/oil.nvim",
 	"ibhagwan/fzf-lua",
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	},
 	-- Lualine
 	"nvim-lualine/lualine.nvim",
 	"arkav/lualine-lsp-progress",
