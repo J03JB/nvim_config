@@ -2,6 +2,7 @@
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require("lsp-zero")
 lsp.preset("lsp-compe")
+local M = {}
 -- lsp.preset("recommended")
 
 lsp.ensure_installed({
@@ -27,6 +28,19 @@ lsp.defaults.cmp_config({
 	require("freesec.plugin_config.cmp"),
 })
 
+function M.show_documentation()
+	local filetype = vim.bo.filetype
+	if vim.tbl_contains({ "vim", "help" }, filetype) then
+		vim.cmd("h " .. vim.fn.expand("<cword>"))
+	elseif vim.tbl_contains({ "man" }, filetype) then
+		vim.cmd("Man " .. vim.fn.expand("<cword>"))
+	elseif vim.fn.expand("%:t") == "Cargo.toml" then
+		require("crates").show_popup()
+	else
+		vim.lsp.buf.hover()
+	end
+end
+
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
@@ -34,9 +48,7 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "gd", function()
 		vim.lsp.buf.definition()
 	end, opts)
-	-- vim.keymap.set("n", "K", function()
-	-- 	vim.lsp.buf.hover()
-	-- end, opts)
+	vim.keymap.set("n", "K", M.show_documentation, opts)
 	vim.keymap.set("n", "<space>ca", function()
 		vim.lsp.buf.code_action()
 	end, opts)
