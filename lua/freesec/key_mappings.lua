@@ -45,10 +45,6 @@ key_mapper("n", "rw", "viwpyiw")
 -- replace to the end of line with yanked text
 key_mapper("n", "rl", 'Pl"_D')
 
--- Reselect the text that has just been pasted,
--- see also https://stackoverflow.com/a/4317090/6064933.
-key_mapper("n", "<leader>v", "printf('`[%s`]', getregtype()[0])")
-
 -- "greatest remap ever" thePrimagen
 key_mapper("x", "<leader>p", '"_dP')
 
