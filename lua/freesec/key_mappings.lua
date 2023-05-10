@@ -8,8 +8,9 @@
 --
 -- ###################################################################################
 
+local opts = { noremap = true }
 local key_mapper = function(mode, key, result)
-	vim.api.nvim_set_keymap(mode, key, result, { noremap = true })
+	vim.api.nvim_set_keymap(mode, key, result, opts)
 end
 
 -- ***********************************************************************************
@@ -114,6 +115,9 @@ key_mapper("i", "<A-;>", "<Esc>miA;<Esc>`ii")
 key_mapper("i", "<C-CR>", "<Esc>o")
 
 key_mapper("n", "U", "<nop>")
+
+-- Send chars delteted with 'x' to black hole
+key_mapper("n", "x", '"_x')
 
 -- dd doesn't yank empty line to default register
 vim.keymap.set("n", "dd", function()
