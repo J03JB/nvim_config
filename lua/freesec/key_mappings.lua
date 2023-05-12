@@ -20,25 +20,6 @@ end
 -- Map leader to space
 vim.g.mapleader = " "
 
--- 'qq' to record instead of 'q'
-key_mapper("n", "qq", "q")
-key_mapper("n", "q", "<nop>")
-
--- Faster scrolling
-key_mapper("n", "<c-DOWN>", "3<c-e>")
-key_mapper("n", "<c-UP>", "3<c-y>")
-
--- delete inside of ",',(.[.{ using db, dp etc.
-key_mapper("o", "p", 'i"')
-key_mapper("o", "q", "i'")
-key_mapper("o", "b", "i(")
-key_mapper("o", "k", "i{|")
-key_mapper("o", "s", "i[|")
-
--- pageup/pagedn only half page at a time
-key_mapper("n", "<PageUp>", "<C-U>")
-key_mapper("n", "<PageDown>", "<C-D>")
-
 -- replace a word with yanked text
 key_mapper("n", "rw", "viwpyiw")
 
@@ -83,7 +64,7 @@ key_mapper("i", "<c-l>", "<esc>la")
 key_mapper("n", "<leader>h", ":nohlsearch<CR>")
 
 -- insert new line above without enerting insert mode.
-key_mapper("n", "<leader>o", "moO<ESC>k ")
+key_mapper("n", "<leader>o", "moO<ESC>")
 key_mapper("n", "<leader>O", "moo<ESC>k")
 
 -- Better indentaion
@@ -160,6 +141,8 @@ key_mapper("v", "<leader>/", ":CommentToggle<CR>")
 -- FTerm
 key_mapper("n", "<leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
 key_mapper("t", "<leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+key_mapper("n", "<leader>tb", "<cmd> lua require('FTerm').scratch({ cmd = {'cargo', 'build', '--release'} })<CR>")
+key_mapper("n", "<leader>tj", "<cmd> lua require('FTerm').run({'node', vim.api.nvim_get_current_buf()})<CR>")
 
 -- Fzf-lua
 key_mapper("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>")
