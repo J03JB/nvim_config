@@ -5,7 +5,8 @@ require("null-ls").setup({
 	sources = {
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.diagnostics.eslint,
-		null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.autopep8,
+        -- null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.prettier.with({ filetypes = { "json", "yaml", "markdown" } }),
 		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.formatting.jq,
@@ -25,6 +26,9 @@ require("null-ls").setup({
 	-- 	end
 	-- end,
 })
+
+local opts = { silent = true }
+vim.api.nvim_set_keymap("n", "<A-f>", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
 -- local lsp_formatting = function(bufnr)
 -- 	vim.lsp.buf.format({
