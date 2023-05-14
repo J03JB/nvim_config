@@ -26,3 +26,16 @@ end)
 vim.keymap.set("n", "<A-t>", function()
     tmux.gotoTerminal(1)
 end)
+
+-- Fix for macos and Alt key.
+vim.keymap.set("n", "‘", function()
+    ui.nav_next()
+end)
+vim.keymap.set("n", "“", function()
+    ui.nav_prev()
+end)
+vim.keymap.set("n", "†", function()
+    tmux.gotoTerminal(1)
+end)
+
+
