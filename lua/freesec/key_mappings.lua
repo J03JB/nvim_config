@@ -87,6 +87,7 @@ key_mapper("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
 -- insert semicolon at the end of line
 key_mapper("i", "<A-;>", "<Esc>miA;<Esc>`ii")
+key_mapper("i", "…", "<Esc>miA;<Esc>`ii") -- mac keymap.
 
 -- could just use ctrl+j but meh.
 key_mapper("i", "<C-CR>", "<Esc>o")
