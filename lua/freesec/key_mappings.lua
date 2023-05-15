@@ -17,7 +17,7 @@ end
 -- Vim Key Bindings
 -- ***********************************************************************************
 
--- Map leader to space
+-- Map space to leader
 vim.g.mapleader = " "
 
 -- replace a word with yanked text
@@ -156,15 +156,15 @@ key_mapper("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 key_mapper("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 key_mapper("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 key_mapper("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-key_mapper("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
-key_mapper("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
-key_mapper("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
-key_mapper("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-key_mapper("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+key_mapper("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
+key_mapper("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
+key_mapper("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
+key_mapper("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+key_mapper("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 key_mapper("n", "<Leader>E", "<cmd>lua vim.diagnostic.open_float()<CR>")
 key_mapper("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 key_mapper("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-key_mapper("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+key_mapper("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
 -- Nvim Tree Toggle
 key_mapper("n", "<leader>e", ":NvimTreeToggle<CR>")
