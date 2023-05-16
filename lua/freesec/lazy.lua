@@ -22,7 +22,6 @@ local plugins = {
 		dependencies = { { "nvim-lua/plenary.nvim", "tsakirist/telescope-lazy.nvim" } },
 	},
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	"nvim-telescope/telescope-file-browser.nvim",
 	"nvim-telescope/telescope-ui-select.nvim",
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
