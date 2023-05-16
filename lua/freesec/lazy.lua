@@ -95,6 +95,7 @@ local plugins = {
 	"HiPhish/nvim-ts-rainbow2",
 	"windwp/nvim-ts-autotag",
 	"JoosepAlviste/nvim-ts-context-commentstring",
+    'nvim-treesitter/nvim-treesitter-context',
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
 	-----------------------------------------------------------------------------------------------
 	-- LSP
