@@ -36,12 +36,10 @@ local plugins = {
 	"davidgranstrom/nvim-markdown-preview",
 	"simrat39/rust-tools.nvim",
 	{ "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
-	"preservim/tagbar",
 	"folke/todo-comments.nvim",
 	{ "ojroques/nvim-osc52", event = "VeryLazy" },
 	"abecodes/tabout.nvim",
 	"ThePrimeagen/harpoon",
-	"stevearc/oil.nvim",
 	"ibhagwan/fzf-lua",
 	{
 		"kylechui/nvim-surround",
