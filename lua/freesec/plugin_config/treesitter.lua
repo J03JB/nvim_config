@@ -4,17 +4,11 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = true,
+		additional_vim_regex_highlighting = false,
 	},
-	rainbow = {
-		enable = true,
-		query = "rainbow-parens",
-		-- extended = true,
-		strategy = require("ts-rainbow").strategy.global,
-	},
-	indent = {
-		enable = false,
-	},
+    indent = {
+        enable = false,
+    },
 	refactor = {
 		highlight_definitions = {
 			enable = true,
@@ -23,9 +17,9 @@ require("nvim-treesitter.configs").setup({
 	autotag = {
 		enable = true,
 	},
-	context_commentstring = {
-		enable = true,
-	},
+	-- context_commentstring = {
+	-- 	enable = true,
+	-- },
 	textobjects = {
 		select = {
 			enable = true,
