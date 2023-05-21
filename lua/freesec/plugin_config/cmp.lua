@@ -2,6 +2,9 @@ local types = require("cmp.types")
 local cmp = require("cmp")
 
 cmp.setup({
+    performance = {
+        debounce = 150,
+    },
 	snippet = {
 		expand = function(args)
 			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
