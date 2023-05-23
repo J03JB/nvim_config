@@ -48,6 +48,12 @@ local plugins = {
 			require("nvim-surround").setup({})
 		end,
 	},
+
+	-------
+	-- Copilot
+	-------
+	"zbirenbaum/copilot.lua",
+	-- "github/copilot.vim",
 	-----------------------------------------------------------------------------------------------
 	-- Lualine
 	-----------------------------------------------------------------------------------------------
@@ -93,7 +99,7 @@ local plugins = {
 	"HiPhish/nvim-ts-rainbow2",
 	"windwp/nvim-ts-autotag",
 	"JoosepAlviste/nvim-ts-context-commentstring",
-    'nvim-treesitter/nvim-treesitter-context',
+	"nvim-treesitter/nvim-treesitter-context",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
 	-----------------------------------------------------------------------------------------------
 	-- LSP
