@@ -61,6 +61,7 @@ opt.suffixesadd = { ".md", ".js", ".ts", ".tsx" } -- File extensions not require
 opt.tabstop = 4
 opt.timeoutlen = 500 -- By default timeoutlen is 1000 ms
 opt.termguicolors = true
+opt.guicursor = "i:block"
 opt.undodir = vim.fn.expand("~/.config/nvim/backups")
 opt.undofile = true
 opt.updatetime = 100 -- Trigger cursorhold faster
