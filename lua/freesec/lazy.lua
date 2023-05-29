@@ -36,14 +36,13 @@ local plugins = {
 	"davidgranstrom/nvim-markdown-preview",
 	"simrat39/rust-tools.nvim",
 	{ "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
-	"folke/todo-comments.nvim",
-	{ "ojroques/nvim-osc52", event = "VeryLazy" },
+	"ojroques/nvim-osc52",
 	"abecodes/tabout.nvim",
 	"ThePrimeagen/harpoon",
 	"ibhagwan/fzf-lua",
 	{
 		"kylechui/nvim-surround",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		config = function()
 			require("nvim-surround").setup({})
 		end,
@@ -83,10 +82,10 @@ local plugins = {
 	-----------------------------------------------------------------------------------------------
 	-- Bufferline
 	-----------------------------------------------------------------------------------------------
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-	},
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	version = "*",
+	-- },
 	-----------------------------------------------------------------------------------------------
 	-- Debugging
 	-----------------------------------------------------------------------------------------------
