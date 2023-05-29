@@ -54,7 +54,6 @@ opt.sidescroll = 5 -- Lines to scroll horizontally
 opt.signcolumn = "yes:1"
 opt.smarttab = true
 opt.smartindent = true
--- opt.spell = true
 opt.splitright = true -- Open new split to the right
 opt.softtabstop = 4
 opt.suffixesadd = { ".md", ".js", ".ts", ".tsx" } -- File extensions not required when opening with `gf`
