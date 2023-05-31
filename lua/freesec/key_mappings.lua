@@ -8,94 +8,94 @@
 --
 -- ###################################################################################
 
-local opts = { noremap = true }
-local key_mapper = function(mode, key, result)
-	vim.api.nvim_set_keymap(mode, key, result, opts)
-end
+local map = require("freesec.utils").map
+
+-- Map space to leader
+vim.g.mapleader = " "
 
 -- ***********************************************************************************
 -- Vim Key Bindings
 -- ***********************************************************************************
 
--- Map space to leader
-vim.g.mapleader = " "
-
 -- replace a word with yanked text
-key_mapper("n", "rw", "viwpyiw")
+map("n", "rw", "viwpyiw")
+
+-- Ctrl + s to save. (for old times sake.)
+map("n", "<c-s>", ":w<cr>")
 
 -- replace to the end of line with yanked text
-key_mapper("n", "rl", 'Pl"_D')
+map("n", "rl", 'Pl"_D')
 
 -- "greatest remap ever" thePrimagen
-key_mapper("x", "<leader>p", '"_dP')
+map("x", "<leader>p", '"_dP')
 
 --  next greatest remap: asbjornHaland
-key_mapper("n", "<leader>y", '"+y')
-key_mapper("x", "<leader>y", '"+y')
-key_mapper("n", "<leader>Y", '"+Y')
+map("n", "<leader>y", '"+y')
+map("x", "<leader>y", '"+y')
+map("n", "<leader>Y", '"+Y')
 
 -- Copy to end of line from current position
-key_mapper("n", "Y", "yg$")
+map("n", "Y", "yg$")
 
 -- Copy entire buffer.
-key_mapper("n", "<leader>yb", "<cmd>%yank<cr>")
+map("n", "<leader>yb", "<cmd>%yank<cr>")
 
 --- toggle capitalisation
-key_mapper("n", "<leader>w", "g~iw")
-key_mapper("v", "<leader>w", "~")
+map("n", "<leader>w", "g~iw")
+map("v", "<leader>w", "~")
 
 -- Window Navigation
-key_mapper("n", "<C-h>", "<C-w>h")
-key_mapper("n", "<C-l>", "<C-w>l")
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-l>", "<C-w>l")
 
 -- easier navigation
-key_mapper("n", "H", "^")
-key_mapper("v", "H", "^")
-key_mapper("n", "L", "$")
-key_mapper("v", "L", "$")
+map("n", "H", "^")
+map("v", "H", "^")
+map("n", "L", "$")
+map("v", "L", "$")
 
 -- ditch those arrow keys --> move up and down in insert mode with hjkl by simply holding control
-key_mapper("i", "<c-j>", "<esc>ji")
-key_mapper("i", "<c-k>", "<esc>ki")
-key_mapper("i", "<c-h>", "<esc>i")
-key_mapper("i", "<c-l>", "<esc>la")
+map("i", "<c-j>", "<esc>ji")
+map("i", "<c-k>", "<esc>ki")
+map("i", "<c-h>", "<esc>i")
+map("i", "<c-l>", "<esc>la")
 
 -- Clear highlights
-key_mapper("n", "<leader>h", ":nohlsearch<CR>")
+map("n", "<leader>h", ":nohlsearch<CR>")
 
 -- insert new line above without enerting insert mode.
-key_mapper("n", "<leader>o", "moO<ESC>")
-key_mapper("n", "<leader>O", "moo<ESC>k")
+map("n", "<leader>o", "moO<ESC>")
+map("n", "<leader>O", "moo<ESC>k")
 
 -- Better indentaion
-key_mapper("v", ">", ">gv")
-key_mapper("v", "<", "<gv")
+map("v", ">", ">gv")
+map("v", "<", "<gv")
 
 -- Move line up or down
-key_mapper("n", "<C-k>", ":m-2<cr>")
-key_mapper("n", "<C-j>", ":m+<cr>")
+map("n", "<C-k>", ":m-2<cr>")
+map("n", "<C-j>", ":m+<cr>")
 
 -- Move selected line / block of text in visual mode
-key_mapper("v", "J", ":move '>+1<CR>gv=gv")
-key_mapper("v", "K", ":move '<-2<CR>gv=gv")
+map("v", "J", ":move '>+1<CR>gv=gv")
+map("v", "K", ":move '<-2<CR>gv=gv")
 
 -- jk as Escape key
-key_mapper("i", "jk", "<Esc>")
+map("i", "jk", "<Esc>")
 
 -- make file executable
-key_mapper("n", "<leader>x", "<cmd>!chmod +x %<CR>")
+map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
 -- insert semicolon at the end of line
-key_mapper("i", "<A-;>", "<Esc>miA;<Esc>`ii")
-key_mapper("i", "…", "<Esc>miA;<Esc>`ii") -- mac keymap.
+map("i", "<A-;>", "<Esc>miA;<Esc>`ii")
+map("i", "…", "<Esc>miA;<Esc>`ii") -- mac keymap.
 
 -- could just use ctrl+j but meh.
-key_mapper("i", "<C-CR>", "<Esc>o")
+map("i", "<C-CR>", "<Esc>o")
 
-key_mapper("n", "U", "<nop>")
+map("n", "U", "<nop>")
 
 -- Send chars delteted with 'x' to black hole
-key_mapper("n", "x", '"_x')
+map("n", "x", '"_x')
 
 -- dd doesn't yank empty line to default register
 vim.keymap.set("n", "dd", function()
@@ -110,83 +110,82 @@ end, { expr = true })
 vim.keymap.set("n", "<leader><F9>", ":lcd %:p:h<CR>")
 
 -- Search and replace word under cursor
-key_mapper("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- *************************************************************************************
 -- Plugin Bindings
 -- *************************************************************************************
 
 -- Lazy.nvim
-key_mapper("n", "<Leader>ls", ":Lazy sync <CR>")
+map("n", "<Leader>ls", ":Lazy sync <CR>")
 
 -- Bufferline
-key_mapper("n", "<TAB>", ":BufferLineCycleNext<CR>")
-key_mapper("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
-key_mapper("n", "<leader>bd", ":bdelete<CR>")
+map("n", "<TAB>", ":BufferLineCycleNext<CR>")
+map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
+map("n", "<leader>bd", ":bdelete<CR>")
 
 -- Comment
-key_mapper("n", "<leader>/", ":CommentToggle<CR>")
-key_mapper("v", "<leader>/", ":CommentToggle<CR>")
+map("n", "<leader>/", ":CommentToggle<CR>")
+map("v", "<leader>/", ":CommentToggle<CR>")
 
 -- nvim-dap keymappings
--- key_mapper("n", "<F5>", [[:lua require'dap'.continue()<CR>]])
--- key_mapper("n", "<C-b>", [[:lua require'dap'.toggle_breakpoint()<CR>]])
--- key_mapper("n", "<C-c>", [[:lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>]])
--- key_mapper("n", "<C-l>", [[:lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log Point Msg: '))<CR>]])
--- key_mapper("n", "<F10>", [[:lua require'dap'.step_over()<CR>]])
--- -- key_mapper("n", "<F11>", [[:lua require'dap'.step_into()<CR>]])
--- key_mapper("n", "<F12>", [[:lua require'dap'.step_out()<CR>]])
--- key_mapper("n", "<F6>", [[:lua require'dap'.repl.open()<CR>]])
--- key_mapper("n", "dl", [[:lua require'dap'.run_last()<CR>]])
+-- map("n", "<F5>", [[:lua require'dap'.continue()<CR>]])
+-- map("n", "<C-b>", [[:lua require'dap'.toggle_breakpoint()<CR>]])
+-- map("n", "<C-c>", [[:lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>]])
+-- map("n", "<C-l>", [[:lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log Point Msg: '))<CR>]])
+-- map("n", "<F10>", [[:lua require'dap'.step_over()<CR>]])
+-- -- map("n", "<F11>", [[:lua require'dap'.step_into()<CR>]])
+-- map("n", "<F12>", [[:lua require'dap'.step_out()<CR>]])
+-- map("n", "<F6>", [[:lua require'dap'.repl.open()<CR>]])
+-- map("n", "dl", [[:lua require'dap'.run_last()<CR>]])
 
 -- FTerm
-key_mapper("n", "<leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
-key_mapper("t", "<leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-key_mapper("n", "<leader>tb", "<cmd> lua require('FTerm').scratch({ cmd = {'cargo', 'build', '--release'} })<CR>")
-key_mapper("n", "<leader>tj", "<cmd> lua require('FTerm').run({'node', vim.api.nvim_get_current_buf()})<CR>")
+map("n", "<leader>t", '<CMD>lua require("FTerm").toggle()<CR>')
+map("t", "<leader>t", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+map("n", "<leader>tb", "<cmd> lua require('FTerm').scratch({ cmd = {'cargo', 'build', '--release'} })<CR>")
+map("n", "<leader>tj", "<cmd> lua require('FTerm').run({'node', vim.api.nvim_get_current_buf()})<CR>")
 
 -- Fzf-lua
-key_mapper("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>")
+map("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>")
 
 -- Fugitive
-key_mapper("n", "<leader>gs", "<CMD>Git<CR>")
+map("n", "<leader>gs", "<CMD>Git<CR>")
 
 -- cmp
-key_mapper("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-key_mapper("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-key_mapper("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-key_mapper("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-key_mapper("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
-key_mapper("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
-key_mapper("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
-key_mapper("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-key_mapper("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-key_mapper("n", "<Leader>E", "<cmd>lua vim.diagnostic.open_float()<CR>")
-key_mapper("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-key_mapper("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-key_mapper("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+map("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+map("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
+map("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
+map("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
+map("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+map("n", "<Leader>E", "<cmd>lua vim.diagnostic.open_float()<CR>")
+map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
 -- Nvim Tree Toggle
-key_mapper("n", "<leader>e", ":NvimTreeToggle<CR>")
+map("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Tagbar
-key_mapper("n", "<F8>", ":TagbarToggle<CR>")
+map("n", "<F8>", ":TagbarToggle<CR>")
 
 -- Telescope
-key_mapper("n", "<leader>bb", ":Telescope buffers theme=dropdown<CR>")
-key_mapper("n", "<leader>fb", ":Telescope file_browser<CR>")
-key_mapper("n", "<leader>fc", ":Telescope git_commits<cr>")
-key_mapper("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
-key_mapper("n", "<leader>fg", ":Telescope git_files<CR>")
-key_mapper("n", "<leader>fh", ":Telescope help_tags<CR>")
-key_mapper("n", "<leader>fl", ":Telescope live_grep<CR>")
-key_mapper("n", "<leader>fm", ":Telescope harpoon marks theme=dropdown<CR>")
-key_mapper("n", "<leader>fq", ":Telescope quickfix<CR>")
-key_mapper("n", "<leader>fr", ":Telescope oldfiles <CR>")
-key_mapper("n", "<leader>fs", ":Telescope possession list theme=dropdown<CR>")
-key_mapper("n", "<leader>fx", ":Telescope git_status<cr>")
-key_mapper("n", "<leader>fgw", ":Telescope grep_string<cr>")
-key_mapper("n", "<leader>lh", ":Telescope lazy<CR>")
+map("n", "<leader>bb", ":Telescope buffers theme=dropdown<CR>")
+map("n", "<leader>fc", ":Telescope git_commits<cr>")
+map("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
+map("n", "<leader>fg", ":Telescope git_files<CR>")
+map("n", "<leader>fh", ":Telescope help_tags<CR>")
+map("n", "<leader>fl", ":Telescope live_grep<CR>")
+map("n", "<leader>fm", ":Telescope harpoon marks theme=dropdown<CR>")
+map("n", "<leader>fq", ":Telescope quickfix<CR>")
+map("n", "<leader>fr", ":Telescope oldfiles <CR>")
+-- map("n", "<leader>fs", ":Telescope possession list theme=dropdown<CR>")
+map("n", "<leader>fx", ":Telescope git_status<cr>")
+map("n", "<leader>fgw", ":Telescope grep_string<cr>")
+map("n", "<leader>lh", ":Telescope lazy<CR>")
 
 -- TrueZen
-key_mapper("n", "<leader>tz", ":TZAtaraxis <CR>")
+map("n", "<leader>tz", ":TZAtaraxis <CR>")

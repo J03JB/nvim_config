@@ -32,11 +32,6 @@ require("telescope").setup({
 				height = 0.5,
 			},
 		},
-		file_browser = {
-			theme = "ivy",
-			hijack_netrw = true,
-			cwd_to_path = true,
-		},
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
 				layout_config = {
