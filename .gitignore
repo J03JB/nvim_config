@@ -1,5 +1,3 @@
 backups/
-plugins/
 Session.vim
-/plugin
 lazy-lock.json
