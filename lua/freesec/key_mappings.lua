@@ -27,7 +27,7 @@ map("n", "<c-s>", ":w<cr>")
 map("n", "rl", 'Pl"_D')
 
 -- "greatest remap ever" thePrimagen
-map("x", "<leader>p", '"_dP')
+map("x", "p", '"_dP')
 
 --  next greatest remap: asbjornHaland
 map("n", "<leader>y", '"+y')

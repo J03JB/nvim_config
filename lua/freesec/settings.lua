@@ -10,17 +10,19 @@
 
 local opt = vim.opt
 
+vim.g.mapleader = " "  -- set leader to <space>
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 opt.autoindent = true
-opt.autoread = true
+opt.autoread = true -- Reload file if changed outside vim
 opt.autowrite = true
 opt.autowriteall = true
-opt.background = "dark"
-opt.backup = false
-opt.clipboard = { "unnamed", "unnamedplus" }
-opt.cmdheight = 2
+opt.background = "dark" -- Dark background
+opt.backup = false -- No backup file
+opt.clipboard = { "unnamed", "unnamedplus" } -- Copy paste between vim and everything else
+opt.cmdheight = 2 -- More space for displaying messages
 opt.cursorline = true -- Highlight current line
 opt.diffopt = "vertical" -- Diff in vertical split
 opt.encoding = "utf-8"

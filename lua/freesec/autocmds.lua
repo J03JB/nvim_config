@@ -10,12 +10,12 @@ require("freesec.utils").create_augroups({
 		{ "InsertLeave,WinEnter", "*", "set cursorline" },
 		{ "InsertEnter,WinLeave", "*", "set nocursorline" },
 		-- Restore cursor position when opening file
-		-- { "BufRead", "*", [[call setpos(".", getpos("'\""))]] },
-		-- Format Json files using `jq`
+		{ "BufRead", "*", [[call setpos(".", getpos("'\""))]] },
+        -- Format Json files using `jq`
 		{ "BufWritePost", "*.json", ":%!jq ." },
 		-- don't continue comment on next line
 		{ "FileType", "*", "setlocal formatoptions-=cro" },
-		-- changes window-local to current directory (may remove.)
-		-- { "BufEnter", "* silent!", "lcd %:p:h" },
+        -- open help in a buffer instead of a split 
+        { "BufWinEnter", "*", "if &buftype == 'help' | wincmd L | endif" },
 	},
 })
