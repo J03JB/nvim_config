@@ -169,6 +169,9 @@ map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
+-- Markdown Preview
+map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
+
 -- Nvim Tree Toggle
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
 
