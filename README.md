@@ -23,3 +23,8 @@
 ## Coloring
 
 TokyoNight
+
+-----
+
+![rust_file](Screenshots/screenshot_rs.png)
+

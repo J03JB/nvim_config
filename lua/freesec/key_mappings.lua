@@ -20,6 +20,9 @@ vim.g.mapleader = " "
 -- replace a word with yanked text
 map("n", "rw", "viwpyiw")
 
+-- Ctrl + backspace to delete word (insert mode)
+map("i", "<C-BS>", "<Esc>cvb")
+
 -- Ctrl + s to save. (for old times sake.)
 map("n", "<c-s>", ":w<cr>")
 
