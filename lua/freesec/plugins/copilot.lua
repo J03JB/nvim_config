@@ -43,4 +43,4 @@ require('copilot').setup({
 })
 
 local map = require("freesec.utils").map
-map("i", "å", ":Copilot suggestion accept<cr>")
+map("i", "å", "<cmd>Copilot suggestion accept<cr>")
