@@ -41,3 +41,6 @@ require('copilot').setup({
   copilot_node_command = 'node', -- Node.js version must be > 16.x
   server_opts_overrides = {},
 })
+
+local map = require("freesec.utils").map
+map("i", "å", ":Copilot suggestion accept<cr>")
