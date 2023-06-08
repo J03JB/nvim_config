@@ -100,3 +100,6 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("lazy")
 -- require("telescope").load_extension("possession")
+
+require("freesec.telescope-custom")
+

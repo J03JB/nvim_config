@@ -49,9 +49,9 @@ end
 map("n", "<leader>ez", '<cmd>lua require"freesec.telescope-custom".edit_zsh()<cr>')
 
 function M.edit_neovim()
-	local opts_with_preview
+	local opts
 
-	opts_with_preview = {
+	opts = {
 		prompt_title = "< nvim config >",
 		shorten_path = false,
 		cwd = "~/.config/nvim",
@@ -76,7 +76,7 @@ function M.edit_neovim()
 		},
 	}
 
-	require("telescope.builtin").find_files(opts_with_preview)
+	require("telescope.builtin").find_files(opts)
 end
 
 map("n", "<leader>ev", '<cmd>lua require"freesec.telescope-custom".edit_neovim()<cr>')
