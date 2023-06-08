@@ -30,7 +30,7 @@ opt.expandtab = true
 opt.hidden = true -- Buffer switching without saving
 opt.ignorecase = true -- case insensitive search
 opt.smartcase = true -- But sensitice if includes capital letter
-opt.inccommand = "nosplit" --Show live results of substitute
+opt.inccommand = "split" --Show live results of substitute
 opt.incsearch = true -- Show results as you search
 opt.lazyredraw = true -- Only redraw when need to
 opt.list = true
@@ -82,8 +82,6 @@ opt.shortmess = table.concat({
 	"o",
 	"O",
 	"F", -- Defaults
-	-- 'I',  -- No splash screen
-	-- 'W',  -- Don't print "written" when editing
 	"a", -- Use abbreviations in messages ([RO] intead of [readonly])
 	"c", -- Do not show ins-completion-menu messages (match 1 of 2)
 })
