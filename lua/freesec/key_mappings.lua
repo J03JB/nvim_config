@@ -82,8 +82,9 @@ map("n", "<C-j>", ":m+<cr>")
 map("v", "J", ":move '>+1<CR>gv=gv")
 map("v", "K", ":move '<-2<CR>gv=gv")
 
--- jk as Escape key
+-- ctrl+c or jk as Escape key
 map("i", "jk", "<Esc>")
+map("i", "<C-c>", "<Esc>")
 
 -- make file executable
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
