@@ -98,9 +98,6 @@ map("i", "<C-CR>", "<Esc>o")
 
 map("n", "U", "<nop>")
 
--- Send chars delteted with 'x' to black hole
-map("n", "x", '"_x')
-
 -- dd doesn't yank empty line to default register
 vim.keymap.set("n", "dd", function()
 	if vim.api.nvim_get_current_line():match("^%s*$") then
@@ -175,9 +172,6 @@ map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
 
 -- Nvim Tree Toggle
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
-
--- Tagbar
-map("n", "<F8>", ":TagbarToggle<CR>")
 
 -- Telescope
 map("n", "<leader>bb", ":Telescope buffers theme=dropdown<CR>")
