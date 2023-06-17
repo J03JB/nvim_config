@@ -64,7 +64,7 @@ require("telescope").setup({
 			vertical = { mirror = false },
 		},
 		file_sorter = require("telescope.sorters").get_fzy_sorter,
-		file_ignore_patterns = { "gtk/**/*", ".git", "go/", "node_modules/", ".gem", "Pictures" },
+		file_ignore_patterns = { "gtk/**/*", '.git/', "go/", "node_modules/", ".gem/", "Pictures" },
 		generic_sorter = require("telescope.sorters").get_fzy_sorter,
 		path_display = { "full" },
 		winblend = 0,

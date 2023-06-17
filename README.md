@@ -1,6 +1,6 @@
 # Config for Neovim
 
-> Switched from `packer` to `lazy.nvim` package manager > 31/03/23
+![rust_file](Screenshots/screenshot_rs.png)
 
 ## Plugins:
 
@@ -22,7 +22,6 @@
 
 [TokyoNight](https://github.com/folke/tokyonight.nvim)
 
------
+## Notes:
 
-![rust_file](Screenshots/screenshot_rs.png)
-
+> Does not use `unamedplus` as clipboard. Use `<leader>y` or `<leader>Y` to yank to system clipboard
