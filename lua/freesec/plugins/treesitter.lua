@@ -22,11 +22,11 @@ require("nvim-treesitter.configs").setup({
     },
     rainbow = {
         enable = true,
-        disable = { 'zig', 'jsx', 'cpp' },
+        disable = { "zig", "jsx", "cpp" },
         -- Which query to use for finding delimiters
-        query = 'rainbow-parens',
+        query = "rainbow-parens",
         -- Highlight the entire buffer all at once
-        strategy = require('ts-rainbow').strategy.global,
+        strategy = require("ts-rainbow").strategy.global,
     },
     textobjects = {
         select = {
@@ -37,6 +37,13 @@ require("nvim-treesitter.configs").setup({
                 ["ac"] = "@class.outer",
                 ["ic"] = "@class.inner",
             },
+        },
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            node_incremental = "v",
+            node_decremental = "V",
         },
     },
 })

@@ -26,6 +26,9 @@ map("i", "<C-BS>", "<Esc>cvb")
 -- Ctrl + s to save. (for old times sake.)
 map("n", "<c-s>", ":w<cr>")
 
+-- <BS> to change word in normal mode
+map("n", "<BS>", "ciw")
+
 -- replace to the end of line with yanked text
 map("n", "rl", 'Pl"_D')
 
@@ -111,7 +114,10 @@ end, { expr = true })
 vim.keymap.set("n", "<leader><F9>", ":lcd %:p:h<CR>")
 
 -- Search and replace word under cursor
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = false })
+
+-- variable rename
+map("n", "<leader>vrn", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
 -- *************************************************************************************
 -- Plugin Bindings

@@ -104,4 +104,10 @@ function M.map(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+P = function(v)
+    print(vim.inspect(v))
+    return v
+end
+
+
 return M

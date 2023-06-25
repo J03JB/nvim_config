@@ -34,7 +34,7 @@ local plugins = {
     "numToStr/FTerm.nvim",
     "brenoprata10/nvim-highlight-colors",
     "simrat39/rust-tools.nvim",
-    { "saecki/crates.nvim",                       event = { "BufRead Cargo.toml" } },
+    { "saecki/crates.nvim",  event = { "BufRead Cargo.toml" } },
     "ojroques/nvim-osc52",
     "abecodes/tabout.nvim",
     "ThePrimeagen/harpoon",
@@ -56,6 +56,12 @@ local plugins = {
     -- Copilot
     -------
     "zbirenbaum/copilot.lua",
+
+    -----------------------------------------------------------------------------------------------
+    -- Tabnine
+    -----------------------------------------------------------------------------------------------
+    { "codota/tabnine-nvim", build = "./dl_binaries.sh" },
+
     -----------------------------------------------------------------------------------------------
     -- Lualine
     -----------------------------------------------------------------------------------------------
