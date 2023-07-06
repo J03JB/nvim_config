@@ -9,6 +9,7 @@ require("telescope").setup({
 			layout_config = {
 				height = 0.75,
 				width = 0.75,
+                prompt_position = "bottom",
 			},
 		},
 		oldfiles = {
