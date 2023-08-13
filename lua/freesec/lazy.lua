@@ -103,6 +103,7 @@ local plugins = {
     -- Treesitter
     -----------------------------------------------------------------------------------------------
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    'filNaj/tree-setter',
     "nvim-treesitter/playground",
     "HiPhish/nvim-ts-rainbow2",
     "windwp/nvim-ts-autotag",

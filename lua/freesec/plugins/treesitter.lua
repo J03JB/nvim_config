@@ -46,4 +46,7 @@ require("nvim-treesitter.configs").setup({
             node_decremental = "V",
         },
     },
+    tree_setter = {
+        enable = true,
+    }
 })
