@@ -86,6 +86,7 @@ local plugins = {
     -----------------------------------------------------------------------------------------------
     "EdenEast/nightfox.nvim",
     "navarasu/onedark.nvim",
+    "projekt0n/caret.nvim",
     "folke/tokyonight.nvim",
     { "catppuccin/nvim",                 name = "catppuccin" },
     -----------------------------------------------------------------------------------------------
@@ -148,6 +149,7 @@ local plugins = {
     "hrsh7th/cmp-vsnip",
     "lukas-reineke/cmp-under-comparator",
     "hrsh7th/cmp-nvim-lsp-signature-help",
+    "lukas-reineke/cmp-rg",
 }
 
 local opts = {}

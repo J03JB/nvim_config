@@ -82,6 +82,7 @@ cmp.setup({
 		end,
 	},
 	sources = {
+        { name = "rg", keyword_length = 3 },
 		{ name = "nvim_lsp", max_item_count = 20, priority_weight = 100 },
 		{ name = "vsnip", priority_weight = 100 },
 		{ name = "buffer", max_item_count = 5, priority_weight = 100 },
