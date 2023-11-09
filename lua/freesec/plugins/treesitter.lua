@@ -20,14 +20,14 @@ require("nvim-treesitter.configs").setup({
     context_commentstring = {
         enable = true,
     },
-    rainbow = {
-        enable = true,
-        disable = { "zig", "jsx", "cpp" },
-        -- Which query to use for finding delimiters
-        query = "rainbow-parens",
-        -- Highlight the entire buffer all at once
-        strategy = require("ts-rainbow").strategy.global,
-    },
+    -- rainbow = {
+    --     enable = true,
+    --     disable = { "zig", "jsx", "cpp" },
+    --     -- Which query to use for finding delimiters
+    --     query = "rainbow-parens",
+    --     -- Highlight the entire buffer all at once
+    --     strategy = require("ts-rainbow").strategy.global,
+    -- },
     textobjects = {
         select = {
             enable = true,
