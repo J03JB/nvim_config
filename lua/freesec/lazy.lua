@@ -30,7 +30,7 @@ local plugins = {
     "kdav5758/TrueZen.nvim",
     "terrortylor/nvim-comment",
     "windwp/nvim-autopairs",
-    "lukas-reineke/indent-blankline.nvim",
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     "numToStr/FTerm.nvim",
     "brenoprata10/nvim-highlight-colors",
     "simrat39/rust-tools.nvim",
