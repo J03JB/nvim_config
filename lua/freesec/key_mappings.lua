@@ -53,6 +53,8 @@ map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in inse
 map("i", "<c-k>",      "<esc>ki")             -- ctrl + k to move up a line in insert mode
 map("i", "<c-h>",      "<esc>i")              -- ctrl + h to move left in insert mode
 map("i", "<c-l>",      "<esc>la")             -- ctrl + l to move right in insert mode
+map("n", "Q",          "@qj")                 -- Q to repeat macro and move down a line
+map("x", "Q",          ":norm @q<CR>")        -- Q in visual mode to repeat macro
 
 map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
 
@@ -129,6 +131,7 @@ map("n", "<leader>fg", ":Telescope git_files<CR>")
 map("n", "<leader>fh", ":Telescope help_tags<CR>")
 map("n", "<leader>fl", ":Telescope live_grep<CR>")
 map("n", "<leader>fm", ":Telescope harpoon marks theme=dropdown<CR>")
+map("n", "<leader>fp", ":Telescope find_files<CR>")
 map("n", "<leader>fq", ":Telescope quickfix<CR>")
 map("n", "<leader>fr", ":Telescope oldfiles <CR>")
 map("n", "<leader>fx", ":Telescope git_status<cr>")
