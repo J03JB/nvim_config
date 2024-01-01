@@ -10,5 +10,7 @@ require("nvim_comment").setup({
 	-- text object mapping, comment chunk,,
 	comment_chunk_text_object = "ic",
 	-- Hook function to call before commenting takes place
-	hook = nil,
+    hook = function()
+        require('ts_context_commentstring').update_commentstring()
+    end,
 })

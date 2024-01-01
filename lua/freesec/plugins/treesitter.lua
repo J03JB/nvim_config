@@ -40,3 +40,9 @@ require("nvim-treesitter.configs").setup({
 -- context-commentstring deprecated fitx: 
 require("ts_context_commentstring").setup{}
 vim.g.skip_ts_context_commentstring_module = true
+
+-- commentstring disable autocmd
+require('ts_context_commentstring').setup {
+  enable_autocmd = false,
+}
+
