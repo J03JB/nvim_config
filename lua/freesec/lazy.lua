@@ -104,8 +104,6 @@ local plugins = {
     -- Treesitter
     -----------------------------------------------------------------------------------------------
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    'filNaj/tree-setter',
-    "nvim-treesitter/playground",
     "windwp/nvim-ts-autotag",
     "JoosepAlviste/nvim-ts-context-commentstring",
     "nvim-treesitter/nvim-treesitter-context",
