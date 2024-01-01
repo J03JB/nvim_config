@@ -125,6 +125,7 @@ map("n", "<leader>e",  ":NvimTreeToggle<CR>")
 
 -- Telescope
 map("n", "<leader>bb", ":Telescope buffers theme=dropdown<CR>")
+map("n", "<leader>fb", ":Telescope current_buffer_fuzzy_find<CR>")
 map("n", "<leader>fc", ":Telescope git_commits<cr>")
 map("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
 map("n", "<leader>fg", ":Telescope git_files<CR>")
@@ -137,6 +138,7 @@ map("n", "<leader>fr", ":Telescope oldfiles <CR>")
 map("n", "<leader>fx", ":Telescope git_status<cr>")
 map("n", "<leader>fs", ":Telescope grep_string<cr>")
 map("n", "<leader>lh", ":Telescope lazy<CR>")
+map("n", "<leader>tr",  ":Telescope resume<CR>")
 
 -- TrueZen
 map("n", "<leader>tz", ":TZAtaraxis <CR>")

@@ -18,7 +18,7 @@ local plugins = {
     -----------------------------------------------------------------------------------------------
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.1",
+        tag = "0.1.5",
         dependencies = { { "nvim-lua/plenary.nvim", "tsakirist/telescope-lazy.nvim" } },
     },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -26,12 +26,17 @@ local plugins = {
     -----------------------------------------------------------------------------------------------
     -- Quality of Life
     -----------------------------------------------------------------------------------------------
-    "folke/which-key.nvim",
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+    },
     "kdav5758/TrueZen.nvim",
     "terrortylor/nvim-comment",
-    "windwp/nvim-autopairs",
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    "numToStr/FTerm.nvim",
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+    },
+    { "lukas-reineke/indent-blankline.nvim",      event = "VeryLazy", main = "ibl", opts = {} },
     "brenoprata10/nvim-highlight-colors",
     "simrat39/rust-tools.nvim",
     { "saecki/crates.nvim",  event = { "BufRead Cargo.toml" } },
@@ -47,6 +52,7 @@ local plugins = {
     },
     {
         "kylechui/nvim-surround",
+        event = "VeryLazy",
         config = function()
             require("nvim-surround").setup({})
         end,
@@ -70,11 +76,12 @@ local plugins = {
     -----------------------------------------------------------------------------------------------
     -- Git
     -----------------------------------------------------------------------------------------------
-    "lewis6991/gitsigns.nvim",
+    { "lewis6991/gitsigns.nvim",         event = { "BufRead", "BufNewFile" } },
     "tpope/vim-fugitive",
     -----------------------------------------------------------------------------------------------
     -- formatting
     -----------------------------------------------------------------------------------------------
+    -- replace with `none-ls`
     { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
     -----------------------------------------------------------------------------------------------
     -- NvimTree
@@ -147,6 +154,12 @@ local plugins = {
     "lukas-reineke/cmp-under-comparator",
     "hrsh7th/cmp-nvim-lsp-signature-help",
     "lukas-reineke/cmp-rg",
+
+    -- sway syntax highlighting
+    {
+        "aouelete/sway-vim-syntax",
+        ft = "sway",
+    },
 }
 
 local opts = {}
