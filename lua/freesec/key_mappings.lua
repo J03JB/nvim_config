@@ -42,7 +42,7 @@ map("n", "<leader>y",  '"+y')                 -- copy to system clipboard
 map("x", "<leader>y",  '"+y')                 -- copy to system clipboard in visual mode
 map("n", "<leader>Y",  '"+Y')                 -- copy line to system clipboard
 map("n", "<C-h>",      "<C-w>h")              -- ctrl + h to go to left pane
-map("n", "<C-l>",      "<C-w>l")              -- ctrl + l to go to right pane
+-- map("n", "<C-l>",      "<C-w>l")              -- ctrl + l to go to right pane
 map("n", "H",          "^")                   -- H to go to start of line
 map("v", "H",          "^")                   -- H to go to start of line in visual mode
 map("n", "L",          "$")                   -- L to go to end of line
@@ -86,36 +86,8 @@ map("n", "<leader>bd", ":bdelete<CR>")
 map("n", "<leader>/",  ":CommentToggle<CR>")
 map("v", "<leader>/",  ":CommentToggle<CR>")
 
--- FTerm
-map("n", "<leader>t",  '<CMD>lua require("FTerm").toggle()<CR>')
-map("t", "<leader>t",  '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-map("n", "<leader>tb", "<cmd> lua require('FTerm').scratch({ cmd = {'cargo', 'build', '--release'} })<CR>")
-map("n", "<leader>tj", "<cmd> lua require('FTerm').run({'node', vim.api.nvim_get_current_buf()})<CR>")
-
--- Fzf-lua
-map("n", "<c-P>",      "<cmd>lua require('fzf-lua').files()<CR>")
-
 -- Fugitive
 map("n", "<leader>gs", "<CMD>Git<CR>")
-
--- lsp
-map("n", "gd",         "<cmd>lua vim.lsp.buf.definition()<CR>")
-map("n", "gD",         "<cmd>lua vim.lsp.buf.declaration()<CR>")
-map("n", "gh",         "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-map("n", "gi",         "<cmd>lua vim.lsp.buf.implementation()<CR>")
-map("n", "gI",         '<cmd>lua require"telescope.builtin".lsp_implementations()<cr>')
-map("n", "gr",         "<cmd>lua vim.lsp.buf.references()<CR>")
-map("n", "gT",         "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-map("n", "<leader>gr", '<cmd>lua require"telescope.builtin".lsp_references()<cr>')
-map("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
-map("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
-map("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
-map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-map("n", "<Leader>E",  "<cmd>lua vim.diagnostic.open_float()<CR>")
-map("n", "<leader>q",  "<cmd>lua vim.diagnostic.setloclist()<CR>")
-map("n", "[d",         "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-map("n", "]d",         "<cmd>lua vim.diagnostic.goto_next()<CR>")
-map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
 -- Markdown Preview
 map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
@@ -127,6 +99,7 @@ map("n", "<leader>e",  ":NvimTreeToggle<CR>")
 map("n", "<leader>bb", ":Telescope buffers theme=dropdown<CR>")
 map("n", "<leader>fb", ":Telescope current_buffer_fuzzy_find<CR>")
 map("n", "<leader>fc", ":Telescope git_commits<cr>")
+map("n", "<leader>fd", '<cmd>lua require"freesec.telescope-custom".dotfiles()<cr>')
 map("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
 map("n", "<leader>fg", ":Telescope git_files<CR>")
 map("n", "<leader>fh", ":Telescope help_tags<CR>")
@@ -138,7 +111,7 @@ map("n", "<leader>fr", ":Telescope oldfiles <CR>")
 map("n", "<leader>fx", ":Telescope git_status<cr>")
 map("n", "<leader>fs", ":Telescope grep_string<cr>")
 map("n", "<leader>lh", ":Telescope lazy<CR>")
-map("n", "<leader>tr",  ":Telescope resume<CR>")
+map("n", "<leader>tr", ":Telescope resume<CR>")
 
 -- TrueZen
 map("n", "<leader>tz", ":TZAtaraxis <CR>")

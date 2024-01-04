@@ -1,23 +1,54 @@
-require("freesec.plugins.treesitter")
-require("freesec.plugins.lsp")
-require("freesec.plugins.telescope")
-require("freesec.plugins.lualine")
-require("freesec.plugins.autopairs")
-require("freesec.plugins.nvim-tree")
-require("freesec.plugins.gitsigns")
-require("freesec.plugins.null-ls")
-require("freesec.plugins.indent")
-require("freesec.plugins.comment")
-require("freesec.plugins.fugitive")
-require("freesec.plugins.bufferline")
-require("freesec.plugins.tabout")
-require("freesec.plugins.truezen")
-require("freesec.plugins.rust-tools")
-require("freesec.plugins.colorizer")
-require("freesec.plugins.trouble")
-require("freesec.plugins.osc52")
-require("freesec.plugins.harpoon")
-require("freesec.plugins.cmp")
--- require("freesec.plugins.crates")
--- require("freesec.plugins.copilot")
-require("freesec.plugins.tabnine")
+local M = {
+	-----------------------------------------------------------------------------------------------
+	-- Global plugins
+	-----------------------------------------------------------------------------------------------
+	"nvim-lua/plenary.nvim",
+	{ "nvim-tree/nvim-web-devicons", lazy = false, priority = 200 },
+
+	-----------------------------------------------------------------------------------------------
+	--  Colorschemes
+	-----------------------------------------------------------------------------------------------
+	"EdenEast/nightfox.nvim",
+	"navarasu/onedark.nvim",
+	"projekt0n/caret.nvim",
+	"folke/tokyonight.nvim",
+	{ "catppuccin/nvim", name = "catppuccin" },
+
+	-----------------------------------------------------------------------------------------------
+	-- Quality of Life
+	-----------------------------------------------------------------------------------------------
+    {"brenoprata10/nvim-highlight-colors",
+        config = function ()
+            require("nvim-highlight-colors").setup()
+        end,
+    },
+	"kdav5758/TrueZen.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy", main = "ibl", opts = {} },
+	{ "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
+
+	-----------------------------------------------------------------------------------------------
+	-- Which Key
+	-----------------------------------------------------------------------------------------------
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+	},
+
+	-----------------------------------------------------------------------------------------------
+	-- Markdown Preview
+	-----------------------------------------------------------------------------------------------
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
+
+	-----------------------------------------------------------------------------------------------
+	-- sway syntax highlighting
+	-----------------------------------------------------------------------------------------------
+	{ "aouelete/sway-vim-syntax", ft = "sway" },
+
+}
+
+return M

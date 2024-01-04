@@ -1,3 +1,7 @@
+return {
+     "codota/tabnine-nvim",
+build = "./dl_binaries.sh" ,
+config = function ()
 require('tabnine').setup({
   disable_auto_comment=true,
   accept_keymap="<A-a>",
@@ -7,3 +11,5 @@ require('tabnine').setup({
   exclude_filetypes = {"TelescopePrompt"},
   log_file_path = nil, -- absolute path to Tabnine log file
 })
+end,
+}

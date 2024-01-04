@@ -12,6 +12,7 @@
 -- require("freesec.plugin_config.catppuccin")
 
 vim.cmd.colorscheme("tokyonight-night")
+-- vim.cmd.colorscheme("carbonfox")
 
 -- require("onedark").setup({
 -- 	style = "dark", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'

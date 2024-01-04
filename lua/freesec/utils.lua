@@ -105,9 +105,8 @@ function M.map(mode, lhs, rhs, opts)
 end
 
 P = function(v)
-    print(vim.inspect(v))
-    return v
+	print(vim.inspect(v))
+	return v
 end
-
 
 return M
