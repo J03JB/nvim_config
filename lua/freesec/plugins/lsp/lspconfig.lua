@@ -20,21 +20,21 @@ return {
 			opts.buffer = bufnr
 
 			-- set keybinds
-			keymap.set("n", "gd",          "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
-			keymap.set("n", "gD",          vim.lsp.buf.declaration, opts) -- go to declaration
-			keymap.set("n", "gi",          "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
-			keymap.set("n", "gr",          "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-			keymap.set("n", "gR",          "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
-			keymap.set("n", "gt",          "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
-			keymap.set("n", "K",           vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-			keymap.set("n", "<leader>ca",  vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
-			keymap.set("n", "<leader>d",   vim.diagnostic.open_float, opts) -- show diagnostics for line
-			keymap.set("n", "<leader>D",   "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-			keymap.set("n", "<leader>q",   "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-			keymap.set("n", "<leader>rn",  vim.lsp.buf.rename, opts) -- smart rename
-			keymap.set("n", "<leader>rs",  ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-			keymap.set("n", "[d",          "<cmd>vim.diagnostic.goto_prev()<CR>", opts)
-			keymap.set("n", "]d",          "<cmd>vim.diagnostic.goto_next()<CR>", opts)
+			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+			keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+			keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+			keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+			keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+			keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+			keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+			keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+			keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+			keymap.set("n", "[d", "<cmd>vim.diagnostic.goto_prev()<CR>", opts)
+			keymap.set("n", "]d", "<cmd>vim.diagnostic.goto_next()<CR>", opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -47,7 +47,15 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- configure html server
+		-- lspconfig["sourcegraph"].setup({
+		-- 	cmd = { "codys", "lsp" },
+		-- 	filetypes = { "lua" },
+		-- 	-- filetypes = { "typescript", "javascript", "python", "go", "cpp", "c", "java", "php", "ruby", "rust" },
+		-- 	-- root_dir = function()
+		-- 	-- 	return vim.loop.cwd()
+		-- 	-- end,
+		-- })
+		-- -- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -58,6 +66,11 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+
+		-- lspconfig["rust_analyzer"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		-- configure css server
 		lspconfig["cssls"].setup({
@@ -73,6 +86,11 @@ return {
 
 		-- configure python server
 		lspconfig["pyright"].setup({
+			-- capabilities = capabilities,
+			-- on_attach = on_attach,
+		})
+
+		lspconfig["taplo"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

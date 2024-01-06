@@ -24,7 +24,7 @@ local M = {
     },
 	"kdav5758/TrueZen.nvim",
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy", main = "ibl", opts = {} },
-	{ "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
+	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 
 	-----------------------------------------------------------------------------------------------
 	-- Which Key
