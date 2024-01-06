@@ -33,8 +33,8 @@ return {
 			keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-			keymap.set("n", "[d", "<cmd>vim.diagnostic.goto_prev()<CR>", opts)
-			keymap.set("n", "]d", "<cmd>vim.diagnostic.goto_next()<CR>", opts)
+			keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+			keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -47,15 +47,7 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- lspconfig["sourcegraph"].setup({
-		-- 	cmd = { "codys", "lsp" },
-		-- 	filetypes = { "lua" },
-		-- 	-- filetypes = { "typescript", "javascript", "python", "go", "cpp", "c", "java", "php", "ruby", "rust" },
-		-- 	-- root_dir = function()
-		-- 	-- 	return vim.loop.cwd()
-		-- 	-- end,
-		-- })
-		-- -- configure html server
+		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
