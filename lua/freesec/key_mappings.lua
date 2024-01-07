@@ -78,11 +78,6 @@ end, { expr = true })
 -- Lazy.nvim
 map("n", "<Leader>ls", ":Lazy sync <CR>")
 
--- Bufferline
-map("n", "<TAB>",      ":BufferLineCycleNext<CR>")
-map("n", "<S-Tab>",    ":BufferLineCyclePrev<CR>")
-map("n", "<leader>bd", ":bdelete<CR>")
-
 -- Comment
 map("n", "<leader>/",  ":CommentToggle<CR>")
 map("v", "<leader>/",  ":CommentToggle<CR>")
