@@ -24,7 +24,8 @@ local M = {
     },
 	"kdav5758/TrueZen.nvim",
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy", main = "ibl", opts = {} },
-	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
+	{ "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
+	{ "aouelete/sway-vim-syntax", ft = "sway" },
 
 	-----------------------------------------------------------------------------------------------
 	-- Which Key
@@ -43,11 +44,6 @@ local M = {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-
-	-----------------------------------------------------------------------------------------------
-	-- sway syntax highlighting
-	-----------------------------------------------------------------------------------------------
-	{ "aouelete/sway-vim-syntax", ft = "sway" },
 
 }
 
