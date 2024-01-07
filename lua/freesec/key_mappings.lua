@@ -75,9 +75,6 @@ end, { expr = true })
 -- Plugin Bindings
 -- *************************************************************************************
 
--- Lazy.nvim
-map("n", "<Leader>ls", ":Lazy sync <CR>")
-
 -- Markdown Preview
 map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
 

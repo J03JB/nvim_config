@@ -21,4 +21,8 @@ require("lazy").setup({
 		{ import = "freesec.plugins.configs" },
 	},
 })
--- require("lazy").setup(plugins, opts)
+
+-- keymaps
+local map = require("freesec.utils").map
+
+map("n", "<Leader>ls", ":Lazy sync <CR>")

@@ -18,15 +18,15 @@ return {
 				local bufnr = vim.api.nvim_get_current_buf()
 				local opts = { buffer = bufnr, remap = false }
 
-				map("n", "<leader>p", function()
+				vim.keymap.set("n", "<leader>p", function()
 					vim.cmd.Git("push")
 				end, opts)
 
-				map("n", "<leader>c", function()
+				vim.keymap.set("n", "<leader>c", function()
 					vim.cmd.Git("commit")
 				end, opts)
 
-				map("n", "<leader>P", function()
+				vim.keymap.set("n", "<leader>P", function()
 					vim.cmd.Git({ "pull", "--rebase" })
 				end, opts)
 			end,
