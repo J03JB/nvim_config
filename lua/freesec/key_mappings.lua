@@ -78,10 +78,6 @@ end, { expr = true })
 -- Lazy.nvim
 map("n", "<Leader>ls", ":Lazy sync <CR>")
 
--- Comment
-map("n", "<leader>/",  ":CommentToggle<CR>")
-map("v", "<leader>/",  ":CommentToggle<CR>")
-
 -- Markdown Preview
 map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
 

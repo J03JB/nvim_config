@@ -19,5 +19,10 @@ return {
 				require("ts_context_commentstring").update_commentstring()
 			end,
 		})
+		-- keymaps
+		local map = require("freesec.utils").map
+
+		map("n", "<leader>/", ":CommentToggle<CR>")
+		map("v", "<leader>/", ":CommentToggle<CR>")
 	end,
 }
