@@ -82,9 +82,6 @@ map("n", "<Leader>ls", ":Lazy sync <CR>")
 map("n", "<leader>/",  ":CommentToggle<CR>")
 map("v", "<leader>/",  ":CommentToggle<CR>")
 
--- Fugitive
-map("n", "<leader>gs", "<CMD>Git<CR>")
-
 -- Markdown Preview
 map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
 
