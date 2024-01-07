@@ -93,8 +93,5 @@ map("n", "<leader>gs", "<CMD>Git<CR>")
 -- Markdown Preview
 map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
 
--- Nvim Tree Toggle
-map("n", "<leader>e",  ":NvimTreeToggle<CR>")
-
 -- TrueZen
 map("n", "<leader>tz", ":TZAtaraxis <CR>")
