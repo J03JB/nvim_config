@@ -114,5 +114,25 @@ return {
 
 		-- custom previews
 		require("freesec.telescope-custom")
+
+        -- Keymaps 
+		local map = require("freesec.utils").map
+
+		map("n", "<leader>bb", ":Telescope buffers theme=dropdown<CR>")
+		map("n", "<leader>fb", ":Telescope current_buffer_fuzzy_find<CR>")
+		map("n", "<leader>fc", ":Telescope git_commits<cr>")
+		map("n", "<leader>fd", '<cmd>lua require"freesec.telescope-custom".dotfiles()<cr>')
+		map("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
+		map("n", "<leader>fg", ":Telescope git_files<CR>")
+		map("n", "<leader>fh", ":Telescope help_tags<CR>")
+		map("n", "<leader>fl", ":Telescope live_grep<CR>")
+		map("n", "<leader>fm", ":Telescope harpoon marks theme=dropdown<CR>")
+		map("n", "<leader>fp", ":Telescope find_files<CR>")
+		map("n", "<leader>fq", ":Telescope quickfix<CR>")
+		map("n", "<leader>fr", ":Telescope oldfiles <CR>")
+		map("n", "<leader>fx", ":Telescope git_status<cr>")
+		map("n", "<leader>fs", ":Telescope grep_string<cr>")
+		map("n", "<leader>lh", ":Telescope lazy<CR>")
+		map("n", "<leader>tr", ":Telescope resume<CR>")
 	end,
 }
