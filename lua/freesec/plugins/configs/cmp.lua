@@ -33,14 +33,6 @@ return {
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-                -- manually start completion for Cody
-				-- ["<C-m>"] = cmp.mapping.complete({
-				-- 	config = {
-				-- 		sources = {
-				-- 			{ name = "cody" },
-				-- 		},
-				-- 	},
-				-- }),
 				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -71,25 +63,27 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = "rg", keyword_length = 3 },
-				{ name = "nvim_lsp", max_item_count = 20, priority_weight = 100 },
+				-- { name = "rg", keyword_length = 3 },
+				{ name = "nvim_lsp", max_item_count = 20, priority_weight = 200 },
 				{ name = "cody" },
 				{ name = "vsnip", priority_weight = 100 },
 				{ name = "luasnip", priority_weight = 100 },
 				{ name = "buffer", keyword_length = 3, max_item_count = 5, priority_weight = 100 },
 				{ name = "path", priority_weight = 110 },
-				{ name = "nvim_lua", priority_weight = 90 },
+				{ name = "nvim_lua", priority_weight = 150 },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "crates" },
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
 				format = lspkind.cmp_format({
-					-- maxwidth = 50,
+                    mode = "symbol_text",
+					maxwidth = 50,
 					ellipsis_char = "...",
-					menu = {
-						cody = "[cody]",
-					},
+                    symbol_map = {
+                        Cody = "",
+                        tabnine = "",
+                    },
 				}),
 			},
 

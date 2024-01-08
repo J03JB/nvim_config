@@ -5,6 +5,6 @@ return {
 	lazy = true,
 
 	config = function()
-		require("fidget").setup()
+		require("fidget").setup({})
 	end,
 }

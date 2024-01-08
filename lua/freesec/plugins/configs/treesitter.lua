@@ -11,11 +11,11 @@ return {
             "nvim-treesitter/nvim-treesitter-context",
 		},
 		config = function()
-			-- import nvim-treesitter plugin
 			local treesitter = require("nvim-treesitter.configs")
 
 			treesitter.setup({
 				ensure_installed = { "rust", "toml", "c", "lua", "vim", "vimdoc", "javascript", "typescript", "python" },
+                ignore_install = {"javascript"},
 				sync_install = false,
 				auto_install = true,
 				highlight = {

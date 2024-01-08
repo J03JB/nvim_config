@@ -27,7 +27,7 @@ return {
 					theme = "dropdown",
 					previewer = false,
 					layout_config = {
-						prompt_position = "bottom",
+						prompt_position = "top",
 					},
 					winblend = 20,
 				},

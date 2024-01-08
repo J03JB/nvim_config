@@ -45,9 +45,9 @@ return {
 					replace = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.yellow, bg = colors.bg } },
 
 					inactive = {
-						a = { bg = colors.fg, fg = colors.bg },
+						a = { bg = colors.bg, fg = colors.fg },
 						b = { bg = colors.yellow, fg = colors.bg },
-						c = { bg = colors.fg, fg = colors.bg },
+						c = { bg = colors.bg, fg = colors.fg },
 					},
 				},
 				-- section_separators = { left = "", right = "" },
@@ -86,7 +86,7 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
-			extensions = { "nvim-tree", "quickfix", "toggleterm", "aerial", "fugitive" },
+			extensions = { "nvim-tree", "quickfix", "fugitive" },
 		})
 	end,
 }
