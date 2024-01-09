@@ -5,8 +5,13 @@ return {
 		local mark = require("harpoon.mark")
 		local ui = require("harpoon.ui")
 		local tmux = require("harpoon.tmux")
+        local fidget = require("fidget")
 
-		vim.keymap.set("n", "<leader>a", mark.add_file)
+		vim.keymap.set("n", "<leader>a", function()
+            mark.add_file()
+            fidget.notify( "󱡅  marked file")
+        end)
+
 		vim.keymap.set("n", "<C-l>", ui.toggle_quick_menu)
 
 		vim.keymap.set("n", "<leader>1", function()

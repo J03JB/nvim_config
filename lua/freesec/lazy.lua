@@ -20,6 +20,10 @@ require("lazy").setup({
 		{ import = "freesec.plugins.lsp" },
 		{ import = "freesec.plugins.configs" },
 	},
+    change_detection = {
+        enabled = true,
+        notify = false,
+    },
 })
 
 -- keymaps

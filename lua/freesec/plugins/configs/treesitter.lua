@@ -15,7 +15,7 @@ return {
 
 			treesitter.setup({
 				ensure_installed = { "rust", "toml", "c", "lua", "vim", "vimdoc", "javascript", "typescript", "python" },
-                ignore_install = {"javascript"},
+                ignore_install = {},
 				sync_install = false,
 				auto_install = true,
 				highlight = {
@@ -25,6 +25,7 @@ return {
 				indent = {
 					enable = true,
 				},
+                modules = {},
 				refactor = {
 					highlight_definitions = {
 						enable = true,
@@ -39,6 +40,8 @@ return {
 						keymaps = {
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
+                            ["ab"] = "@block.outer",
+                            ["ib"] = "@block.inner",
 							["ac"] = "@class.outer",
 							["ic"] = "@class.inner",
 							["is"] = "@statements.inner",

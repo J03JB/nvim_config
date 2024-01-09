@@ -1,3 +1,5 @@
+local map = require("freesec.utils").map
+
 return {
 
 	"folke/trouble.nvim",
@@ -52,4 +54,7 @@ return {
 			use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
 		})
 	end,
+
+    -- toggle troble
+    map("n", "<leader>t", ":TroubleToggle<CR>"),
 }
