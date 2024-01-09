@@ -11,7 +11,7 @@ return {
 	-- vim.keymap.set("n", "<leader>ss", "<cmd>lua require('sg.extensions.telescope').fuzzy_search_results()<CR>"),
 
 	-- Toggle cody chat
-	vim.keymap.set("n", "<space>cc", function()
+	vim.keymap.set("n", "<space>co", function()
 		require("sg.cody.commands").toggle()
 	end),
 
