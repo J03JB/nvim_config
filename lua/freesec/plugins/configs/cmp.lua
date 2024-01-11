@@ -40,8 +40,10 @@ return {
 			return vim_item
 		end
 
+		-- Snippets
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_vscode").lazy_load({paths = "./snippets"})
 
 		cmp.setup({
 			completion = {
@@ -95,7 +97,7 @@ return {
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
-                fields = { 'abbr', 'kind', 'menu' },
+				fields = { "abbr", "kind", "menu" },
 				expandable_indicator = true,
 				format = lspkind.cmp_format({
 					mode = "symbol_text",
@@ -114,7 +116,7 @@ return {
 						return vim_item
 					end,
 				}),
- },
+			},
 		})
 		-- `:` cmdline setup.
 		cmp.setup.cmdline(":", {
