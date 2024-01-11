@@ -20,6 +20,26 @@ return {
 		local lspkind = require("lspkind")
 		local luasnip = require("luasnip")
 
+		local formatForTailwindCSS = function(entry, vim_item)
+			if vim_item.kind == "Color" and entry.completion_item.documentation then
+				local _, _, r, g, b = string.find(entry.completion_item.documentation, "^rgb%((%d+), (%d+), (%d+)")
+				if r then
+					local color = string.format("%02x", r) .. string.format("%02x", g) .. string.format("%02x", b)
+					local group = "Tw_" .. color
+					if vim.fn.hlID(group) < 1 then
+						vim.api.nvim_set_hl(0, group, { fg = "#" .. color })
+					end
+					vim_item.kind = "●" -- or "■" or anything
+					vim_item.kind_hl_group = group
+					return vim_item
+				end
+			end
+			-- vim_item.kind = icons[vim_item.kind] and (icons[vim_item.kind] .. vim_item.kind) or vim_item.kind
+			-- or just show the icon
+			vim_item.kind = lspkind.symbolic(vim_item.kind) and lspkind.symbolic(vim_item.kind) or vim_item.kind
+			return vim_item
+		end
+
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -65,51 +85,36 @@ return {
 			sources = cmp.config.sources({
 				-- { name = "rg", keyword_length = 3 },
 				{ name = "nvim_lsp", max_item_count = 20, priority_weight = 200 },
-				{ name = "cody" },
-				{ name = "vsnip", priority_weight = 100 },
-				{ name = "luasnip", priority_weight = 100 },
-				{ name = "buffer", keyword_length = 3, max_item_count = 5, priority_weight = 100 },
-				{ name = "path", priority_weight = 110 },
 				{ name = "nvim_lua", priority_weight = 150 },
 				{ name = "nvim_lsp_signature_help" },
+				{ name = "path", priority_weight = 110 },
+				{ name = "luasnip", priority_weight = 100 },
+				{ name = "cody" },
+				{ name = "buffer", keyword_length = 5 },
 				{ name = "crates" },
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
+                fields = { 'abbr', 'kind', 'menu' },
+				expandable_indicator = true,
 				format = lspkind.cmp_format({
-                    mode = "symbol_text",
+					mode = "symbol_text",
 					maxwidth = 50,
-					ellipsis_char = "...",
-                    symbol_map = {
-                        Cody = "",
-                        tabnine = "",
-                    },
+					symbol_map = {
+						Cody = "",
+						tabnine = "",
+					},
+					before = function(entry, vim_item)
+						vim_item.menu = "(" .. vim_item.kind .. ")"
+						vim_item.dup = ({
+							nvim_lsp = 0,
+							path = 0,
+						})[entry.source.name] or 0
+						vim_item = formatForTailwindCSS(entry, vim_item) -- for tailwind css autocomplete
+						return vim_item
+					end,
 				}),
-			},
-
-			--       formatting = {
-			-- format = function(entry, vim_item)
-			-- 	 local icons = require("freesec.kind").icons
-			-- 			 vim_item.kind = icons[vim_item.kind]
-			-- 			 vim_item.menu = ({
-			-- 				 nvim_lsp = "[LSP]",
-			-- 				 emoji = "[Emoji]",
-			-- 				 path = "[Path]",
-			-- 				 calc = "[Calc]",
-			-- 				 cmp_tabnine = "[Tabnine]",
-			-- 				 vsnip = "[Vsnip]",
-			-- 				 luasnip = "[Luasnip]",
-			-- 				 buffer = "[Buffer]",
-			-- 				 latex_symbols = "[LaTeX]",
-			-- 			 })[entry.source.name]
-			-- 			 vim_item.dup = ({
-			-- 				 buffer = 1,
-			-- 				 path = 1,
-			-- 				 nvim_lsp = 0,
-			-- 			 })[entry.source.name] or 0
-			-- 			 return vim_item
-			-- end,
-			--         },
+ },
 		})
 		-- `:` cmdline setup.
 		cmp.setup.cmdline(":", {
