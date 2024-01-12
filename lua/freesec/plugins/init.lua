@@ -12,6 +12,7 @@ local M = {
 	"navarasu/onedark.nvim",
 	"projekt0n/caret.nvim",
 	"folke/tokyonight.nvim",
+    "scottmckendry/cyberdream.nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 
 	-----------------------------------------------------------------------------------------------
@@ -44,6 +45,18 @@ local M = {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+
+    -----------------------------------------------------------------------------------------------
+    -- Vim-snippets implemented in Luasnip
+    -----------------------------------------------------------------------------------------------
+    {
+        'mireq/luasnip-snippets',
+        dependencies = {'L3MON4D3/LuaSnip'},
+        init = function()
+            -- Mandatory setup function
+            require('luasnip_snippets.common.snip_utils').setup()
+        end
+    },
 
 }
 
