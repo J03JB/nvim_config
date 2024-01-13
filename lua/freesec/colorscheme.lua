@@ -33,14 +33,20 @@
 
 -- require("onedark").load()
 
-
 require("cyberdream").setup({
-    -- Enable italics comments
-    italic_comments = true, -- Default: false
+	-- Enable italics comments
+	italic_comments = true, -- Default: false
 
-    -- Modern borderless telescope theme
-    borderless_telescope = false, -- Default: true
+	-- transparent = true,
 
+	-- Modern borderless telescope theme
+	borderless_telescope = false, -- Default: true
+
+	theme = {
+		highlights = {
+			CursorLine = { bg = "#232223" },
+		},
+	},
 })
 
 vim.cmd.colorscheme("cyberdream")

@@ -18,13 +18,13 @@ vim.g.mapleader = " "
 -- ***********************************************************************************
 
 map("n", "rw",         "viwpyiw")             -- replace a word with yanked text
-map("n", "<c-s>",      ":w<cr>")              -- Ctrl + s to save. (for old times sake.)
+map("n", "<c-s>",      ":w<cr>")              -- (for old times sake.)
 map("n", "<BS>",       "ciw")                 -- <BS> to change word in normal mode
 map("n", "Y",          "yg$")                 -- Copy to end of line from current position
 map("n", "<leader>yb", "<cmd>%yank<cr>")      -- Copy entire buffer.
 map("n", "<leader>w",  "g~iw")                -- toggle capitalisation
 map("n", "<leader>O",  "moO<ESC>")            -- insert line above
-map("n", "<leader>o",  "moo<ESC>k")           -- insert line below
+map("n", "<leader>o",  "moo<ESC>")            -- insert line below
 map("n", "<leader>h",  ":nohlsearch<CR>")     -- Clear highlights
 map("n", "<C-k>",      ":m-2<cr>")            -- move line down
 map("n", "<C-j>",      ":m+<cr>")             -- move line up
