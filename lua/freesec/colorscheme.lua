@@ -11,7 +11,7 @@
 -- vim.cmd.colorscheme("catppuccin")
 -- require("freesec.plugin_config.catppuccin")
 
-vim.cmd.colorscheme("tokyonight-night")
+-- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("carbonfox")
 
 -- require("onedark").setup({
@@ -32,3 +32,15 @@ vim.cmd.colorscheme("tokyonight-night")
 -- })
 
 -- require("onedark").load()
+
+
+require("cyberdream").setup({
+    -- Enable italics comments
+    italic_comments = true, -- Default: false
+
+    -- Modern borderless telescope theme
+    borderless_telescope = false, -- Default: true
+
+})
+
+vim.cmd.colorscheme("cyberdream")
