@@ -22,34 +22,34 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				-- theme = "auto",
-				theme = {
-					normal = {
-						a = { fg = colors.fg, bg = colors.bg },
-						b = { fg = colors.yellow, bg = colors.bg },
-						c = { fg = colors.fg, bg = colors.bg },
-					},
-					insert = {
-						a = { fg = colors.blue, bg = colors.bg },
-						b = { fg = colors.yellow, bg = colors.bg },
-						x = { fg = colors.fg, bg = colors.bg },
-						z = { fg = colors.fg, bg = colors.bg },
-					},
-					visual = {
-						a = { fg = colors.magenta, bg = colors.bg },
-						b = { fg = colors.yellow, bg = colors.bg },
-						c = { fg = colors.fg, bg = colors.bg },
-						z = { fg = colors.fg, bg = colors.bg },
-					},
-					command = { a = { fg = colors.orange, bg = colors.bg }, b = { fg = colors.yellow, bg = colors.bg } },
-					replace = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.yellow, bg = colors.bg } },
+				theme = "cyberdream",
+				-- theme = {
+				-- 	normal = {
+				-- 		a = { fg = colors.fg, bg = colors.bg },
+				-- 		b = { fg = colors.yellow, bg = colors.bg },
+				-- 		c = { fg = colors.fg, bg = colors.bg },
+				-- 	},
+				-- 	insert = {
+				-- 		a = { fg = colors.blue, bg = colors.bg },
+				-- 		b = { fg = colors.yellow, bg = colors.bg },
+				-- 		x = { fg = colors.fg, bg = colors.bg },
+				-- 		z = { fg = colors.fg, bg = colors.bg },
+				-- 	},
+				-- 	visual = {
+				-- 		a = { fg = colors.magenta, bg = colors.bg },
+				-- 		b = { fg = colors.yellow, bg = colors.bg },
+				-- 		c = { fg = colors.fg, bg = colors.bg },
+				-- 		z = { fg = colors.fg, bg = colors.bg },
+				-- 	},
+				-- 	command = { a = { fg = colors.orange, bg = colors.bg }, b = { fg = colors.yellow, bg = colors.bg } },
+				-- 	replace = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.yellow, bg = colors.bg } },
 
-					inactive = {
-						a = { bg = colors.bg, fg = colors.fg },
-						b = { bg = colors.yellow, fg = colors.bg },
-						c = { bg = colors.bg, fg = colors.fg },
-					},
-				},
+				-- 	inactive = {
+				-- 		a = { bg = colors.bg, fg = colors.fg },
+				-- 		b = { bg = colors.yellow, fg = colors.bg },
+				-- 		c = { bg = colors.bg, fg = colors.fg },
+				-- 	},
+				-- },
 				-- section_separators = { left = "", right = "" },
 				-- component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
