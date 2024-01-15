@@ -28,7 +28,6 @@ return {
 			ensure_installed = {
 				"tsserver",
 				"html",
-				"cssls",
 				"tailwindcss",
 				"lua_ls",
 				"pyright",

@@ -65,11 +65,11 @@ function M.config()
 	local servers = {
 		"html",
 		"tsserver",
-		"cssls",
 		"jsonls",
 		"pyright",
 		"bashls",
 		"lua_ls",
+        "tailwindcss",
 	}
 
 	-- Change the Diagnostic symbols in the sign column (gutter)
