@@ -70,6 +70,7 @@ function M.config()
 		"bashls",
 		"lua_ls",
         "tailwindcss",
+        "vimls",
 	}
 
 	-- Change the Diagnostic symbols in the sign column (gutter)
