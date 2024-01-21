@@ -1,5 +1,6 @@
 return {
 	"sourcegraph/sg.nvim",
+    event = "insertEnter",
 
 	config = function()
 		require("sg").setup({

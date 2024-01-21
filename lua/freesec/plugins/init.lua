@@ -3,7 +3,7 @@ local M = {
 	-- Global plugins
 	-----------------------------------------------------------------------------------------------
 	"nvim-lua/plenary.nvim",
-	{ "nvim-tree/nvim-web-devicons", lazy = false, priority = 200 },
+	{ "nvim-tree/nvim-web-devicons", lazy = false},
 
 	-----------------------------------------------------------------------------------------------
 	--  Colorschemes
@@ -24,7 +24,7 @@ local M = {
         end,
     },
 	"kdav5758/TrueZen.nvim",
-	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy", main = "ibl", opts = {} },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
 
