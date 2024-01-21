@@ -24,7 +24,7 @@ return {
 						},
 						prefix = "self",
 					},
-					project_root = "rust-analyzer.json",
+					root_pattern = { "Cargo.toml", "rust-project.json" },
 					cargo = {
 						features = { "ssr" },
 						loadOutDirsFromCheck = true,
