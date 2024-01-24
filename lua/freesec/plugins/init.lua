@@ -27,6 +27,7 @@ local M = {
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
+    { "fladson/vim-kitty" },
 
 	-----------------------------------------------------------------------------------------------
 	-- Which Key
