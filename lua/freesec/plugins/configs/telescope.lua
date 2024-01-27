@@ -5,9 +5,10 @@ return {
 		"nvim-lua/plenary.nvim",
 		"tsakirist/telescope-lazy.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
-		{ "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make"
-        },
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+		},
 		{
 			"debugloop/telescope-undo.nvim",
 			lazy = true,
@@ -70,13 +71,13 @@ return {
 						-- },
 					}),
 				},
-                undo = {
-                    layout_config = {
-                        height = 0.75,
-                        width = 0.75,
-                        prompt_position = "bottom",
-                    }
-                },
+				undo = {
+					layout_config = {
+						height = 0.75,
+						width = 0.75,
+						prompt_position = "bottom",
+					},
+				},
 			},
 			defaults = {
 				vimgrep_arguments = {
@@ -137,7 +138,7 @@ return {
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("harpoon")
 		require("telescope").load_extension("lazy")
-        require("telescope").load_extension("undo")
+		require("telescope").load_extension("undo")
 
 		-- custom previews
 		require("freesec.telescope-custom")
@@ -161,10 +162,11 @@ return {
 		map("n", "<leader>fr", ":Telescope oldfiles <CR>")
 		map("n", "<leader>fR", ":Telescope registers<CR>")
 		map("n", "<leader>fs", ":Telescope grep_string<cr>")
-        map("n", "<leader>fu", ":Telescope undo<CR>")
+		map("n", "<leader>fu", ":Telescope undo<CR>")
 		map("n", "<leader>fw", ":Telescope live_grep<CR>")
 		map("n", "<leader>fx", ":Telescope git_status<cr>")
 		map("n", "<leader>gc", ":Telescope git_commits<cr>")
+        map("n", "<leader>ss", ":Telescope spell_suggest theme=dropdown<cr>")
 		map("n", "<leader>tr", ":Telescope resume<CR>")
 	end,
 }
