@@ -38,8 +38,6 @@ map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
 map("n", "H",          "^")                   -- H to go to start of line
 map("n", "L",          "$")                   -- L to go to end of line
 map("n", "Q",          "@qj")                 -- Q to repeat macro and move down a line
-map("x", "Q",          ":norm @q<CR>")        -- Q in visual mode to repeat macro
-map("x", "p",          '"_dP')                -- replace selected text in visual mode. sends to blackhole.
 
 map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in insert mode
 map("i", "<c-k>",      "<esc>ki")             -- ctrl + k to move up a line in insert mode
@@ -57,6 +55,8 @@ map("v", ">",          ">gv")                 -- better indentation
 map("v", "<",          "<gv")                 -- better indentation
 map("v", "J",          ":move '>+1<CR>gv=gv") -- Move selected line / block of text down in visual mode
 map("v", "K",          ":move '<-2<CR>gv=gv") -- Move selected line / block of text up in visual mode
+map("x", "p",          '"_dP')                -- replace selected text in visual mode. sends to blackhole.
+map("x", "Q",          ":norm @q<CR>")        -- Q in visual mode to repeat macro
 
 
 -- Search and replace word under cursor
