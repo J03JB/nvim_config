@@ -11,11 +11,23 @@ require("freesec.utils").create_augroups({
 		{ "InsertEnter,WinLeave", "*", "set nocursorline" },
 		-- Restore cursor position when opening file
 		{ "BufRead", "*", [[call setpos(".", getpos("'\""))]] },
-        -- Format Json files using `jq`
+		-- Format Json files using `jq`
 		{ "BufWritePost", "*.json", ":%!jq ." },
 		-- don't continue comment on next line
 		{ "FileType", "*", "setlocal formatoptions-=cro" },
-        -- open help in a buffer instead of a split 
-        { "BufWinEnter", "*", "if &buftype == 'help' | wincmd L | endif" },
+		-- open help in vertical split instead of horizontal
+		{ "BufWinEnter", "*", [[if &buftype == 'help' | wincmd L | endif]] },
+		-- resizes splits when terminal gets resized
+		{
+			"WinResized",
+			"*",
+			"wincmd =",
+		},
+		-- set spell for markdown, txt and git commit
+		{
+			"FileType",
+			"gitcommit,markdown,txt",
+			"setlocal spell",
+		},
 	},
 })
