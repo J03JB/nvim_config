@@ -64,8 +64,6 @@ function M.config()
 	local lspconfig = require("lspconfig")
 	local servers = {
 		"html",
-		"tsserver",
-		"jsonls",
 		"pyright",
 		"bashls",
 		"lua_ls",
