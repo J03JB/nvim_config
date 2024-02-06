@@ -10,7 +10,6 @@ local M = {
 	-----------------------------------------------------------------------------------------------
 	"EdenEast/nightfox.nvim",
 	"navarasu/onedark.nvim",
-	"projekt0n/caret.nvim",
 	"folke/tokyonight.nvim",
 	"scottmckendry/cyberdream.nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
