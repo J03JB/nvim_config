@@ -1,8 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
-	event = "InsertEnter",
 	dependencies = {
-		"lukas-reineke/cmp-rg",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
@@ -14,7 +12,7 @@ return {
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
 	},
-
+    event = 'InsertEnter',
 	config = function()
 		local cmp = require("cmp")
 		local lspkind = require("lspkind")
@@ -85,7 +83,6 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				-- { name = "rg", keyword_length = 3 },
 				{ name = "nvim_lsp", max_item_count = 20, priority_weight = 200 },
 				{ name = "nvim_lua", priority_weight = 150 },
 				{ name = "nvim_lsp_signature_help" },

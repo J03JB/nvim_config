@@ -1,21 +1,21 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		-- event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			"windwp/nvim-ts-autotag",
-			"jose-elias-alvarez/nvim-lsp-ts-utils",
-            "JoosepAlviste/nvim-ts-context-commentstring",
-            "nvim-treesitter/nvim-treesitter-context",
+				"nvim-treesitter/nvim-treesitter-textobjects",
+				"windwp/nvim-ts-autotag",
+				"jose-elias-alvarez/nvim-lsp-ts-utils",
+				"JoosepAlviste/nvim-ts-context-commentstring",
+				"nvim-treesitter/nvim-treesitter-context",
 		},
+        event = { "BufEnter" },
 		config = function()
 			local treesitter = require("nvim-treesitter.configs")
 
 			treesitter.setup({
 				ensure_installed = { "rust", "toml", "c", "lua", "vim", "vimdoc", "javascript", "typescript", "python" },
-                ignore_install = {},
+				ignore_install = {},
 				sync_install = false,
 				auto_install = true,
 				highlight = {
@@ -25,7 +25,7 @@ return {
 				indent = {
 					enable = true,
 				},
-                modules = {},
+				modules = {},
 				refactor = {
 					highlight_definitions = {
 						enable = true,
@@ -40,8 +40,8 @@ return {
 						keymaps = {
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
-                            ["ab"] = "@block.outer",
-                            ["ib"] = "@block.inner",
+							["ab"] = "@block.outer",
+							["ib"] = "@block.inner",
 							["ac"] = "@class.outer",
 							["ic"] = "@class.inner",
 							["is"] = "@statements.inner",
