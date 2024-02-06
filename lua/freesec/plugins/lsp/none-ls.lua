@@ -1,7 +1,6 @@
 return {
-	"nvimtools/none-ls.nvim", -- configure formatters & linters
-	lazy = true,
-	event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
+	"nvimtools/none-ls.nvim",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "jay-babu/mason-null-ls.nvim" },
 
 	config = function()
