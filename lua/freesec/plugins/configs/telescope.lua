@@ -103,7 +103,13 @@ return {
 					vertical = { mirror = false },
 				},
 				file_sorter = require("telescope.sorters").get_fzy_sorter,
-				file_ignore_patterns = { "gtk/**/*", ".git/", "go/", "node_modules/", ".gem/", "Pictures" },
+                file_ignore_patterns = {
+                    '%.git/', 'node_modules/', '%.npm/', '__pycache__/', '%[Cc]ache/',
+                    '%.dropbox/', '%.dropbox_trashed/', '%.local/share/Trash/',
+                    '%.py[c]', '%.sw.?', '~$', '%.tags', '%.gemtags', '%.tmp',
+                    '%.plist$', '%.pdf$', '%.jpg$', '%.JPG$', '%.jpeg$', '%.png$',
+                    '%.class$', '%.pdb$', '%.dll$'
+                },
 				generic_sorter = require("telescope.sorters").get_fzy_sorter,
 				path_display = { "full" },
 				winblend = 0,
