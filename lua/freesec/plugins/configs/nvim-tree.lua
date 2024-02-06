@@ -1,8 +1,13 @@
 return {
 	"nvim-tree/nvim-tree.lua",
+
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
+	keys = {
+		{ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+	},
+
 	config = function()
 		require("nvim-tree").setup({
 			auto_reload_on_write = true,
@@ -89,10 +94,5 @@ return {
 				require_confirm = true,
 			},
 		})
-
-		-- keymaps
-		local map = require("freesec.utils").map
-
-		map("n", "<leader>e", ":NvimTreeToggle<CR>")
 	end,
 }
