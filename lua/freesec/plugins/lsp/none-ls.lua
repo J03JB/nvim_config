@@ -17,43 +17,29 @@ return {
 				"eslint_d", -- js linter
 			},
 		})
-		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 		null_ls.setup({
 			sources = {
-				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.diagnostics.eslint,
+				null_ls.builtins.diagnostics.jsonlint,
+				null_ls.builtins.diagnostics.markdownlint.with({ filetypes = { "markdown", "vimwiki" } }),
 				null_ls.builtins.formatting.autopep8,
 				null_ls.builtins.formatting.black,
-				null_ls.builtins.formatting.prettier.with({ filetypes = { "json", "toml", "yaml", "markdown" } }),
+				null_ls.builtins.formatting.markdownlint.with({ filetypes = { "markdown", "vimwiki" } }),
+				null_ls.builtins.formatting.prettier.with({
+					filetypes = { "html", "jsonc", "markdown", "javascript", "json", "toml", "yaml", "markdown" },
+				}),
 				null_ls.builtins.formatting.rustfmt,
 				null_ls.builtins.formatting.jq,
 				null_ls.builtins.formatting.shfmt,
+				null_ls.builtins.formatting.stylua.with({ filetypes = { "lua" } }),
+				null_ls.builtins.formatting.yamlfmt.with({ filetypes = { "yaml" } }),
 				null_ls.builtins.code_actions.gitsigns,
+				null_ls.builtins.code_actions.refactoring,
 			},
-			-- on_attach = function(client, bufnr)
-			-- 	if client.supports_method("textDocument/formatting") then
-			-- 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			-- 		vim.api.nvim_create_autocmd("BufWritePre", {
-			-- 			group = augroup,
-			-- 			buffer = bufnr,
-			-- 			callback = function()
-			-- 				vim.lsp.buf.format({ bufnr = bufnr })
-			-- 			end,
-			-- 		})
-			-- 	end
-			-- end,
 		})
 
 		local opts = { silent = false }
 		vim.api.nvim_set_keymap("n", "<A-f>", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 		vim.api.nvim_set_keymap("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
-
-		-- local lsp_formatting = function(bufnr)
-		-- 	vim.lsp.buf.format({
-		-- 		filter = function(client)
-		-- 			return client.name == "null-ls"
-		-- 		end,
-		-- 		bufnr = bufnr,
-		-- 	})
 	end,
 }

@@ -34,6 +34,10 @@ return {
 				autotag = {
 					enable = true,
 				},
+                -- context_commentstring = {
+                --     enable = true,
+                --     enable_autocmd = true,
+                -- },
 				textobjects = {
 					select = {
 						enable = true,
@@ -57,14 +61,15 @@ return {
 					},
 				},
 			})
-			-- context-commentstring deprecated fitx:
-			require("ts_context_commentstring").setup({})
-			vim.g.skip_ts_context_commentstring_module = true
 
 			-- commentstring disable autocmd
 			require("ts_context_commentstring").setup({
 				enable_autocmd = false,
+                config = {},
+                languages = {},
+                commentary_integration = {},
 			})
+			vim.g.skip_ts_context_commentstring_module = true
 		end,
 	},
 }
