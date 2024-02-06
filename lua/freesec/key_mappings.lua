@@ -34,10 +34,10 @@ map("n", "<leader>y",  '"+y')                 -- copy to system clipboard
 map("x", "<leader>y",  '"+y')                 -- copy to system clipboard in visual mode
 map("n", "<leader>Y",  '"+Y')                 -- copy line to system clipboard
 map("n", "<C-h>",      "<C-w>h")              -- ctrl + h to go to left pane
-map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
 map("n", "H",          "^")                   -- H to go to start of line
 map("n", "L",          "$")                   -- L to go to end of line
 map("n", "Q",          "@qj")                 -- Q to repeat macro and move down a line
+map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
 
 map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in insert mode
 map("i", "<c-k>",      "<esc>ki")             -- ctrl + k to move up a line in insert mode
@@ -74,9 +74,3 @@ end, { expr = true })
 -- *************************************************************************************
 -- Plugin Bindings
 -- *************************************************************************************
-
--- Markdown Preview
-map("n", "<leader>md", "<cmd>MarkdownPreview<CR>")
-
--- TrueZen
-map("n", "<leader>tz", ":TZAtaraxis <CR>")
