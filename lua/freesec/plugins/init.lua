@@ -3,7 +3,7 @@ local M = {
 	-- Global plugins
 	-----------------------------------------------------------------------------------------------
 	"nvim-lua/plenary.nvim",
-	{ "nvim-tree/nvim-web-devicons", lazy = false},
+	{ "nvim-tree/nvim-web-devicons", lazy = false },
 
 	-----------------------------------------------------------------------------------------------
 	--  Colorschemes
@@ -12,22 +12,33 @@ local M = {
 	"navarasu/onedark.nvim",
 	"projekt0n/caret.nvim",
 	"folke/tokyonight.nvim",
-    "scottmckendry/cyberdream.nvim",
+	"scottmckendry/cyberdream.nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
 	-----------------------------------------------------------------------------------------------
-    {"brenoprata10/nvim-highlight-colors",
-        config = function ()
-            require("nvim-highlight-colors").setup()
-        end,
-    },
-	"kdav5758/TrueZen.nvim",
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	{
+		"brenoprata10/nvim-highlight-colors",
+		config = function()
+			require("nvim-highlight-colors").setup()
+		end,
+	},
+	{ "lukas-reineke/indent-blankline.nvim", event = "BufRead", main = "ibl", opts = {} },
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
-    { "fladson/vim-kitty" },
+	{ "fladson/vim-kitty" },
+
+	-----------------------------------------------------------------------------------------------
+	-- TrueZen
+	-----------------------------------------------------------------------------------------------
+	{
+		"kdav5758/TrueZen.nvim",
+		keys = {
+
+			{ "<leader>tz", ":TZAtaraxis <CR>", desc = "TrueZen toggle" },
+		},
+	},
 
 	-----------------------------------------------------------------------------------------------
 	-- Which Key
@@ -45,28 +56,27 @@ local M = {
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
+		ft = "markdown",
 	},
 
-    -----------------------------------------------------------------------------------------------
-    -- Vim-snippets implemented in Luasnip
-    -----------------------------------------------------------------------------------------------
-    {
-        'mireq/luasnip-snippets',
-        dependencies = {'L3MON4D3/LuaSnip'},
-        init = function()
-            -- Mandatory setup function
-            require('luasnip_snippets.common.snip_utils').setup()
-        end
-    },
+	-----------------------------------------------------------------------------------------------
+	-- Vim-snippets implemented in Luasnip
+	-----------------------------------------------------------------------------------------------
+	-- {
+	--     'mireq/luasnip-snippets',
+	--     dependencies = {'L3MON4D3/LuaSnip'},
+	--     event = "InsertEnter",
+	--     init = function()
+	--         require('luasnip_snippets.common.snip_utils').setup()
+	--     end
+	-- },
 
-    -----------------------------------------------------------------------------------------------
-    -- Plugin Dev
-    -----------------------------------------------------------------------------------------------
-    {
-        dir = "~/Dev/Plugins/"
-    },
-
-
+	-----------------------------------------------------------------------------------------------
+	-- Plugin Dev
+	-----------------------------------------------------------------------------------------------
+	{
+		dir = "~/Dev/Plugins/",
+	},
 }
 
 return M

@@ -13,20 +13,38 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	install = {
+		colorscheme = { "cyberdream" },
+	},
 	spec = {
-		-- { import = "freesec.Lazy" },
-		-- { import = "freesec.Lazy.lsp" },
 		{ import = "freesec.plugins" },
 		{ import = "freesec.plugins.lsp" },
 		{ import = "freesec.plugins.configs" },
 	},
-    change_detection = {
-        enabled = true,
-        notify = false,
-    },
+	change_detection = {
+		enabled = true,
+		notify = false,
+	},
+	performance = {
+		rtp = {
+			-- disable some rtp plugins
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				-- "matchparen",
+				-- "netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"vimball",
+				"vimballPlugin",
+				"zipPlugin",
+			},
+		},
+	},
 })
 
 -- keymaps
 local map = require("freesec.utils").map
 
-map("n", "<Leader>ls", ":Lazy sync <CR>")
+map("n", "<Leader>l", ":Lazy<CR>")
