@@ -37,6 +37,7 @@ map("n", "<C-h>",      "<C-w>h")              -- ctrl + h to go to left pane
 map("n", "H",          "^")                   -- H to go to start of line
 map("n", "L",          "$")                   -- L to go to end of line
 map("n", "Q",          "@qj")                 -- Q to repeat macro and move down a line
+map("n", "<C-q>",      "<cmd>open<CR>")       -- close all buffers except currently selected
 map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
 
 map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in insert mode
@@ -61,6 +62,8 @@ map("x", "Q",          ":norm @q<CR>")        -- Q in visual mode to repeat macr
 
 -- Search and replace word under cursor
 map("n", "<leader>s",  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = false })
+-- Same but for 'big word'
+map("n", "<leader>S",  [[:%s/\<<C-r><C-a>\>/<C-r><C-a>/gI<Left><Left><Left>]], { silent = false })
 
 -- dd doesn't yank empty line to default register
 vim.keymap.set("n", "dd", function()
