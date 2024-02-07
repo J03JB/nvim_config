@@ -38,6 +38,7 @@ map("n", "H",          "^")                   -- H to go to start of line
 map("n", "L",          "$")                   -- L to go to end of line
 map("n", "Q",          "@qj")                 -- Q to repeat macro and move down a line
 map("n", "<C-q>",      "<cmd>open<CR>")       -- close all buffers except currently selected
+map("n", "<leader>xp", ":call setreg('+', getreg('@'))<CR>") -- copy paste register to system clipboard
 map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
 
 map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in insert mode

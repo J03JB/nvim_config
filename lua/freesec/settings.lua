@@ -98,9 +98,13 @@ vim.g.floating_window_border_dark = {
 	{ "│", "FloatBorderDark" },
 }
 
--- Sessions
-vim.g.autoload_last_session = false
-
+-- fix common typo in cmd line
+vim.cmd([[
+cnoreabbrev Wq wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qa qa
+]])
 -- Python Path
 if vim.fn.has("mac") == 1 then
 	vim.g.python3_host_prog = "/usr/local/bin/python3"
