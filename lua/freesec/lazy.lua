@@ -48,3 +48,4 @@ require("lazy").setup({
 local map = require("freesec.utils").map
 
 map("n", "<Leader>l", ":Lazy<CR>")
+map("n", "<Leader>ls", ":Lazy sync<CR>")
