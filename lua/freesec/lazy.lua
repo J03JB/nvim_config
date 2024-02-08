@@ -21,6 +21,10 @@ require("lazy").setup({
 		{ import = "freesec.plugins.lsp" },
 		{ import = "freesec.plugins.configs" },
 	},
+    dev = {
+        path = "~/Dev/Plugins",
+        fallback = false,
+    },
 	change_detection = {
 		enabled = true,
 		notify = false,
