@@ -1,9 +1,11 @@
 return {
 	"tpope/vim-fugitive",
 
-	config = function()
-		local map = require("freesec.utils").map
+    keys = {
+        { "<leader>gs", "<CMD>Git<CR>", desc = "Open Git"  }
+    },
 
+	config = function()
 		local gitfug = vim.api.nvim_create_augroup("gitfug", {})
 
 		local autocmd = vim.api.nvim_create_autocmd
@@ -31,7 +33,5 @@ return {
 				end, opts)
 			end,
 		})
-        -- open Git
-		map("n", "<leader>gs", "<CMD>Git<CR>")
 	end,
 }
