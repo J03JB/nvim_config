@@ -92,8 +92,12 @@ return {
 				{ name = "buffer", keyword_length = 5 },
 				{ name = "crates" },
 			}),
-			-- configure lspkind for vs-code like pictograms in completion menu
-			formatting = {
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
+            -- configure lspkind for vs-code like pictograms in completion menu
+            formatting = {
 				fields = { "abbr", "kind", "menu" },
 				expandable_indicator = true,
 				format = lspkind.cmp_format({
