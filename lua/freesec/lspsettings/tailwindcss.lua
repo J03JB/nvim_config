@@ -1,11 +1,11 @@
 return {
-	-- filetypes = {
+	filetypes = {
 	-- 	"gohtml",
 	-- 	"gohtmltmpl",
-	-- 	"html",
-	-- 	"css",
+		"html",
+		"css",
 	-- 	"rust",
-	-- },
+	},
 	userLanguages = {
 		rust = "html",
 		rs = "html",

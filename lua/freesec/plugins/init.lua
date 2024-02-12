@@ -23,7 +23,7 @@ local M = {
 			require("nvim-highlight-colors").setup()
 		end,
 	},
-	{ "lukas-reineke/indent-blankline.nvim", event = "BufRead", main = "ibl", opts = {} },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
 	{ "fladson/vim-kitty" },
