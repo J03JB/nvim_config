@@ -58,6 +58,19 @@ function M.common_capabilities()
 	return capabilities
 end
 
+-- Add border to floating windows for lsp diagnostics
+local border =  vim.g.floating_window_border
+
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+}
+vim.diagnostic.config{
+    float = {
+        border = border,
+        source = "always",
+    },
+}
 
 function M.config()
 	require("neodev").setup()
