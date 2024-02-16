@@ -44,9 +44,6 @@ M.inlay_toggle = function()
     vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
 end
 
--- used to enable autocompletion (assign to every lsp server config)
--- Do i really need all of this... should i just go back to
---  "local capabilities = cmp_nvim_lsp.default_capabilities()"
 function M.common_capabilities()
 	local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 	if status_ok then
@@ -82,6 +79,12 @@ function M.config()
 		"lua_ls",
         "tailwindcss",
         "vimls",
+        "jsonls",
+        "marksman",
+        "tsserver",
+        "htmx",
+        "yamlls",
+        "gopls",
 	}
 
 	-- Change the Diagnostic symbols in the sign column (gutter)

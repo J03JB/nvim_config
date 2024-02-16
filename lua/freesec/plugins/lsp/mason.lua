@@ -32,9 +32,8 @@ return {
 				"tailwindcss",
 				"lua_ls",
 				"pyright",
-				"rust_analyzer",
 			},
-			automatic_installation = true, -- not the same as ensure_installed
+			automatic_installation = false, -- not the same as ensure_installed
 		})
 
 		mason_tool_installer.setup({

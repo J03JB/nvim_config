@@ -15,7 +15,7 @@ return {
             -- },
             tools = {
                 hover_actions = {
-                	auto_focus = true,
+                	auto_focus = false,
                 },
             },
             settings = {
