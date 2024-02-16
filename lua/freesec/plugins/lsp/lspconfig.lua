@@ -95,6 +95,7 @@ function M.config()
 		local opts = {
 			on_attach = M.on_attach,
 			capabilities = M.common_capabilities(),
+            handlers = handlers,
 		}
 
 		local require_ok, settings = pcall(require, "freesec.lspsettings." .. server)
