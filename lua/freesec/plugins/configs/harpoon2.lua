@@ -33,8 +33,14 @@ function M. config()
         end,
     })
 
+    local toggle_opts = {
+        border = "rounded",
+        title_pos = "center",
+        ui_width_ratio = 0.40,
+    }
+
     vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
-    vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+    vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts) end)
 
     vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
     vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
