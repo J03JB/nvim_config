@@ -27,5 +27,29 @@
   "Anyhow Result": {
     "prefix": "anyhow",
     "body": "anyhow::Result<()>"
+  },
+  "result": {
+    "prefix": "res",
+    "body": ["Result<${1:$TM_SELECTED_TEXT}, ${2:dyn std::error::Error}>"]
+  },
+  "boxed error": {
+    "prefix": "be",
+    "body": ["Box<dyn error::Error>"]
+  },
+  "anyhow error": {
+    "prefix": "ae",
+    "body": ["anyhow::Error"]
+  },
+  "anyhow result": {
+    "prefix": "ar",
+    "body": ["anyhow::Result<${1:$TM_SELECTED_TEXT}>"]
+  },
+  "println": {
+    "prefix": "pl",
+    "body": ["println!(\"$1\");"]
+  },
+  "rustdoc": {
+    "prefix": "/",
+    "body": ["/// "]
   }
 }

@@ -3,13 +3,11 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		dependencies = {
-				"nvim-treesitter/nvim-treesitter-textobjects",
-				"windwp/nvim-ts-autotag",
-				"jose-elias-alvarez/nvim-lsp-ts-utils",
-				"JoosepAlviste/nvim-ts-context-commentstring",
-				"nvim-treesitter/nvim-treesitter-context",
+			"windwp/nvim-ts-autotag",
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			"nvim-treesitter/nvim-treesitter-context",
 		},
-        event = { "BufEnter" },
 		config = function()
 			local treesitter = require("nvim-treesitter.configs")
 
@@ -33,14 +31,25 @@ return {
 				},
 				autotag = {
 					enable = true,
+					enable_close_on_slash = true,
 				},
-                -- context_commentstring = {
-                --     enable = true,
-                --     enable_autocmd = true,
-                -- },
+				context_commentstring = {
+					enable = true,
+					enable_autocmd = false,
+				},
 				textobjects = {
+					lsp_interop = {
+						enable = true,
+						border = "none",
+						floating_preview_opts = {},
+						peek_definition_code = {
+							["<leader>df"] = "@function.outer",
+							["<leader>dF"] = "@class.outer",
+						},
+					},
 					select = {
 						enable = true,
+						lookahead = true,
 						keymaps = {
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
@@ -65,9 +74,9 @@ return {
 			-- commentstring disable autocmd
 			require("ts_context_commentstring").setup({
 				enable_autocmd = false,
-                config = {},
-                languages = {},
-                commentary_integration = {},
+				config = {},
+				languages = {},
+				commentary_integration = {},
 			})
 			vim.g.skip_ts_context_commentstring_module = true
 		end,
