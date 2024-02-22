@@ -33,10 +33,6 @@ return {
 					enable = true,
 					enable_close_on_slash = true,
 				},
-				context_commentstring = {
-					enable = true,
-					enable_autocmd = false,
-				},
 				textobjects = {
 					lsp_interop = {
 						enable = true,
