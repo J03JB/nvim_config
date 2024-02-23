@@ -37,6 +37,19 @@ M.on_attach = function(client, bufnr)
 	if client.supports_method("textDocument/inlayHint") then
 		vim.lsp.inlay_hint.enable(bufnr, true)
 	end
+
+    if client.server_capabilities.documentHighlightProvider then
+          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            buffer = bufnr,
+            callback = vim.lsp.buf.document_highlight,
+          })
+
+          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            buffer = bufnr,
+            callback = vim.lsp.buf.clear_references,
+        })
+    end
+
 end
 
 M.inlay_toggle = function()
