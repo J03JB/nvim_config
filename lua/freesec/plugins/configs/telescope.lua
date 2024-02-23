@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"tsakirist/telescope-lazy.nvim",
-		--     "nvim-telescope/telescope-ui-select.nvim",
+		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
@@ -88,13 +88,10 @@ return {
 						height = 0.5,
 					},
 				},
-				-- ["ui-select"] = {
-				-- 	require("telescope.themes").get_dropdown({
-				-- 		-- layout_config = {
-				-- 		-- prompt_position = "top",
-				-- 		-- },
-				-- 	}),
-				-- },
+				["ui-select"] = {
+					theme = "dropdown",
+					winblend = 10,
+				},
 				undo = {
 					layout_config = {
 						height = 0.75,
@@ -155,7 +152,7 @@ return {
 				},
 				generic_sorter = require("telescope.sorters").get_fzy_sorter,
 				path_display = { "full" },
-				winblend = 0,
+				winblend = 10,
 				border = {},
 				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 				color_devicons = true,
@@ -183,8 +180,8 @@ return {
 				},
 			},
 		})
-		-- require("telescope").load_extension("ui-select")
 		require("telescope").load_extension("fzf")
+		require("telescope").load_extension("ui-select")
 
 		-- custom previews
 		require("freesec.telescope-custom")
