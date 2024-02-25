@@ -6,47 +6,48 @@
 --	  \____/ \____//_/ \____//_/   /____/ \___//_/ /_/ \___//_/ /_/ /_/ \___/
 --
 -- ###################################################################################
+local M = {}
 
--- Catppuccin
--- vim.cmd.colorscheme("catppuccin")
--- require("freesec.plugin_config.catppuccin")
-
--- vim.cmd.colorscheme("tokyonight-night")
--- vim.cmd.colorscheme("carbonfox")
-
--- require("onedark").setup({
--- 	style = "dark", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
--- 	highlight_linenumber = true,
--- 	term_colors = true,
--- 	code_style = {
--- 		comments = "italic",
--- 		key_words = "italic,bold",
--- 		variables = "italic",
--- 	},
--- 	-- Plugins Config --
--- 	diagnostics = {
--- 		darker = true, -- darker colors for diagnostic
--- 		undercurl = true, -- use undercurl instead of underline for diagnostics
--- 		background = false, -- use background color for virtual text
--- 	},
--- })
-
--- require("onedark").load()
-
-require("cyberdream").setup({
-	-- Enable italics comments
-	italic_comments = true, -- Default: false
-
-	-- transparent = true,
-
-	-- Modern borderless telescope theme
-	borderless_telescope = false, -- Default: true
-
-	theme = {
-		highlights = {
-			CursorLine = { bg = "#232223" },
+function M.onedark()
+	require("onedark").setup({
+		style = "darker", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+		highlight_linenumber = true,
+		term_colors = true,
+		code_style = {
+			comments = "italic",
+			key_words = "italic,bold",
+			variables = "italic",
 		},
-	},
-})
+		-- Plugins Config --
+		diagnostics = {
+			darker = true, -- darker colors for diagnostic
+			undercurl = true, -- use undercurl instead of underline for diagnostics
+			background = false, -- use background color for virtual text
+		},
+	})
 
-vim.cmd.colorscheme("cyberdream")
+	require("onedark").load()
+end
+
+function M.cyberdream()
+	require("cyberdream").setup({
+		italic_comments = true, -- Default: false
+
+		borderless_telescope = false, -- Default: true
+
+		theme = {
+			highlights = {
+				CursorLine = { bg = "#232223" },
+				CursorColumn = { bg = "#232223" },
+				LspInfoBorder = { fg = "#3c4048" },
+			},
+		},
+	})
+
+	vim.cmd.colorscheme("cyberdream")
+end
+
+-- M.onedark()
+M.cyberdream()
+
+return M
