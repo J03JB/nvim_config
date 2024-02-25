@@ -6,7 +6,7 @@ return {
 		require("gitsigns").setup({
 			signs = {
 				add = { text = "+" },
-				change = { text = "|" },
+				change = { text = "~" },
 				delete = { text = "_" },
 				topdelete = { text = "‾" },
 				changedelete = { text = "~" },
@@ -31,18 +31,16 @@ return {
 		})
 
 		-- Keymaps.
-		map("n", "]g",         '<cmd>lua require"gitsigns".next_hunk()<CR>')
-		map("n", "[g",         '<cmd>lua require"gitsigns".prev_hunk()<CR>')
-		map("x", "ih",         '<cmd>lua require"gitsigns".select_hunk()<CR>')
-		map("n", "<leader>hb", '<cmd>lua require"gitsigns".blame_line()<CR>')
+		map("n", "]h",         '<cmd>lua require"gitsigns".next_hunk()<CR>')
+		map("n", "[h",         '<cmd>lua require"gitsigns".prev_hunk()<CR>')
 		map("n", "<leader>hd", "<cmd>Gitsigns diffthis<CR>")
 		map("n", "<leader>hD", '<cmd>lua require"gitsigns".diffthis("~")<CR>')
 		map("n", "<leader>hp", '<cmd>lua require"gitsigns".preview_hunk()<CR>')
 		map("n", "<leader>hr", '<cmd>lua require"gitsigns".reset_hunk()<CR>')
-		map("n", "<leader>hR", '<cmd>lua require"gitsigns".reset_buffer()<CR>')
 		map("n", "<leader>hs", '<cmd>lua require"gitsigns".stage_hunk()<CR>')
 		map("n", "<leader>hu", '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>')
 		map("n", "<leader>sh", '<cmd>lua require"gitsigns".select_hunk()<CR>')
 		map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>")
+        map("n", "<leader>xh", "<cmd>Gitsigns setqflist<CR>") -- use trouble
 	end,
 }
