@@ -70,6 +70,16 @@ opt.wrap = false -- wrap lines
 opt.writebackup = false
 opt.completeopt = "menu,menuone,noselect"
 opt.confirm = true
+
+-- TODO: look into this!!
+-- vim.g.clipboard = {
+--     name = "OSC 52",
+--     copy = {
+--         ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+--     },
+-- }
+
+vim.loader.enable()
 -- Messages
 opt.shortmess = table.concat({
 	"f",
