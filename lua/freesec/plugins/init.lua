@@ -11,8 +11,7 @@ local M = {
 	"EdenEast/nightfox.nvim",
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
-	"scottmckendry/cyberdream.nvim",
-	{ "catppuccin/nvim", name = "catppuccin" },
+    "J03JB/cyberdream.nvim",
 
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life

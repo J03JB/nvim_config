@@ -31,15 +31,13 @@ end
 
 function M.cyberdream()
 	require("cyberdream").setup({
-		italic_comments = true, -- Default: false
-
-		borderless_telescope = false, -- Default: true
+		italic_comments = true,
 
 		theme = {
 			highlights = {
-				CursorLine = { bg = "#232223" },
-				CursorColumn = { bg = "#232223" },
-				LspInfoBorder = { fg = "#3c4048" },
+				-- CursorLine = { bg = "#232223" },
+				-- CursorColumn = { bg = "#232223" },
+				-- LspInfoBorder = { fg = "#3c4048" },
 			},
 		},
 	})
