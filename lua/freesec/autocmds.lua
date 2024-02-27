@@ -14,6 +14,10 @@ local groups = {
 			[[lua require('vim.highlight').on_yank({ higroup = 'Substitute', timeout = 500 })]],
 		},
 	},
+    q_to_quit = {
+		-- close windows with 'q'
+		{ "FileType", "qf,git,tsplayground,fugitive*,checkhealth,help", [[ nnoremap <buffer> q :close<CR> | set nobuflisted ]] },
+    },
 	freesec = {
 		-- resizes splits when terminal gets resized
 		{ "WinResized", "*", "wincmd =" },
@@ -28,10 +32,7 @@ local groups = {
 		-- open help in vertical split instead of horizontal
 		{ "BufWinEnter", "*", [[if &buftype == 'help' | wincmd L | endif]] },
 
-		-- close windows with 'q'
-		{ "FileType", "qf,git,tsplayground", [[ nnoremap <buffer> q :close<CR> | set nobuflisted ]] },
-
-		-- cloe neovim if quickfix is the last window
+		-- close neovim if quickfix is the last window
         { "WinEnter", "*", [[  if winnr('$') == 1 && &buftype == "quickfix"|q|endif ]] },
 	},
 }
