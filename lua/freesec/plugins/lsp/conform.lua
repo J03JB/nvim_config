@@ -23,6 +23,7 @@ return {
 			json = { "jq" },
 			yaml = { "yamlfmt" },
 			go = { "gofmt" },
+			markdown = { "prettier", "markdownlint" },
 		},
 		-- Set up format-on-save
 		-- format_on_save = { timeout_ms = 500, lsp_fallback = true },
