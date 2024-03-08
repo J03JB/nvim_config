@@ -39,17 +39,17 @@ function M. config()
         ui_width_ratio = 0.40,
     }
 
-    vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
-    vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts) end)
+    vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = "Harpoon add file to list"})
+    vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts) end, { desc = "Harpoon open list"})
 
-    vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
-    vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
-    vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
-    vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
+    vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end, { desc = "Harpoon file: 1"})
+    vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end, { desc = "Harpoon file: 2"})
+    vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end, { desc = "Harpoon file: 3"})
+    vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end, { desc = "Harpoon file: 4"})
 
     -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set("n", "<M-p>", function() harpoon:list():prev() end)
-    vim.keymap.set("n", "<M-n>", function() harpoon:list():next() end)
+    vim.keymap.set("n", "<M-p>", function() harpoon:list():prev() end, { desc = "Harpoon previous file"})
+    vim.keymap.set("n", "<M-n>", function() harpoon:list():next() end, { desc = "Harpoon nexg file"} )
 end
 
 
