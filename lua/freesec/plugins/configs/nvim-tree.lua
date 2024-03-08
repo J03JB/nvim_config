@@ -95,4 +95,5 @@ return {
 			},
 		})
 	end,
+    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true, desc = "Open file tree" })
 }
