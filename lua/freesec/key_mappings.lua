@@ -40,6 +40,8 @@ map("n", "Q",          "@qj")                 -- Q to repeat macro and move down
 map("n", "<C-q>",      "<cmd>open<CR>")       -- close all buffers except currently selected
 map("n", "<leader>xp", ":call setreg('+', getreg('@'))<CR>") -- copy paste register to system clipboard
 map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
+map("n", "[b",         ":bprev<CR>")          -- go to previous buffer
+map("n", "]b",         ":bnext<CR>")          -- go to next buffer
 
 map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in insert mode
 map("i", "<c-k>",      "<esc>ki")             -- ctrl + k to move up a line in insert mode
@@ -75,6 +77,3 @@ vim.keymap.set("n", "dd", function()
 	end
 end, { expr = true })
 
--- *************************************************************************************
--- Plugin Bindings
--- *************************************************************************************
