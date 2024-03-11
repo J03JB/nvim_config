@@ -22,6 +22,7 @@ map("n", "<c-s>",      ":w<cr>")              -- (for old times sake.)
 map("n", "<BS>",       "ciw")                 -- <BS> to change word in normal mode
 map("n", "Y",          "yg$")                 -- Copy to end of line from current position
 map("n", "<leader>yb", "<cmd>%yank<cr>")      -- Copy entire buffer.
+map("n", "<leader>bd", "<cmd>bdelete<CR>")    -- close/remove buffer
 map("n", "<leader>w",  "g~iw")                -- toggle capitalisation
 map("n", "<leader>O",  "moO<ESC>")            -- insert line above
 map("n", "<leader>o",  "moo<ESC>")            -- insert line below
@@ -37,7 +38,6 @@ map("n", "<C-h>",      "<C-w>h")              -- ctrl + h to go to left pane
 map("n", "H",          "^")                   -- H to go to start of line
 map("n", "L",          "$")                   -- L to go to end of line
 map("n", "Q",          "@qj")                 -- Q to repeat macro and move down a line
-map("n", "<C-q>",      "<cmd>open<CR>")       -- close all buffers except currently selected
 map("n", "<leader>xp", ":call setreg('+', getreg('@'))<CR>") -- copy paste register to system clipboard
 map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
 map("n", "[b",         ":bprev<CR>")          -- go to previous buffer
