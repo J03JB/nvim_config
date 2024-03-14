@@ -89,6 +89,7 @@ function M.config()
 		"html",
 		"pyright",
 		"bashls",
+        "eslint",
 		"lua_ls",
         "tailwindcss",
         "vimls",

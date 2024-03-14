@@ -72,4 +72,33 @@ M.get_visual_selection_rows = function()
 	return start_row, end_row
 end
 
+-- DEV : from tjdevries:globals.lua
+-- Save the local require here
+local require = require
+
+local ok, plenary_reload = pcall(require, "plenary.reload")
+local reloader = require
+if ok then
+  reloader = plenary_reload.reload_module
+end
+
+P = function(v)
+  print(vim.inspect(v))
+  return v
+end
+
+RELOAD = function(...)
+  local ok, plenary_reload = pcall(require, "plenary.reload")
+  if ok then
+    reloader = plenary_reload.reload_module
+  end
+
+  return reloader(...)
+end
+
+R = function(name)
+  RELOAD(name)
+  return require(name)
+end
+
 return M

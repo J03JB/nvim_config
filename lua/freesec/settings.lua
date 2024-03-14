@@ -78,8 +78,8 @@ opt.confirm = true
 --         ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
 --     },
 -- }
+-- vim.loader.enable()
 
-vim.loader.enable()
 -- Messages
 opt.shortmess = table.concat({
 	"f",
