@@ -14,14 +14,15 @@ local groups = {
 			[[lua require('vim.highlight').on_yank({ higroup = 'Substitute', timeout = 500 })]],
 		},
 	},
-    q_to_quit = {
+    close_with_q = {
 		-- close windows with 'q'
-		{ "FileType", "qf,git,tsplayground,fugitive*,checkhealth,help", [[ nnoremap <buffer> q :close<CR> | set nobuflisted ]] },
+		{ "FileType", "qf,git,tsplayground,fugitive*,checkhealth,help,man,notify", [[ nnoremap <buffer> q :close<CR> | set nobuflisted ]] },
     },
-	freesec = {
+    vim_resized = {
 		-- resizes splits when terminal gets resized
 		{ "WinResized", "*", "wincmd =" },
-
+    },
+	freesec = {
 		-- Hide cursorline in insert mode
 		{ "InsertLeave,WinEnter", "*", "set cursorline" },
 		{ "InsertEnter,WinLeave", "*", "set nocursorline" },
