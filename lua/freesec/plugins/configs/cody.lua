@@ -11,7 +11,7 @@ return {
 		})
 	end,
 
-    vim.keymap.set("v", "<space>ca", ":CodyAsk "),
+    -- vim.keymap.set("v", "<space>ca", ":CodyAsk "),
 
 	-- Toggle cody chat
 	vim.keymap.set("n", "<space>co", function()
@@ -35,6 +35,20 @@ return {
         local msg = vim.fn.getreg('"')
         require("sg.cody.commands").do_task(buf, start, eline, msg )
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), 'n', true)
-    end)
+    end),
+    vim.keymap.set("v",
+        "<leader>ca",
+        function()
+            local utils = require("freesec.utils")
+            local buf = vim.api.nvim_get_current_buf()
+            local start_row, end_row = utils.get_visual_selection_rows()
+
+            vim.ui.input({ prompt = "Task/Ask: " }, function(input)
+                if input == nil or input == "" then
+                    return
+                end
+                require("sg.cody.commands").do_task(buf, start_row, end_row, input)
+            end)
+        end)
 
 }
