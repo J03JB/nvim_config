@@ -2,16 +2,15 @@ return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
 		"hrsh7th/cmp-cmdline",
-		"hrsh7th/cmp-buffer", -- source for text in buffer
-		"hrsh7th/cmp-path", -- source for file system paths
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
-		"L3MON4D3/LuaSnip", -- snippet engine
-		"saadparwaiz1/cmp_luasnip", -- for autocompletion
-		"rafamadriz/friendly-snippets", -- useful snippets
-		"onsails/lspkind.nvim", -- vs-code like pictograms
-        'petertriho/cmp-git' -- git source
+        { "saadparwaiz1/cmp_luasnip", dependencies = { "L3MON4D3/LuaSnip" } },
+		"rafamadriz/friendly-snippets",
+		"onsails/lspkind.nvim",
+        "petertriho/cmp-git",
 	},
 	event = { "InsertEnter", "CmdlineEnter" },
 	config = function()
@@ -60,11 +59,19 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
+				["<C-y>"] = cmp.mapping.confirm({ select = false }), -- confirm completion
+				["<CR>"] = cmp.mapping.confirm({ select = false }), -- confirm completion
+                 -- Cody completion
+                ["<C-a>"] = cmp.mapping.complete {
+                    config = {
+                        sources = {
+                            { name = "cody" },
+                        },
+                    },
+                },
+                -- luasnip mappings
 				["<Tab>"] = function()
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif luasnip.expand_or_locally_jumpable() then
+					if luasnip.expand_or_locally_jumpable() then
 						luasnip.expand_or_jump()
 					else
 						-- tabout, replace with fallback() to go back to default
@@ -72,9 +79,7 @@ return {
 					end
 				end,
 				["<S-Tab>"] = function()
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif luasnip.locally_jumpable(-1) then
+					if luasnip.locally_jumpable(-1) then
 						luasnip.jump(-1)
 					else
 						-- tabout, replace with fallback() to go back to default
@@ -84,13 +89,13 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp", max_item_count = 20, priority_weight = 200 },
-				{ name = "nvim_lua", priority_weight = 150 },
-				{ name = "nvim_lsp_signature_help" },
-				{ name = "path", priority_weight = 110 },
-				{ name = "luasnip", priority_weight = 100 },
 				{ name = "cody" },
-				{ name = "buffer", keyword_length = 5 },
+				{ name = "nvim_lua" },
+				{ name = "nvim_lsp" },
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "luasnip" },
+				{ name = "path" },
+				{ name = "buffer" },
 				{ name = "crates" },
 			}),
             window = {
@@ -154,7 +159,7 @@ return {
             }),
         })
 
-        -- add () afte completing functions  
+        -- adds () afte completing functions  
         -- (https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques#add-parentheses-after-selecting-function-or-method-item)
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
         cmp.event:on(
