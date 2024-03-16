@@ -129,6 +129,7 @@ return {
                     { name = 'buffer' },
                 })
         })
+        require("cmp_git").setup()
 
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ '/', '?' }, {
