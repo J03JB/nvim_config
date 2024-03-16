@@ -11,8 +11,9 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
+        'petertriho/cmp-git' -- git source
 	},
-    event = 'InsertEnter',
+	event = { "InsertEnter", "CmdlineEnter" },
 	config = function()
 		local cmp = require("cmp")
 		local lspkind = require("lspkind")
@@ -41,7 +42,7 @@ return {
 		-- Snippets
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
-        require("luasnip.loaders.from_vscode").lazy_load({paths = "./snippets"})
+		require("luasnip.loaders.from_vscode").lazy_load({ paths = "./snippets" })
 
 		cmp.setup({
 			completion = {
@@ -104,8 +105,10 @@ return {
 					mode = "symbol_text",
 					maxwidth = 50,
 					symbol_map = {
-						Cody = "",
-						tabnine = "",
+						Cody = "󰧑 ",
+						tabnine = "󰧑 ",
+						-- Cody = "",
+						-- tabnine = "",
 					},
 					before = function(entry, vim_item)
 						vim_item.menu = "(" .. vim_item.kind .. ")"
@@ -119,19 +122,44 @@ return {
 				}),
 			},
 		})
-		-- `:` cmdline setup.
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "path" },
-			}, {
-				{
-					name = "cmdline",
-					option = {
-						ignore_cmds = { "Man", "!" },
-					},
-				},
-			}),
-		})
+        cmp.setup.filetype('gitcommit', {
+            sources = cmp.config.sources({
+                { name = 'git' },
+            }, {
+                    { name = 'buffer' },
+                })
+        })
+
+        -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+        cmp.setup.cmdline({ '/', '?' }, {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = 'buffer' }
+            }
+        })
+
+        -- `:` cmdline setup.
+        cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = "path" },
+                }, {
+                    {
+                        name = "cmdline",
+                        option = {
+                            ignore_cmds = { "Man", "!" },
+                        },
+                    },
+            }),
+        })
+
+        -- add () afte completing functions  
+        -- (https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques#add-parentheses-after-selecting-function-or-method-item)
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+        cmp.event:on(
+            'confirm_done',
+            cmp_autopairs.on_confirm_done()
+        )
+
 	end,
 }
