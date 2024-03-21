@@ -22,7 +22,7 @@ opt.autowriteall = true
 opt.background = "dark" -- Dark background
 opt.backup = false -- No backup file
 opt.clipboard = { "unnamed" } -- Copy paste between vim and everything else
-opt.cmdheight = 2 -- More space for displaying messages
+opt.cmdheight = 1 -- More space for displaying messages
 opt.cursorline = true -- Highlight current line
 opt.diffopt = "vertical" -- Diff in vertical split
 opt.encoding = "utf-8"
@@ -32,7 +32,7 @@ opt.ignorecase = true -- case insensitive search
 opt.smartcase = true -- But sensitice if includes capital letter
 opt.inccommand = "split" --Show live results of substitute
 opt.incsearch = true -- Show results as you search
-opt.lazyredraw = true -- Only redraw when need to
+-- opt.lazyredraw = true -- Only redraw when need to
 opt.list = true
 opt.listchars = {
 	nbsp = "⦸",
@@ -47,7 +47,7 @@ opt.relativenumber = true
 opt.swapfile = false
 opt.scrolloff = 8 -- Lines to scroll when cursor leaves screen
 opt.shiftwidth = 4
-opt.showbreak = "↳ " -- Show cool character on line wrap
+opt.showbreak = "↳ " -- Show character on line wrap
 opt.fillchars = { eob = " " } -- Suppress ~ at EndOfBuffer
 opt.showcmd = true
 opt.showmatch = true -- Highlight matching parentheses, etc.
@@ -63,6 +63,7 @@ opt.tabstop = 4
 opt.timeoutlen = 500 -- By default timeoutlen is 1000 ms
 opt.termguicolors = true
 -- opt.guicursor = "i:block"
+vim.opt.guicursor = ""
 opt.undodir = vim.fn.expand("~/.config/nvim/backups")
 opt.undofile = true
 opt.updatetime = 100 -- Trigger cursorhold faster
@@ -71,30 +72,9 @@ opt.writebackup = false
 opt.completeopt = "menu,menuone,noselect"
 opt.confirm = true
 
--- TODO: look into this!!
--- vim.g.clipboard = {
---     name = "OSC 52",
---     copy = {
---         ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
---     },
--- }
--- vim.loader.enable()
+opt.shortmess:append('a')
 
--- Messages
-opt.shortmess = table.concat({
-	"f",
-	"i",
-	"l",
-	"n",
-	"x",
-	"t",
-	"T",
-	"o",
-	"O",
-	"F", -- Defaults
-	"a", -- Use abbreviations in messages ([RO] intead of [readonly])
-	"c", -- Do not show ins-completion-menu messages (match 1 of 2)
-})
+opt.formatoptions:append('tcrqnj')
 
 vim.g.floating_window_border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 vim.g.floating_window_border_dark = {
