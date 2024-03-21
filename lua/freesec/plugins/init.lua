@@ -26,7 +26,12 @@ local M = {
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
 	{ "fladson/vim-kitty" },
-
+    {
+        "sindrets/diffview.nvim",
+        keys ={
+            { "<space>vv", ":DiffviewOpen ", desc = "Open DiffView" },
+        },
+    },
 	-----------------------------------------------------------------------------------------------
 	-- TrueZen
 	-----------------------------------------------------------------------------------------------
