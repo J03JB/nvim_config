@@ -7,6 +7,7 @@ return {
 	-- keys = {
 	-- 	{ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
 	-- },
+    enabled = false,
 
 	config = function()
 		require("nvim-tree").setup({
