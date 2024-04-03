@@ -39,7 +39,7 @@ function M. config()
         ui_width_ratio = 0.40,
     }
 
-    vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end, { desc = "Harpoon add file to list"})
+    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Harpoon add file to list"})
     vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts) end, { desc = "Harpoon open list"})
 
     vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end, { desc = "Harpoon file: 1"})
@@ -47,9 +47,16 @@ function M. config()
     vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end, { desc = "Harpoon file: 3"})
     vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end, { desc = "Harpoon file: 4"})
 
+    -- not sure on the keys yet... 
+    vim.keymap.set("n", "<C-1>", function() harpoon:list():replace_at(1) end, { desc = "Harpoon file: 1"})
+    vim.keymap.set("n", "<C-2>", function() harpoon:list():replace_at(2) end, { desc = "Harpoon file: 2"})
+    vim.keymap.set("n", "<C-3>", function() harpoon:list():replace_at(3) end, { desc = "Harpoon file: 3"})
+    vim.keymap.set("n", "<C-4>", function() harpoon:list():replace_at(4) end, { desc = "Harpoon file: 4"})
+
     -- Toggle previous & next buffers stored within Harpoon list
     vim.keymap.set("n", "<M-p>", function() harpoon:list():prev() end, { desc = "Harpoon previous file"})
     vim.keymap.set("n", "<M-n>", function() harpoon:list():next() end, { desc = "Harpoon nexg file"} )
+
 end
 
 
