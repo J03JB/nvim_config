@@ -19,13 +19,7 @@ local M = {
 
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
-	-----------------------------------------------------------------------------------------------
-	{
-		"brenoprata10/nvim-highlight-colors",
-		config = function()
-			require("nvim-highlight-colors").setup()
-		end,
-	},
+    -----------------------------------------------------------------------------------------------
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
@@ -85,7 +79,7 @@ local M = {
 	-- Plugin Dev
 	-----------------------------------------------------------------------------------------------
 	{ dir = "~/Dev/Plugins/teleprompt.nvim" },
-    {
+   {
         dir = "~/Dev/Plugins/gitbar.nvim",
         dependencies = {'MunifTanjim/nui.nvim'}
     },
@@ -103,7 +97,6 @@ local M = {
         opts = {
         }
     }
-
 }
 
 return M
