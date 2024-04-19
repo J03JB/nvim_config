@@ -8,10 +8,14 @@ local M = {
 	-----------------------------------------------------------------------------------------------
 	--  Colorschemes
 	-----------------------------------------------------------------------------------------------
-	"EdenEast/nightfox.nvim",
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
-    "J03JB/cyberdream.nvim",
+    "oxfist/night-owl.nvim",
+    {
+        "J03JB/cyberdream.nvim",
+        dir = "~/Dev/Plugins/cyberdream.nvim/",
+        dev = true,
+    },
 
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
@@ -81,7 +85,25 @@ local M = {
 	-- Plugin Dev
 	-----------------------------------------------------------------------------------------------
 	{ dir = "~/Dev/Plugins/teleprompt.nvim" },
-	{ dir = "~/Dev/Plugins/pasta.nvim" },
+    {
+        dir = "~/Dev/Plugins/gitbar.nvim",
+        dependencies = {'MunifTanjim/nui.nvim'}
+    },
+    {
+        "J03JB/pasta.nvim",
+        dir = "~/Dev/Plugins/pasta.nvim" ,
+        init = function()
+            require('pasta').setup()
+        end,
+    },
+    {
+        "NStefan002/speedtyper.nvim",
+        cmd = "Speedtyper",
+        dir = "~/throw-away/speedtyper.nvim",
+        opts = {
+        }
+    }
+
 }
 
 return M
