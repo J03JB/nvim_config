@@ -46,6 +46,7 @@ map("n", "<C-d>",      "<C-d>zz")             -- page down and center
 map("n", "<C-u>",      "<C-u>zz")             -- page up and center
 map("n", "<leader>xp", ":call setreg('+', getreg('@'))<CR>") -- copy paste register to system clipboard
 map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
+map("n", "<leader>/",  ":normal gcc<CR>")         -- comment line in normal mode
 
 map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in insert mode
 map("i", "<c-k>",      "<esc>ki")             -- ctrl + k to move up a line in insert mode
@@ -65,6 +66,7 @@ map("v", "K",          ":move '<-2<CR>gv=gv") -- Move selected line / block of t
 map("x", "<leader>p",          '"_dP')                -- replace selected text in visual mode. sends to blackhole.
 map("x", "Q",          ":norm @q<CR>")        -- Q in visual mode to repeat macro
 map("x", "<leader>y",  [["+y]])               -- copy to system clipboard in visual mode
+map("x", "<leader>/",  ":normal gcc<CR>")     -- comment line in visual mode
 
 
 -- Search and replace word under cursor
