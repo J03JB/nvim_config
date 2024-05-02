@@ -23,6 +23,7 @@ local M = {
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
+    { 'mbbill/undotree' },
 	{ "fladson/vim-kitty" },
     {
         "sindrets/diffview.nvim",
@@ -81,7 +82,8 @@ local M = {
 	{ dir = "~/Dev/Plugins/teleprompt.nvim" },
    {
         dir = "~/Dev/Plugins/gitbar.nvim",
-        dependencies = {'MunifTanjim/nui.nvim'}
+        dependencies = {'MunifTanjim/nui.nvim'},
+        dev = true,
     },
     {
         "J03JB/pasta.nvim",
