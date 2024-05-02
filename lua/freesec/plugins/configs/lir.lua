@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
 	"tamago324/lir.nvim",
 	dependencies = {
@@ -13,7 +14,7 @@ return {
 
 		require("lir").setup({
 			show_hidden_files = false,
-			ignore = {}, -- { ".DS_Store", "node_modules" } etc.
+			ignore = { ".DS_Store", "node_modules" }, -- { ".DS_Store", "node_modules" } etc.
 			devicons = {
 				enable = true,
 				highlight_dirname = true,
