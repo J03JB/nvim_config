@@ -55,7 +55,7 @@ function M. config()
 
     -- Toggle previous & next buffers stored within Harpoon list
     vim.keymap.set("n", "<M-p>", function() harpoon:list():prev() end, { desc = "Harpoon previous file"})
-    vim.keymap.set("n", "<M-n>", function() harpoon:list():next() end, { desc = "Harpoon nexg file"} )
+    vim.keymap.set("n", "<M-n>", function() harpoon:list():next() end, { desc = "Harpoon next file"} )
 
 end
 
