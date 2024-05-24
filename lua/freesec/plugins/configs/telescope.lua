@@ -1,10 +1,10 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.5",
+	tag = "0.1.6",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"tsakirist/telescope-lazy.nvim",
-		{ "nvim-telescope/telescope-ui-select.nvim" },
+        "nvim-telescope/telescope-ui-select.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",

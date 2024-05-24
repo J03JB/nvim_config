@@ -8,6 +8,7 @@ return {
 				skip_confirm_for_simple_edits = true,
 				keymaps = {
 					["q"] = "actions.close",
+                    ["<C-v>"] = "actions.select_vsplit",
 				},
 			}
 			vim.keymap.set("n", "-", "<cmd>Oil<CR>")
