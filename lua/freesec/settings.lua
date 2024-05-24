@@ -2,9 +2,9 @@
 --		 _____        __   __   _
 --		/ ___/ ___   / /_ / /_ (_)____   ____ _ _____
 --		\__ \ / _ \ / __// __// // __ \ / __ `// ___/
---		___/ //  __// /_ / /_ / // / / // /_/ /(__  )
---	/____/ \___/ \__/ \__//_//_/ /_/ \__, //____/
---	             								  /____/
+--	   ___/ //  __// /_ / /_ / // / / // /_/ /(__  )
+--	  /____/ \___/ \__/ \__//_//_/ /_/ \__, //____/
+--	             					  /____/
 --
 -- ###################################################################################
 
@@ -21,7 +21,7 @@ opt.autowrite = true
 opt.autowriteall = true
 opt.background = "dark" -- Dark background
 opt.backup = false -- No backup file
-opt.clipboard = { "unnamed" } -- Copy paste between vim and everything else
+opt.clipboard = { "unnamedplus" } -- Copy paste between vim and everything else
 opt.cmdheight = 1 -- More space for displaying messages
 opt.cursorline = true -- Highlight current line
 opt.diffopt = "vertical" -- Diff in vertical split
@@ -32,7 +32,7 @@ opt.ignorecase = true -- case insensitive search
 opt.smartcase = true -- But sensitice if includes capital letter
 opt.inccommand = "split" --Show live results of substitute
 opt.incsearch = true -- Show results as you search
--- opt.lazyredraw = true -- Only redraw when need to
+-- opt.lazyredraw = true -- Only redraw when need tosettings
 opt.list = true
 opt.listchars = {
 	nbsp = "⦸",

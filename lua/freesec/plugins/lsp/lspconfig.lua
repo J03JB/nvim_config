@@ -51,10 +51,11 @@ M.on_attach = function(client, bufnr)
 	end
 end
 
-M.inlay_toggle = function()
-	local bufnr = vim.api.nvim_get_current_buf()
-	vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
-end
+-- TODO: fix this fo 0.10
+-- M.inlay_toggle = function()
+	-- local bufnr = vim.api.nvim_get_current_buf()
+	-- vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
+-- end
 
 function M.common_capabilities()
 	local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -77,7 +78,7 @@ local handlers = {
 vim.diagnostic.config({
 	float = {
 		border = border,
-		source = "always",
+		source = "if_many",
 	},
 })
 

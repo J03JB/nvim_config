@@ -10,27 +10,30 @@ local M = {
 	-----------------------------------------------------------------------------------------------
 	"navarasu/onedark.nvim",
 	"folke/tokyonight.nvim",
-    "oxfist/night-owl.nvim",
-    {
-        "J03JB/cyberdream.nvim",
-        dir = "~/Dev/Plugins/cyberdream.nvim/",
-        dev = true,
-    },
+	"oxfist/night-owl.nvim",
+	"HoNamDuong/hybrid.nvim",
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "rose-pine/neovim", name = "rose-pine" },
+	{
+		"J03JB/cyberdream.nvim",
+		dir = "~/Dev/Plugins/cyberdream.nvim/",
+		dev = true,
+	},
 
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
-    -----------------------------------------------------------------------------------------------
+	-----------------------------------------------------------------------------------------------
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- { "saecki/crates.nvim", event = { "BufRead Cargo.toml" } },
 	{ "aouelete/sway-vim-syntax", ft = "sway" },
-    { 'mbbill/undotree' },
+	{ "mbbill/undotree" },
 	{ "fladson/vim-kitty" },
-    {
-        "sindrets/diffview.nvim",
-        keys ={
-            { "<space>vv", ":DiffviewOpen ", desc = "Open DiffView" },
-        },
-    },
+	{
+		"sindrets/diffview.nvim",
+		keys = {
+			{ "<space>vv", ":DiffviewOpen ", desc = "Open DiffView" },
+		},
+	},
 	-----------------------------------------------------------------------------------------------
 	-- TrueZen
 	-----------------------------------------------------------------------------------------------
@@ -58,7 +61,7 @@ local M = {
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-        ft = { "markdown" },
+		ft = { "markdown" },
 		keys = {
 			{ "<leader>md", "<cmd>MarkdownPreview<CR>", desc = "toggle MarkdownPreview" },
 		},
@@ -75,7 +78,6 @@ local M = {
 	--         require('luasnip_snippets.common.snip_utils').setup()
 	--     end
 	-- },
-
 }
 
 return M
