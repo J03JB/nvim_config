@@ -17,9 +17,9 @@ require("lazy").setup({
 		colorscheme = { "cyberdream" },
 	},
 	spec = {
-		{ import = "freesec.plugins" },
-		{ import = "freesec.plugins.lsp" },
-		{ import = "freesec.plugins.configs" },
+		{ import = "jb.plugins" },
+		{ import = "jb.plugins.lsp" },
+		{ import = "jb.plugins.configs" },
 	},
     dev = {
         path = "~/Dev/Plugins",
@@ -49,7 +49,7 @@ require("lazy").setup({
 })
 
 -- keymaps
-local map = require("freesec.utils").map
+local map = require("jb.utils").map
 
 map("n", "<Leader>l", ":Lazy<CR>")
 map("n", "<Leader>ls", ":Lazy sync<CR>")

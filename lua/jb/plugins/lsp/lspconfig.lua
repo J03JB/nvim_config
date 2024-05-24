@@ -23,7 +23,7 @@ local function lsp_keymaps(bufnr)
 	keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 	keymap.set("n", "<leader>d",  vim.diagnostic.open_float, opts) -- show diagnostics for line
 	keymap.set("n", "<leader>D",  "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-	keymap.set("n", "<leader>lh", "<cmd>lua require('freesec.plugins.lsp.lspconfig').inlay_toggle()<CR>)", opts)
+	keymap.set("n", "<leader>lh", "<cmd>lua require('jb.plugins.lsp.lspconfig').inlay_toggle()<CR>)", opts)
 	keymap.set("n", "<leader>q",  "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 	keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
@@ -115,7 +115,7 @@ function M.config()
 			handlers = handlers,
 		}
 
-		local require_ok, settings = pcall(require, "freesec.lspsettings." .. server)
+		local require_ok, settings = pcall(require, "jb.lspsettings." .. server)
 		if require_ok then
 			---@diagnostic disable-next-line: cast-local-type
 			opts = vim.tbl_deep_extend("force", settings, opts)

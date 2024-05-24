@@ -1,4 +1,4 @@
-local map = require("freesec.utils").map
+local map = require("jb.utils").map
 local themes = require("telescope.themes")
 local M = {}
 
@@ -12,7 +12,7 @@ function M.dotfiles()
 	}))
 end
 
-map("n", "<leader>fd", '<cmd>lua require"freesec.telescope-custom".dotfiles()<cr>')
+map("n", "<leader>fd", '<cmd>lua require"jb.telescope-custom".dotfiles()<cr>')
 
 function M.grep_last_search()
 	require("telescope.builtin").grep_string({
@@ -30,7 +30,7 @@ function M.grep_last_search()
 	})
 end
 
-map("n", "<leader>f/", '<cmd>lua require"freesec.telescope-custom".grep_last_search()<cr>')
+map("n", "<leader>f/", '<cmd>lua require"jb.telescope-custom".grep_last_search()<cr>')
 
 function M.edit_zsh()
 	require("telescope.builtin").find_files({
@@ -46,7 +46,7 @@ function M.edit_zsh()
 	})
 end
 
-map("n", "<leader>ez", '<cmd>lua require"freesec.telescope-custom".edit_zsh()<cr>')
+map("n", "<leader>ez", '<cmd>lua require"jb.telescope-custom".edit_zsh()<cr>')
 
 function M.edit_neovim()
 	local opts
@@ -79,6 +79,6 @@ function M.edit_neovim()
 	require("telescope.builtin").find_files(opts)
 end
 
-map("n", "<leader>ev", '<cmd>lua require"freesec.telescope-custom".edit_neovim()<cr>')
+map("n", "<leader>ev", '<cmd>lua require"jb.telescope-custom".edit_neovim()<cr>')
 
 return M

@@ -8,7 +8,7 @@ return {
     ft = { "rust" },
 
     config = function()
-        local lspconfig = require("freesec.plugins.lsp.lspconfig")
+        local lspconfig = require("jb.plugins.lsp.lspconfig")
         vim.g.rustaceanvim = {
             -- inlay_hints = {
             -- 	highlight = "NonText",
@@ -66,7 +66,7 @@ return {
                     --     keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
                     --     keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
                     --     keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-                    --     keymap.set("n", "<leader>lh", "<cmd>lua require('freesec.plugins.lsp.lspconfig').inlay_toggle()<CR>)", opts)
+                    --     keymap.set("n", "<leader>lh", "<cmd>lua require('jb.plugins.lsp.lspconfig').inlay_toggle()<CR>)", opts)
                     --     keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
                     --     keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
                     --     keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary

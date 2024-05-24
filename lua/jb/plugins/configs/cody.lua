@@ -6,7 +6,7 @@ return {
 
 	config = function()
 		require("sg").setup({
-			on_attach = require("freesec.plugins.lsp.lspconfig").on_attach,
+			on_attach = require("jb.plugins.lsp.lspconfig").on_attach,
 			enable_cody = true,
 		})
 	end,
@@ -39,7 +39,7 @@ return {
     vim.keymap.set("v",
         "<leader>ca",
         function()
-            local utils = require("freesec.utils")
+            local utils = require("jb.utils")
             local buf = vim.api.nvim_get_current_buf()
             local start_row, end_row = utils.get_visual_selection_rows()
 

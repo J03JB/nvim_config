@@ -1,0 +1,6 @@
+require("jb.settings")
+require("jb.lazy")
+require("jb.key_mappings")
+require("jb.utils")
+require("jb.autocmds")
+require("jb.colorscheme")

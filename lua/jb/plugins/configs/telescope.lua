@@ -16,8 +16,8 @@ return {
 
 	keys = {
         -- telescope-custom.lua
-        { "<leader>ev", "<cmd>lua require'freesec.telescope-custom'.edit_neovim()<cr>", desc = "nvim config" },
-		{ "<leader>fd", '<cmd>lua require"freesec.telescope-custom".dotfiles()<cr>', desc = "show dotfiles" },
+        { "<leader>ev", "<cmd>lua require'jb.telescope-custom'.edit_neovim()<cr>", desc = "nvim config" },
+		{ "<leader>fd", '<cmd>lua require"jb.telescope-custom".dotfiles()<cr>', desc = "show dotfiles" },
         -- Telescope builtins
 		{ "<leader>bb", "<cmd>Telescope buffers theme=dropdown<CR>",       desc = "show buffers" },
 		{ "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<CR>",    desc = "search buffer" },

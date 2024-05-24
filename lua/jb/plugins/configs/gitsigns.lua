@@ -2,7 +2,7 @@ return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufRead", "BufNewFile" },
 	config = function()
-		local map = require("freesec.utils").map
+		local map = require("jb.utils").map
 		require("gitsigns").setup({
 			signs = {
 				add = { text = "+" },

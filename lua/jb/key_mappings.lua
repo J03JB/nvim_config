@@ -8,7 +8,7 @@
 --
 -- ###################################################################################
 
-local map = require("freesec.utils").map
+local map = require("jb.utils").map
 
 -- Map space to leader
 vim.g.mapleader = " "

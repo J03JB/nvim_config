@@ -22,7 +22,7 @@ local groups = {
 		-- resizes splits when terminal gets resized
 		{ "WinResized", "*", "wincmd =" },
     },
-	freesec = {
+	jb = {
 		-- Hide cursorline in insert mode
 		{ "InsertLeave,WinEnter", "*", "set cursorline" },
 		{ "InsertEnter,WinLeave", "*", "set nocursorline" },
@@ -38,4 +38,4 @@ local groups = {
 	},
 }
 
-require("freesec.utils").create_augroups(groups)
+require("jb.utils").create_augroups(groups)

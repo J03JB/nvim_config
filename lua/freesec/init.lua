@@ -1,6 +1,0 @@
-require("freesec.settings")
-require("freesec.lazy")
-require("freesec.key_mappings")
-require("freesec.utils")
-require("freesec.autocmds")
-require("freesec.colorscheme")
