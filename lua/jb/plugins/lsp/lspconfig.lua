@@ -75,11 +75,19 @@ local handlers = {
 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
+
+-- Change the Diagnostic symbols in the sign column (gutter)
+local deez_icons = {
+	[vim.diagnostic.severity.ERROR] = " ",
+	[vim.diagnostic.severity.WARN] = " ",
+	[vim.diagnostic.severity.HINT] = "󰠠 ",
+	[vim.diagnostic.severity.INFO] = " ",
+}
+
+-- Apply diagnostics settings
 vim.diagnostic.config({
-	float = {
-		border = border,
-		source = "if_many",
-	},
+	float = { border = border, source = "if_many" },
+	signs = { text = deez_icons },
 })
 
 function M.config()
