@@ -16,7 +16,7 @@ local function lsp_keymaps(bufnr)
 	keymap.set("n", "gd",         "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 	keymap.set("n", "gD",         vim.lsp.buf.declaration, opts) -- go to declaration
 	keymap.set("n", "gi",         "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
-	keymap.set("n", "gr",         "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	keymap.set("n", "gr",         vim.lsp.buf.references, opts)
 	keymap.set("n", "gR",         "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 	keymap.set("n", "gt",         "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 	keymap.set("n", "K",          vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
@@ -24,11 +24,11 @@ local function lsp_keymaps(bufnr)
 	keymap.set("n", "<leader>d",  vim.diagnostic.open_float, opts) -- show diagnostics for line
 	keymap.set("n", "<leader>D",  "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 	keymap.set("n", "<leader>lh", "<cmd>lua require('jb.plugins.lsp.lspconfig').inlay_toggle()<CR>)", opts)
-	keymap.set("n", "<leader>q",  "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+	keymap.set("n", "<leader>q",  vim.diagnostic.setloclist, opts)
 	keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 	keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-	keymap.set("n", "[d",         "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	keymap.set("n", "]d",         "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+	keymap.set("n", "[d",         vim.diagnostic.goto_prev, opts)
+	keymap.set("n", "]d",         vim.diagnostic.goto_next, opts)
 end
 
 M.on_attach = function(client, bufnr)
@@ -51,12 +51,6 @@ M.on_attach = function(client, bufnr)
 	end
 end
 
--- TODO: fix this fo 0.10
--- M.inlay_toggle = function()
-	-- local bufnr = vim.api.nvim_get_current_buf()
-	-- vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
--- end
-
 function M.common_capabilities()
 	local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 	if status_ok then
@@ -68,6 +62,7 @@ function M.common_capabilities()
 	return capabilities
 end
 
+-- Diagnostic Settings
 -- Add border to floating windows for lsp diagnostics
 local border = vim.g.floating_window_border
 
@@ -109,13 +104,6 @@ function M.config()
 		"gopls",
 	}
 
-	-- Change the Diagnostic symbols in the sign column (gutter)
-	local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-	for type, icon in pairs(signs) do
-		local hl = "DiagnosticSign" .. type
-		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-	end
-
 	for _, server in ipairs(servers) do
 		local opts = {
 			on_attach = M.on_attach,
@@ -129,9 +117,9 @@ function M.config()
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end
 
-		if server == "lua_ls" then
-			require("neodev").setup({})
-		end
+		-- if server == "lua_ls" then
+			-- require("neodev").setup({})
+		-- end
 
 		lspconfig[server].setup(opts)
 	end
