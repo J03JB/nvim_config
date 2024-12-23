@@ -4,7 +4,6 @@ local M = {
 
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
@@ -29,6 +28,9 @@ local function lsp_keymaps(bufnr)
 	keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 	keymap.set("n", "[d",         vim.diagnostic.goto_prev, opts)
 	keymap.set("n", "]d",         vim.diagnostic.goto_next, opts)
+    -- figure this out for deprecated above
+	-- keymap.set("n", "[d",         vim.diagnostic.jump({count=-1, float=true }), opts)
+	-- keymap.set("n", "]d",         vim.diagnostic.jump({count=1, float=true }), opts)
 end
 
 M.on_attach = function(client, bufnr)
@@ -49,17 +51,6 @@ M.on_attach = function(client, bufnr)
 			callback = vim.lsp.buf.clear_references,
 		})
 	end
-end
-
-function M.common_capabilities()
-	local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-	if status_ok then
-		return cmp_nvim_lsp.default_capabilities()
-	end
-
-	local capabilities = cmp_nvim_lsp.default_capabilities()
-
-	return capabilities
 end
 
 -- Diagnostic Settings
@@ -98,16 +89,19 @@ function M.config()
 		"vimls",
 		"jsonls",
 		"marksman",
-		"tsserver",
+		"ts_ls",
 		"htmx",
 		"yamlls",
 		"gopls",
 	}
 
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 	for _, server in ipairs(servers) do
 		local opts = {
 			on_attach = M.on_attach,
-			capabilities = M.common_capabilities(),
+
+			capabilities = capabilities,
 			handlers = handlers,
 		}
 
