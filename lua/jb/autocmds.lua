@@ -11,7 +11,7 @@ local groups = {
 		{
 			"TextYankPost",
 			"*",
-			[[lua require('vim.highlight').on_yank({ higroup = 'Substitute', timeout = 500 })]],
+			[[lua require('vim.hl').on_yank({ higroup = 'Substitute', timeout = 500 })]],
 		},
 	},
     close_with_q = {

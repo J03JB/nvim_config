@@ -12,15 +12,7 @@ return {
 				checkThirdParty = false,
 			},
 			telemetry = { enable = false },
-			hint = {
-				enable = false,
-				arrayIndex = "Disable",
-				await = true,
-				paraName = "Disable",
-				paramType = false,
-				semicolon = "All",
-				setType = false,
-			},
 		},
 	},
 }
+
