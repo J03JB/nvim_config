@@ -14,6 +14,7 @@ local colors = {
 
 return {
 	"nvim-lualine/lualine.nvim",
+    dependencies = {   "AndreM222/copilot-lualine" },
 
 	config = function()
 		require("lualine").setup({
@@ -71,7 +72,17 @@ return {
 					"filetype",
 					"encoding",
 				},
-				lualine_y = { "fileformat" },
+				lualine_y = {
+                    {
+                        "copilot",
+                        show_colors = true,
+                        padding = 2,
+                        symbols = {
+                            spinners = require("copilot-lualine.spinners").dots,
+                        },
+                    },
+                     -- "fileformat"
+                },
 				lualine_z = { "progress", "location" },
 			},
 			inactive_sections = {

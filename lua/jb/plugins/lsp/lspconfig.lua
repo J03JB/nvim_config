@@ -6,6 +6,7 @@ local M = {
 	dependencies = {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
+        { "saghen/blink.cmp" },
 	},
 }
 local function lsp_keymaps(bufnr)
