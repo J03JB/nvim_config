@@ -1,32 +1,33 @@
-# My Neovim Config
+# My Neovim config
 
 ![rust_file](Screenshots/screenshot_rs.png)
 
 ## Plugins
 
+- [Autopairs](https://github.com/windwp/nvim-autopairs)
+- [Blink.com](https://github.com/Saghen/blink.cmp)
+- [Copilot](https://github.com/zbirenbaum/copilot.lua)
+- [Fidget](https://github.com/j-hui/fidget.nvim)
+- [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [Harpoon](https://github.com/ThePrimeagen/harpoon)
+- [Indent blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [Mason](https://github.com/williamboman/mason.nvim)
 - [Nvim-Tree](https://github.com/nvim-tree/nvim-tree.lua)
-- [Fidget](https://github.com/j-hui/fidget.nvim)
+- [Oil](https://github.com/stevearc/oil.nvim)
+- [Tabout.nvim](https://github.com/abecodes/tabout.nvim)
+- [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [Todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [Autopairs](https://github.com/windwp/nvim-autopairs)
-- [Indent blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Trouble.nvim](https://github.com/folke/trouble.nvim)
-- [Git fugitive](https://github.com/tpope/vim-fugitive)
-- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
-- [WhichKey](https://github.com/folke/which-key.nvim)
 - [True-Zen](https://github.com/pocco81/true-zen.nvim)
+- [Vim fugitive](https://github.com/tpope/vim-fugitive)
+- [WhichKey](https://github.com/folke/which-key.nvim)
 
 ## Coloring
 
-[TokyoNight](https://github.com/folke/tokyonight.nvim)
-
-## Notes
-
-> Config does not use `unamedplus` as clipboard.
-> Use `<leader>y` or `<leader>Y` to yank to system clipboard
+[TokyoNight](https://github.com/folke/tokyonight.nvim)  
+[CyberDream](https://github.com/scottmckendry/cyberdream.nvim)
 
 ---  
 
@@ -38,7 +39,6 @@
 `Ctrl+e` - to scroll screen down one line (without moving cursor)  
 `g;` - jump to last edit made  
 `*` - to look for word under cursor  
-`%` - to jump to  matching bracket  
 
 ### Insert mode
 
