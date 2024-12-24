@@ -1,17 +1,8 @@
 return {
 	"sourcegraph/sg.nvim",
-    event = "insertEnter",
 
     dependencies = "nvim-lua/plenary.nvim",
 
-	config = function()
-		require("sg").setup({
-			on_attach = require("jb.plugins.lsp.lspconfig").on_attach,
-			enable_cody = true,
-		})
-	end,
-
-    -- vim.keymap.set("v", "<space>ca", ":CodyAsk "),
 
 	-- Toggle cody chat
 	vim.keymap.set("n", "<space>co", function()
