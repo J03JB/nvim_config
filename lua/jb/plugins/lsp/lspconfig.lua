@@ -5,7 +5,6 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
         { "saghen/blink.cmp" },
 	},
 }
@@ -78,7 +77,6 @@ vim.diagnostic.config({
 })
 
 function M.config()
-	require("neodev").setup()
 	local lspconfig = require("lspconfig")
 	local servers = {
 		"html",
@@ -111,10 +109,6 @@ function M.config()
 			---@diagnostic disable-next-line: cast-local-type
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end
-
-		-- if server == "lua_ls" then
-			-- require("neodev").setup({})
-		-- end
 
 		lspconfig[server].setup(opts)
 	end
