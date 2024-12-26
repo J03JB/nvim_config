@@ -1,55 +1,12 @@
-local colors = {
-	bg = "#282c34",
-	fg = "#abb2bf",
-	yellow = "#e0af68",
-	cyan = "#56b6c2",
-	darkblue = "#081633",
-	green = "#98c379",
-	orange = "#d19a66",
-	violet = "#a9a1e1",
-	magenta = "#c678dd",
-	blue = "#61afef",
-	red = "#e86671",
-}
-
 return {
 	"nvim-lualine/lualine.nvim",
-    dependencies = {   "AndreM222/copilot-lualine" },
+	dependencies = { "AndreM222/copilot-lualine" },
 
 	config = function()
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "cyberdream",
-				-- theme = {
-				-- 	normal = {
-				-- 		a = { fg = colors.fg, bg = colors.bg },
-				-- 		b = { fg = colors.yellow, bg = colors.bg },
-				-- 		c = { fg = colors.fg, bg = colors.bg },
-				-- 	},
-				-- 	insert = {
-				-- 		a = { fg = colors.blue, bg = colors.bg },
-				-- 		b = { fg = colors.yellow, bg = colors.bg },
-				-- 		x = { fg = colors.fg, bg = colors.bg },
-				-- 		z = { fg = colors.fg, bg = colors.bg },
-				-- 	},
-				-- 	visual = {
-				-- 		a = { fg = colors.magenta, bg = colors.bg },
-				-- 		b = { fg = colors.yellow, bg = colors.bg },
-				-- 		c = { fg = colors.fg, bg = colors.bg },
-				-- 		z = { fg = colors.fg, bg = colors.bg },
-				-- 	},
-				-- 	command = { a = { fg = colors.orange, bg = colors.bg }, b = { fg = colors.yellow, bg = colors.bg } },
-				-- 	replace = { a = { fg = colors.fg, bg = colors.bg }, b = { fg = colors.yellow, bg = colors.bg } },
-
-				-- 	inactive = {
-				-- 		a = { bg = colors.bg, fg = colors.fg },
-				-- 		b = { bg = colors.yellow, fg = colors.bg },
-				-- 		c = { bg = colors.bg, fg = colors.fg },
-				-- 	},
-				-- },
-				-- section_separators = { left = "", right = "" },
-				-- component_separators = { left = "", right = "" },
+				theme = "auto",
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
 			},
@@ -70,20 +27,23 @@ return {
 				lualine_x = {
 					{ "diagnostics", sources = { "nvim_diagnostic" } },
 					"filetype",
-					"encoding",
+					-- "encoding",
 				},
 				lualine_y = {
-                    {
-                        "copilot",
-                        show_colors = true,
-                        padding = 2,
-                        symbols = {
-                            spinners = require("copilot-lualine.spinners").dots,
-                        },
-                    },
-                     -- "fileformat"
-                },
-				lualine_z = { "progress", "location" },
+					"fileformat",
+				},
+				lualine_z = {
+					"progress",
+					-- "location",
+					{
+						"copilot",
+						show_colors = true,
+						padding = 1,
+						symbols = {
+							spinners = require("copilot-lualine.spinners").dots,
+						},
+					},
+				},
 			},
 			inactive_sections = {
 				lualine_a = {},
