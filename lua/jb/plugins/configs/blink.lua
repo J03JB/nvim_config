@@ -15,7 +15,10 @@ return {
 	version = "v0.*",
 	opts = {
 		keymap = {
-			preset = "super-tab",
+            ['<Tab>'] = { 'select_next', 'fallback' },
+            ['<S-Tab>'] = { 'select_prev', 'fallback' },
+            ['<CR>'] = { 'accept', 'fallback' },
+
 			cmdline = {
 				preset = "super-tab",
 			},
