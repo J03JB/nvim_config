@@ -18,7 +18,6 @@ require("lazy").setup({
 	},
 	spec = {
 		{ import = "jb.plugins" },
-		{ import = "jb.plugins.lsp" },
 		{ import = "jb.plugins.configs" },
 	},
     dev = {

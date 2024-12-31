@@ -27,5 +27,6 @@ M.icons = {
 	Operator = "",
 	TypeParameter = "",
 }
+print(vim.inspect(M.icons))
 
 return M
