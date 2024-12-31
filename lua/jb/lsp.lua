@@ -107,23 +107,23 @@ lsp.enable("marksman")
 -- Gopls {{{
 lsp.config["gopls"] = {
 	cmd = { "gopls" },
-    root_markers = { ".git", "go.mod", "go.work" },
+	root_markers = { ".git", "go.mod", "go.work" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    settings = {
-        gopls = {
-            completeUnimported = true,
-            usePlaceholders = true,
-            analyses = {
-                unusedparams = true,
-            },
-            ["ui.inlayhint.hints"] = {
-                compositeLiteralFields = true,
-                constantValues = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-            }
-        }
-    }
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+			},
+			["ui.inlayhint.hints"] = {
+				compositeLiteralFields = true,
+				constantValues = true,
+				parameterNames = true,
+				rangeVariableTypes = true,
+			},
+		},
+	},
 }
 lsp.enable("gopls")
 -- }}}
@@ -135,6 +135,31 @@ vim.lsp.config["bashls"] = {
 }
 vim.lsp.enable("bashls")
 -- }}
+
+-- Typescript server {{{
+lsp.config["ts_ls"] = {
+	init_options = { hostInfo = "neovim" },
+	cmd = { "typescript-language-server", "--stdio" },
+	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+	single_file_support = true,
+}
+lsp.enable("ts_ls")
+-- }}}
+
+-- Yamlls {{{
+lsp.config["yamlls"] = {
+	cmd = { "yaml-language-server", "--stdio" },
+	filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab" },
+	settings = {
+		redhat = {
+			telemetry = {
+				enabled = false,
+			},
+		},
+	},
+}
+lsp.enable("yamlls")
+-- }}}
 
 -- Eslint {{
 lsp.config["eslint"] = {
@@ -167,7 +192,30 @@ lsp.config["tailwindcss"] = {
 		rust = "html",
 		rs = "html",
 	},
-	root_pattern = { "tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs", "tailwind.config.ts" },
+	root_markers = { "tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs", "tailwind.config.ts" },
+	{
+		settings = {
+			tailwindCSS = {
+				classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
+				includeLanguages = {
+					eelixir = "html-eex",
+					eruby = "erb",
+					htmlangular = "html",
+					templ = "html",
+				},
+				lint = {
+					cssConflict = "warning",
+					invalidApply = "error",
+					invalidConfigPath = "error",
+					invalidScreen = "error",
+					invalidTailwindDirective = "error",
+					invalidVariant = "error",
+					recommendedVariantOrder = "warning",
+				},
+				validate = true,
+			},
+		},
+	},
 }
 lsp.enable("tailwindcss")
 -- }}
