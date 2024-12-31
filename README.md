@@ -29,7 +29,7 @@
 [TokyoNight](https://github.com/folke/tokyonight.nvim)  
 [CyberDream](https://github.com/scottmckendry/cyberdream.nvim)
 
----  
+---
 
 ## Vim Tips & Tricks
 
@@ -38,9 +38,9 @@
 `Ctrl+y` - to scroll screen up one line (without moving cursor)  
 `Ctrl+e` - to scroll screen down one line (without moving cursor)  
 `g;` - jump to last edit made  
-`*` - to look for word under cursor  
+`*` - to look for word under cursor
 
 ### Insert mode
 
 `Ctrl+t` - indent line  
-`Ctrl+d` - outdent line  
+`Ctrl+d` - outdent line
