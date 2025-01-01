@@ -1,5 +1,5 @@
 return {
-    "/rustaceanvim",
+    "mrcjkb/rustaceanvim",
     version = "^4",
     dependencies = {
         "nvim-lua/plenary.nvim",
