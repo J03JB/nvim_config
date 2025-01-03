@@ -13,6 +13,7 @@ return {
 	},
 
 	lazy = true,
+    enabled = false,
 
 	keys = {
         -- telescope-custom.lua
