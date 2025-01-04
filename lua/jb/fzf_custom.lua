@@ -3,7 +3,8 @@ local M = {}
 function M.edit_nvim()
 	local dir = "~/.config/nvim"
 	require("fzf-lua").files({
-        prompt = "Nvim Config> ",
+        cwd_prompt = false,
+        prompt = "Nvim Config > ",
         cmd = "rg --files " .. dir,
         cwd = dir,
     })
