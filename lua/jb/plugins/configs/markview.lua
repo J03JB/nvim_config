@@ -8,6 +8,10 @@ return {
         "nvim-tree/nvim-web-devicons"
     },
 
+    keys = {
+        { "<leader>md", "<cmd>Markview<CR>", desc = "Markdown Preview" }
+    },
+
     opts = {
         -- Filetypes where the plugin is enabled
         filetypes = { "markdown", "quarto", "rmd" },

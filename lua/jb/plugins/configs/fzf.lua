@@ -20,8 +20,24 @@ return {
 		-- { "<leader>fu", "<cmd>Telescope undo<CR>",                         desc = "show undo list" },
 		{ "<leader>gc", "<cmd>lua require'fzf-lua'.git_commits()<cr>",                  desc = "Fzf Git Commits" },
 	},
+
 	config = function()
-		require("fzf-lua").setup()
+		require("fzf-lua").setup({
+            oldfiles = {
+                cwd_only = true,
+                stat_file = true,         -- verify files exist on disk
+            },
+            git = {
+                icons = {
+                    ["M"]        = { icon = "~", color = "yellow" },
+                    ["D"]        = { icon = "✗", color = "red" },
+                    ["A"]        = { icon = "+", color = "green" },
+                },
+            },
+
+
+        })
+
 		local actions = require("fzf-lua").actions
 		actions = {
 			files = {
@@ -33,5 +49,8 @@ return {
 				["alt-Q"] = actions.file_sel_to_ll,
 			},
 		}
+
+        -- use `fzf-lua` for replace vim.ui.select 
+        require("fzf-lua").register_ui_select()
 	end,
 }
