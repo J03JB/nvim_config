@@ -41,10 +41,7 @@ return {
 		completion = {
 			list = {
 				max_items = 200,
-				-- selection = "auto_insert",
-				selection = function(ctx)
-					return ctx.mode == "cmdline" and "auto_insert" or "preselect"
-				end,
+				selection = "auto_insert",
 			},
 			accept = {
 				auto_brackets = {
