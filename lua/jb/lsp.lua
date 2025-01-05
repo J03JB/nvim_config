@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 local deez_icons = {
 	[vim.diagnostic.severity.ERROR] = " ",
 	[vim.diagnostic.severity.WARN] = " ",
-	[vim.diagnostic.severity.HINT] = "󰠠 ",
+	[vim.diagnostic.severity.HINT] = " ",
 	[vim.diagnostic.severity.INFO] = " ",
 }
 
@@ -55,7 +55,7 @@ lsp.config("*", {
 	root_markers = { ".git" },
 })
 
--- Lua Lsp {{
+-- Lua Lsp {{{
 lsp.config["lua_ls"] = {
 	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
@@ -77,9 +77,9 @@ lsp.config["lua_ls"] = {
 	},
 }
 lsp.enable("lua_ls")
--- }}
+-- }}}
 
--- Pyright lsp {{
+-- Pyright lsp {{{
 lsp.config["pyright"] = {
 	cmd = { "pyright-langserver", "--stdio" },
 	filetypes = { "python" },
@@ -94,7 +94,7 @@ lsp.config["pyright"] = {
 	},
 }
 lsp.enable("pyright")
--- }}
+-- }}}
 
 -- Marksman {{{
 lsp.config["marksman"] = {
@@ -128,13 +128,13 @@ lsp.config["gopls"] = {
 lsp.enable("gopls")
 -- }}}
 
--- Bash Lsp {{
+-- Bash Lsp {{{
 vim.lsp.config["bashls"] = {
 	cmd = { "bash-language-server", "start" },
 	filetypes = { "sh", "bash" },
 }
 vim.lsp.enable("bashls")
--- }}
+-- }}}
 
 -- Typescript server {{{
 lsp.config["ts_ls"] = {
@@ -161,7 +161,7 @@ lsp.config["yamlls"] = {
 lsp.enable("yamlls")
 -- }}}
 
--- Eslint {{
+-- Eslint {{{
 lsp.config["eslint"] = {
 	cmd = { "vscode-eslint-language-server", "--stdio" },
 	root_markers = { "package.json", "package-lock.json" },
@@ -176,9 +176,17 @@ lsp.config["eslint"] = {
 	single_file_support = true,
 }
 lsp.enable("eslint")
--- }}
+-- }}}
 
--- Tailwindcss {{
+-- {{{
+lsp.config["jsonls"] = {
+    cmd = { "vscode-json-language-server", "--stdio" },
+    filetypes = { "json", "jsonc" },
+}
+lsp.enable("jsonls")
+-- }}}
+
+-- Tailwindcss {{{
 lsp.config["tailwindcss"] = {
 	cmd = { "tailwindcss-language-server", "--stdio" },
 	filetypes = {
@@ -218,4 +226,11 @@ lsp.config["tailwindcss"] = {
 	},
 }
 lsp.enable("tailwindcss")
--- }}
+-- }}}
+
+-- ctags {{{
+lsp.config["ctags-lsp"] = {
+    cmd = { "ctags-lsp" },
+}
+lsp.enable("ctags-lsp")
+-- }}}

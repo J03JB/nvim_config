@@ -1,13 +1,19 @@
 {
-	"name": "my-snip-snips",
-	"contributes": {
-		"snippets": [
-			{
-				"language": [
-					"rust"
-				],
-				"path": "./rust.json"
-			}
-		]
-	}
+  "name": "my-snip-snips",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "rust"
+        ],
+        "path": "./rust.json"
+      },
+      {
+        "language": [
+          "lua"
+        ],
+        "path": "./lua.json"
+      }
+    ]
+  }
 }
