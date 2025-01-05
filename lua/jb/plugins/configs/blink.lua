@@ -93,7 +93,7 @@ return {
 					name = "copilot",
 					module = "blink-cmp-copilot",
 					enabled = true,
-					score_offset = 1000,
+					score_offset = -4,
 					async = true,
 					transform_items = function(_, items)
 						local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
@@ -115,40 +115,9 @@ return {
 		},
 
 		appearance = {
-			kind_icons = {
-				Copilot = "",
-				Text = "",
-				Method = "",
-				Function = "",
-
-				Constructor = "",
-				Field = "",
-				Variable = "",
-				Property = "ﰠ",
-
-				Class = "ﴯ",
-				Interface = "",
-				Struct = "",
-				Module = "",
-
-				Unit = "",
-				Value = "",
-				Enum = "",
-				EnumMember = "",
-
-				Keyword = "",
-				Constant = "",
-
-				Snippet = "",
-				Color = "",
-				File = "",
-				Reference = "",
-				Folder = "",
-				Event = "",
-				Operator = "",
-				TypeParameter = "",
-			},
+            kind_icons = require("jb.utils").icons.kind
 		},
 	},
 	opts_extend = { "sources.default" },
 }
+
