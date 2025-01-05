@@ -15,9 +15,19 @@ return {
 	version = "v0.*",
 	opts = {
 		keymap = {
-            ['<Tab>'] = { 'select_next', 'fallback' },
-            ['<S-Tab>'] = { 'select_prev', 'fallback' },
-            ['<CR>'] = { 'accept', 'fallback' },
+			["<Tab>"] = {
+				function(cmp)
+					if cmp.snippet_active() then
+						return cmp.accept()
+					else
+						return require("blink.cmp").select_next()
+					end
+				end,
+				"snippet_forward",
+				"fallback",
+			},
+			["<S-Tab>"] = { "select_prev", "snippet_forward", "fallback" },
+			-- ['<CR>'] = { 'accept', 'fallback' },
 
 			cmdline = {
 				preset = "super-tab",
@@ -44,8 +54,21 @@ return {
 			menu = {
 				auto_show = true,
 				draw = {
-					-- columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
+					-- columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source" } },
 					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+					-- components = {
+						-- source = {
+							-- text = function(ctx)
+								-- local map = {
+									-- ["lsp"] = "[L]",
+									-- ["path"] = "[~]",
+									-- ["snippets"] = "[X]",
+								-- }
+								-- return map[ctx.item_source_id]
+							-- end,
+							-- highlight = "BlinkCmoSource",
+						-- },
+					-- },
 				},
 			},
 			-- Show documentation when selecting a completion item
@@ -59,6 +82,9 @@ return {
 		-- Experimental signature help support
 		signature = {
 			enabled = true,
+			window = {
+				border = "rounded",
+			},
 		},
 
 		sources = {
