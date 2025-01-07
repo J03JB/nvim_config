@@ -10,6 +10,7 @@ return {
 		{ "rafamadriz/friendly-snippets" },
 		{ "giuxtaposition/blink-cmp-copilot" },
 		{ "folke/lazydev.nvim" },
+        { 'mikavilpas/blink-ripgrep.nvim' },
 	},
 	-- use a release tag to download pre-built binaries
 	version = "v0.*",
@@ -51,25 +52,13 @@ return {
 			menu = {
 				auto_show = true,
 				draw = {
-					-- columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source" } },
-					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
-					-- components = {
-						-- source = {
-							-- text = function(ctx)
-								-- local map = {
-									-- ["lsp"] = "[L]",
-									-- ["path"] = "[~]",
-									-- ["snippets"] = "[X]",
-								-- }
-								-- return map[ctx.item_source_id]
-							-- end,
-							-- highlight = "BlinkCmoSource",
-						-- },
-					-- },
+					columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
+					-- columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+                    treesitter = { 'lsp' },
 				},
 			},
 			-- Show documentation when selecting a completion item
-			documentation = { auto_show = true, auto_show_delay_ms = 500 },
+			documentation = { window = { border = 'rounded' }, auto_show = true, auto_show_delay_ms = 500 },
 
 			ghost_text = {
 				enabled = true,
@@ -79,10 +68,8 @@ return {
 		-- Experimental signature help support
 		signature = {
 			enabled = true,
-			window = {
-				border = "rounded",
-			},
-		},
+			window = { border = "rounded" },
+        },
 
 		sources = {
 			providers = {
@@ -107,8 +94,9 @@ return {
 					module = "lazydev.integrations.blink",
 					score_offset = 100,
 				},
+                ripgrep = { max_items = 3, score_offset = -2, module = 'blink-ripgrep', name = 'ripgrep' },
 			},
-			default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
+			default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot", "ripgrep" },
 		},
 
 		appearance = {
