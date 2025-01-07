@@ -45,17 +45,11 @@ vim.diagnostic.config({
 
 -- LSP setup
 lsp.config("*", {
-	capabilities = {
-		textDocument = {
-			semanticTokens = {
-				multilineTokenSupport = true,
-			},
-		},
-	},
+    capabilities = require("blink.cmp").get_lsp_capabilities(),
 	root_markers = { ".git" },
 })
 
--- TODO: turn this into a function. 
+-- TODO: make this into a function
 -- Enable servers
 lsp.enable('lua_ls')
 lsp.enable("pyright")
@@ -66,5 +60,4 @@ lsp.enable("ts_ls")
 lsp.enable("eslint")
 lsp.enable("jsonls")
 lsp.enable("bashls")
-lsp.enable("ctags-lsp")
 lsp.enable("marksman")

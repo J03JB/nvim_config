@@ -9,10 +9,3 @@ vim.lsp.config["eslint"] = {
 	single_file_support = true,
 }
 -- }}}
-
--- {{{
-vim.lsp.config["jsonls"] = {
-    cmd = { "vscode-json-language-server", "--stdio" },
-    filetypes = { "json", "jsonc" },
-}
--- }}}

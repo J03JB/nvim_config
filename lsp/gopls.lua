@@ -1,4 +1,3 @@
--- Gopls {{{
 vim.lsp.config["gopls"] = {
 	cmd = { "gopls" },
 	root_markers = { ".git", "go.mod", "go.work" },
@@ -19,4 +18,3 @@ vim.lsp.config["gopls"] = {
 		},
 	},
 }
--- }}}
