@@ -12,13 +12,17 @@ local M = {
 	"folke/tokyonight.nvim",
 	"oxfist/night-owl.nvim",
 	"HoNamDuong/hybrid.nvim",
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
-	{
-		"J03JB/cyberdream.nvim",
-		dir = "~/Dev/Plugins/cyberdream.nvim/",
-		dev = true,
-	},
+	-- {
+		-- "J03JB/cyberdream.nvim",
+		-- dir = "~/Dev/Plugins/cyberdream.nvim/",
+		-- dev = true,
+	-- },
+    {
+        "scottmckendry/cyberdream.nvim",
+        lazy = false,
+    },
 
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life

@@ -108,7 +108,7 @@ end
 if vim.g.neovide then
 	vim.g.neovide_confirm_quit = true
 	vim.g.neovide_cursor_animate_command_line = false
-	vim.g.neovide_input_macos_alt_is_meta = true
+	vim.g.neovide_input_macos_option_is_meta = true
 	vim.g.neovide_input_use_logo = 1
 	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
 	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
