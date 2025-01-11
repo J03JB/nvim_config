@@ -11,7 +11,7 @@ return {
 			javascript = { { "prettierd", "prettier" } },
 			json = { "jq" },
 			yaml = { "yamlfmt" },
-			go = { "gofmt" },
+			go = { "gofumpt" },
 			markdown = { "prettier", "markdownlint" },
 		},
 		-- Set up format-on-save
