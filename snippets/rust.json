@@ -30,26 +30,47 @@
   },
   "result": {
     "prefix": "res",
-    "body": ["Result<${1:$TM_SELECTED_TEXT}, ${2:dyn std::error::Error}>"]
+    "body": [
+      "Result<${1:$TM_SELECTED_TEXT}, ${2:dyn std::error::Error}>"
+    ]
   },
   "boxed error": {
     "prefix": "be",
-    "body": ["Box<dyn error::Error>"]
+    "body": [
+      "Box<dyn error::Error>"
+    ]
   },
   "anyhow error": {
     "prefix": "ae",
-    "body": ["anyhow::Error"]
+    "body": [
+      "anyhow::Error"
+    ]
   },
   "anyhow result": {
     "prefix": "ar",
-    "body": ["anyhow::Result<${1:$TM_SELECTED_TEXT}>"]
+    "body": [
+      "anyhow::Result<${1:$TM_SELECTED_TEXT}>"
+    ]
   },
   "println": {
     "prefix": "pl",
-    "body": ["println!(\"$1\");"]
+    "body": [
+      "println!(\"$1\");"
+    ]
   },
   "rustdoc": {
     "prefix": "/",
-    "body": ["/// "]
+    "body": [
+      "/// "
+    ]
+  },
+  "test": {
+    "prefix": "test",
+    "body": [
+      "#[test]",
+      "fn ${1:test_name}() {",
+      "    ${0}",
+      "};"
+    ]
   }
 }

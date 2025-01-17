@@ -9,6 +9,7 @@ local M = {
 	--  Colorschemes
 	-----------------------------------------------------------------------------------------------
 	"navarasu/onedark.nvim",
+    "sainnhe/sonokai",
 	"folke/tokyonight.nvim",
 	"oxfist/night-owl.nvim",
 	"HoNamDuong/hybrid.nvim",

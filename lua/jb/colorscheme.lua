@@ -38,7 +38,17 @@ function M.cyberdream()
 	vim.cmd.colorscheme("cyberdream")
 end
 
+function M.sonokai()
+        -- vim.g.sonokai_style = "shusia"
+        vim.g.sonokai_style = "atlantis"
+        vim.g.sonokai_enable_italic = true
+        vim.g.sonokai_diagnostic_virtual_text = 'colored'
+        vim.g.sonokai_diagnostic_line_highlight = true
+        vim.cmd.colorscheme 'sonokai'
+end
+
 -- M.onedark()
-M.cyberdream()
+-- M.cyberdream()
+M.sonokai()
 
 return M
