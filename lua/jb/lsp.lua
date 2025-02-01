@@ -9,8 +9,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		if client:supports_method("textDocument/inlayHint") then
 			vim.lsp.inlay_hint.enable(true)
 		end
-		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-		vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+        if client:supports_method("textDocument/declaration") then
+            vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { buffer = true })
+        end
+        vim.keymap.set("n", "grd", vim.lsp.buf.definition, { buffer = true })
+		vim.keymap.set("n", "[d", function() vim.diagnostic.jump({count=-1, float=true}) end)
+		vim.keymap.set("n", "]d", function() vim.diagnostic.jump({count=1, float=true}) end)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 
 		if client.server_capabilities.documentHighlightProvider then
