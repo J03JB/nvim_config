@@ -53,15 +53,13 @@ lsp.config("*", {
 	root_markers = { ".git" },
 })
 
--- TODO: make this into a function
+
 -- Enable servers
-lsp.enable('lua_ls')
-lsp.enable("pyright")
-lsp.enable('gopls')
-lsp.enable("tailwindcss")
-lsp.enable("yamlls")
-lsp.enable("ts_ls")
-lsp.enable("eslint")
-lsp.enable("jsonls")
-lsp.enable("bashls")
-lsp.enable("marksman")
+local files = require("plenary.scandir").scan_dir("lsp/", { depth = 1 })
+
+for _, file in ipairs(files) do
+    local server_name = file:match("([^/]+)%.lua$")
+    if server_name then
+        lsp.enable(server_name)
+    end
+end
