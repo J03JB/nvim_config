@@ -13,12 +13,14 @@ return {
     },
 
     opts = {
-        -- Filetypes where the plugin is enabled
-        filetypes = { "markdown", "quarto", "rmd" },
         -- Highlight groups to use
         -- "dynamic" | "light" | "dark"
         highlight_groups = "dynamic",
-        modes = { "n", "no", "c" },
-        initial_state = false
+        previem = {
+            modes = { "n", "no", "c" },
+            initial_state = false,
+            -- Filetypes where the plugin is enabled
+            filetypes = { "markdown", "quarto", "rmd" },
+        }
     }
 }
