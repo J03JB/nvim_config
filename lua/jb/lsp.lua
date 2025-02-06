@@ -13,8 +13,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
             vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { buffer = true })
         end
         vim.keymap.set("n", "grd", vim.lsp.buf.definition, { buffer = true })
-		vim.keymap.set("n", "[d", function() vim.diagnostic.jump({count=-1, float=true}) end)
-		vim.keymap.set("n", "]d", function() vim.diagnostic.jump({count=1, float=true}) end)
+        vim.keymap.set('n', ']d', function()
+            vim.diagnostic.jump({ count = vim.v.count1, float = true })
+        end, { desc = 'Jump to the next diagnostic in the current buffer' })
+        vim.keymap.set('n', '[d', function()
+            vim.diagnostic.jump({ count = vim.v.count-1, float = true })
+        end, { desc = 'Jump to the previous diagnostic in the current buffer' })
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 
 		if client.server_capabilities.documentHighlightProvider then
@@ -42,9 +46,9 @@ local deez_icons = {
 
 -- Apply diagnostics settings
 vim.diagnostic.config({
-	float = { border = vim.g.floating_window_border, source = "if_many" },
+	float = { border = vim.g.floating_window_border, source = "if_many", true },
 	signs = { text = deez_icons },
-	virtual_text = true,
+	virtual_text = { true, virt_text_pos = 'right_align' },
 })
 
 -- LSP setup
