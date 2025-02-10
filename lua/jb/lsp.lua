@@ -59,7 +59,8 @@ lsp.config("*", {
 
 
 -- Enable servers
-local files = require("plenary.scandir").scan_dir("lsp/", { depth = 1 })
+local lsp_dir = vim.fn.stdpath("config") .. "/lsp"
+local files = require("plenary.scandir").scan_dir(lsp_dir, { depth = 1 })
 
 for _, file in ipairs(files) do
     local server_name = file:match("([^/]+)%.lua$")
