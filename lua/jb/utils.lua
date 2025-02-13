@@ -6,7 +6,7 @@ function M.create_augroups(definitions)
 		cmd("augroup " .. group_name)
 		cmd("autocmd!")
 		for _, def in ipairs(definition) do
-			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
+            local command = table.concat(vim.iter({ "autocmd", def }):flatten():totable(), " ")
 			cmd(command)
 		end
 		cmd("augroup END")
@@ -31,35 +31,6 @@ M.get_visual_selection_rows = function()
 	local start_row = math.min(vim.fn.getpos("v")[2], vim.fn.getpos(".")[2])
 	local end_row = math.max(vim.fn.getpos("v")[2], vim.fn.getpos(".")[2])
 	return start_row, end_row
-end
-
--- DEV : from tjdevries:globals.lua
--- Save the local require here
-local require = require
-
-local ok, plenary_reload = pcall(require, "plenary.reload")
-local reloader = require
-if ok then
-  reloader = plenary_reload.reload_module
-end
-
-M.P = function(v)
-  print(vim.inspect(v))
-  return v
-end
-
-M.RELOAD = function(...)
-  local ok, plenary_reload = pcall(require, "plenary.reload")
-  if ok then
-    reloader = plenary_reload.reload_module
-  end
-
-  return reloader(...)
-end
-
-M.R = function(name)
-  M.RELOAD(name)
-  return require(name)
 end
 
 M.icons = {
