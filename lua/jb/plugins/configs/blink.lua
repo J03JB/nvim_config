@@ -26,11 +26,13 @@ return {
       ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       -- ['<CR>'] = { 'accept', 'fallback' },
 
-      cmdline = {
-        preset = "super-tab",
-      },
     },
 
+        cmdline = { 
+            keymap = {
+                preset = "super-tab",
+            },
+        },
     enabled = function()
       return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
     end,
