@@ -25,16 +25,19 @@ return {
       },
       ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       -- ['<CR>'] = { 'accept', 'fallback' },
-
     },
 
-        cmdline = { 
-            keymap = {
-                preset = "super-tab",
-            },
-        },
+    cmdline = {
+      keymap = {
+        preset = "super-tab",
+      },
+    },
     enabled = function()
-      return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
+      local filetype = vim.bo[0].filetype
+      if filetype == "oil" or filetype == "prompt" then
+        return false
+      end
+      return true
     end,
 
     completion = {
