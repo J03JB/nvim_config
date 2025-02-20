@@ -54,6 +54,7 @@ opt.showmatch = true -- Highlight matching parentheses, etc.
 opt.showmode = true -- shows mode in cmd line. (insert, visual etc.)
 opt.sidescroll = 5 -- Lines to scroll horizontally
 opt.signcolumn = "yes:1"
+opt.statuscolumn = "%l%s"
 opt.smarttab = true
 opt.smartindent = true
 opt.splitright = true -- Open new split to the right
