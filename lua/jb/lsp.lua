@@ -37,19 +37,33 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Diagnostic Settings
 -- Change the Diagnostic symbols in the sign column (gutter)
+-- local deez_icons = {
+-- 	[vim.diagnostic.severity.ERROR] = " ",
+-- 	[vim.diagnostic.severity.WARN] = " ",
+-- 	[vim.diagnostic.severity.HINT] = " ",
+-- 	[vim.diagnostic.severity.INFO] = " ",
+-- }
+
+-- Remove icons from statuscolumn
 local deez_icons = {
-	[vim.diagnostic.severity.ERROR] = " ",
-	[vim.diagnostic.severity.WARN] = " ",
-	[vim.diagnostic.severity.HINT] = " ",
-	[vim.diagnostic.severity.INFO] = " ",
+  [vim.diagnostic.severity.ERROR] = "",
+  [vim.diagnostic.severity.WARN] = "",
+  [vim.diagnostic.severity.HINT] = "",
+  [vim.diagnostic.severity.INFO] = "",
 }
 
+local number_hl = {
+  [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+  [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+  [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+  [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+}
 -- Apply diagnostics settings
-vim.diagnostic.config({
-	float = { border = vim.g.floating_window_border, source = "if_many", true },
-	signs = { text = deez_icons },
-	virtual_text = { true, virt_text_pos = 'right_align' },
-})
+vim.diagnostic.config {
+  float = { border = vim.g.floating_window_border, source = "if_many", true },
+  signs = { text = deez_icons, numhl = number_hl },
+  virtual_text = true,
+}
 
 -- LSP setup
 lsp.config("*", {
