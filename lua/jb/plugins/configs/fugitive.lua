@@ -25,7 +25,7 @@ return {
 				end, opts)
 			end,
 		})
-        -- keymap to open fugitive
+        -- keymap to open fugitiv
         vim.keymap.set("n", "<leader>gs", "<CMD>Git<CR>", {desc = "Open Git"})
 	end,
 }
