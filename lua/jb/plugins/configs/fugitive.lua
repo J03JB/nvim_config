@@ -1,10 +1,6 @@
 return {
 	"tpope/vim-fugitive",
 
-    keys = {
-        { "<leader>gs", "<CMD>Git<CR>", desc = "Open Git"  }
-    },
-
 	config = function()
 		local gitfug = vim.api.nvim_create_augroup("gitfug", {})
 
@@ -29,5 +25,7 @@ return {
 				end, opts)
 			end,
 		})
+        -- keymap to open fugitive
+        vim.keymap.set("n", "<leader>gs", "<CMD>Git<CR>", {desc = "Open Git"})
 	end,
 }
