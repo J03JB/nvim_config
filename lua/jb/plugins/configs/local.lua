@@ -5,9 +5,8 @@ local M = {
 	{ dir = "~/Dev/Plugins/teleprompt.nvim" },
 	{
 		dir = "~/Dev/Plugins/gitbar.nvim",
-		dependencies = { "MunifTanjim/nui.nvim" },
 		dev = true,
-},
+    },
 	{
 		"J03JB/pasta.nvim",
 		dir = "~/Dev/Plugins/pasta.nvim",
@@ -15,6 +14,7 @@ local M = {
 			require("pasta").setup()
 		end,
 	},
+    { dir = "~/Dev/Plugins/fzf-undo/" },
 }
 
 return M

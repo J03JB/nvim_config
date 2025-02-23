@@ -36,5 +36,6 @@ return {
 		padding = true, -- add an extra new line on top of the list
 		auto_close = true,
 		auto_jump = true,
+        focus = true,
 	},
 }

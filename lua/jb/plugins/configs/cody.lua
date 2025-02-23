@@ -3,6 +3,10 @@ return {
 
     dependencies = "nvim-lua/plenary.nvim",
 
+   config  = function()
+        require("sg").setup()
+    end,
+
 
 	-- Toggle cody chat
 	vim.keymap.set("n", "<space>co", function()

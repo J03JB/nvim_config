@@ -15,15 +15,12 @@ local M = {
 	"HoNamDuong/hybrid.nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
-	-- {
-		-- "J03JB/cyberdream.nvim",
-		-- dir = "~/Dev/Plugins/cyberdream.nvim/",
-		-- dev = true,
-	-- },
-    {
-        "scottmckendry/cyberdream.nvim",
-        lazy = false,
-    },
+	{
+		"J03JB/cyberdream.nvim",
+		dir = "~/Dev/cyberdream.nvim/",
+		dev = true,
+	},
+    "timmypidashev/darkbox.nvim",
 
 	-----------------------------------------------------------------------------------------------
 	-- Quality of Life
@@ -69,6 +66,9 @@ local M = {
 		ft = { "markdown" },
 	},
 
+    -- http-client
+    { 'mistweaverco/kulala.nvim', opts = {} },
+
 	-----------------------------------------------------------------------------------------------
 	-- Vim-snippets implemented in Luasnip
 	-----------------------------------------------------------------------------------------------
@@ -80,6 +80,7 @@ local M = {
 	--         require('luasnip_snippets.common.snip_utils').setup()
 	--     end
 	-- },
+
 }
 
 return M

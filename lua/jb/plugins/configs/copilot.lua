@@ -1,6 +1,7 @@
 return {
 	{
 		"zbirenbaum/copilot.lua",
+        enabled = false,
 		cmd = "Copilot",
 		event = "InsertEnter",
 		build = ":Copilot auth",
@@ -13,7 +14,7 @@ return {
 		"CopilotC-Nvim/CopilotChat.nvim",
 		lazy = true,
 		event = "VeryLazy",
-		enabled = true,
+		enabled = false,
 		branch = "main",
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" },
