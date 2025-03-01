@@ -14,7 +14,7 @@ return {
   },
   -- use a release tag to download pre-built binaries
   version = "*",
-  build = "cargo build --release",
+  -- build = "cargo build --release",
   opts = {
     keymap = {
       preset = "enter",

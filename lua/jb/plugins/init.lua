@@ -17,8 +17,8 @@ local M = {
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
 		"J03JB/cyberdream.nvim",
-		dir = "~/Dev/cyberdream.nvim/",
-		dev = true,
+		-- dir = "~/Dev/cyberdream.nvim/",
+		-- dev = true,
 	},
     "timmypidashev/darkbox.nvim",
 
