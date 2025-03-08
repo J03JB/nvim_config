@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { buffer = true })
     end
     vim.keymap.set("n", "grd", vim.lsp.buf.definition, { buffer = true })
+    vim.keymap.set("n", "ca", vim.lsp.buf.code_action, { buffer = true })
     vim.keymap.set("n", "]d", function()
       vim.diagnostic.jump { count = vim.v.count1, float = true }
     end, { desc = "Jump to the next diagnostic in the current buffer" })

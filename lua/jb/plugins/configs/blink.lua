@@ -29,7 +29,7 @@ return {
 
     cmdline = {
       keymap = {
-        preset = "super-tab",
+        preset = "cmdline",
       },
     },
     enabled = function()

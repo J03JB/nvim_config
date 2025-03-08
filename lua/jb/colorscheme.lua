@@ -40,5 +40,6 @@ end
 
 -- M.onedark()
 M.cyberdream()
+-- vim.cmd.colorscheme("catppuccin-latte")
 
 return M
