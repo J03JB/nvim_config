@@ -39,7 +39,7 @@ function M. config()
         ui_width_ratio = 0.40,
     }
 
-    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Harpoon add file to list"})
+    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() vim.notify("Added to Harpoon") end, { desc = "Harpoon add file to list"})
     vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts) end, { desc = "Harpoon open list"})
 
     for _, idx in ipairs({ 1, 2, 3, 4 }) do
