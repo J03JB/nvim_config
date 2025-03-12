@@ -1,6 +1,6 @@
 return {
     "mrcjkb/rustaceanvim",
-    version = "^4",
+    version = "^5",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "mfussenegger/nvim-dap",
@@ -16,6 +16,12 @@ return {
                 hover_actions = {
                 	auto_focus = false,
                 },
+                crate_graph = {
+                    backend = "png",
+                },
+                rustc = {
+                    default_edition = '2024'
+                },
             },
             settings = {
                 ["rust-analyzer"] = {
@@ -25,7 +31,6 @@ return {
                         },
                         prefix = "self",
                     },
-                    root_pattern = { "Cargo.toml", "rust-project.json" },
                     cargo = {
                         allfeatures = true,
                         loadOutDirsFromCheck = true,
@@ -48,8 +53,6 @@ return {
             },
             lens = {
                 enable = true,
-            },
-            server = {
             },
         }
     end,
