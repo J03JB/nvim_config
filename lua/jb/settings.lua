@@ -21,7 +21,7 @@ opt.autowrite = true
 opt.autowriteall = true
 opt.background = "dark" -- Dark background
 opt.backup = false -- No backup file
-opt.clipboard = { "unnamedplus" } -- Copy paste between vim and everything else
+-- opt.clipboard = { "unnamedplus" } -- Copy paste between vim and everything else
 opt.cmdheight = 1 -- More space for displaying messages
 opt.cursorline = true -- Highlight current line
 opt.diffopt = "vertical" -- Diff in vertical split
@@ -102,6 +102,17 @@ if vim.fn.has("mac") == 1 then
 else
 	vim.g.python3_host_prog = "/usr/bin/python"
 end
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+    ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste '+',
+    ['*'] = require('vim.ui.clipboard.osc52').paste '*',
+  },
+}
 
 -----------------------------------------------------------------------------------------
 -- Neovide settings for macOS
