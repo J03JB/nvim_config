@@ -46,7 +46,7 @@ opt.number = true
 opt.relativenumber = true
 opt.swapfile = false
 opt.scrolloff = 8 -- Lines to scroll when cursor leaves screen
-opt.shiftwidth = 4
+opt.shiftwidth = 2
 opt.showbreak = "↳ " -- Show character on line wrap
 opt.fillchars = { eob = " " } -- Suppress ~ at EndOfBuffer
 opt.showcmd = true
@@ -60,7 +60,7 @@ opt.smartindent = true
 opt.splitright = true -- Open new split to the right
 opt.softtabstop = 4
 opt.suffixesadd = { ".md", ".js", ".ts", ".tsx" } -- File extensions not required when opening with `gf`
-opt.tabstop = 4
+opt.tabstop = 2
 opt.timeoutlen = 500 -- By default timeoutlen is 1000 ms
 opt.termguicolors = true
 -- opt.guicursor = "i:block"
