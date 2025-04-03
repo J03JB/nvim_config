@@ -61,6 +61,7 @@ M.icons = {
 		Operator = " ",
 		TypeParameter = "󰅲 ",
 		Copilot = " ",
+		Supermaven = " ",
 	},
 }
 
