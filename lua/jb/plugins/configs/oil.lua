@@ -4,7 +4,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("oil").setup {
-        -- Skip the confirmation popup for simple operations
         skip_confirm_for_simple_edits = true,
         keymaps = {
           ["q"] = "actions.close",
@@ -16,7 +15,7 @@ return {
           padding = 2,
           -- max_width and max_height can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
           max_width = 0.5,
-          max_height = 0.25,
+          max_height = 0.5,
           border = "rounded",
           win_options = {
             winblend = 10,
