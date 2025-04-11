@@ -44,6 +44,14 @@ return {
           ["A"] = { icon = "+", color = "green" },
         },
       },
+
+      previewers = {
+        builtin = {
+          extensions      = {
+            ["png"]       = { "viu", "-b" },
+          },
+        },
+      },
     }
 
     local actions = require("fzf-lua").actions
