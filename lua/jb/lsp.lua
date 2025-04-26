@@ -3,12 +3,15 @@ local lsp = vim.lsp
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
+
     if client:supports_method "textDocument/implementation" then
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = true })
     end
+
     if client:supports_method "textDocument/inlayHint" then
       vim.lsp.inlay_hint.enable(true)
     end
+
     if client:supports_method "textDocument/declaration" then
       vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { buffer = true })
     end
@@ -21,6 +24,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.diagnostic.jump { count = vim.v.count - 1, float = true }
     end, { desc = "Jump to the previous diagnostic in the current buffer" })
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+
+    if client:supports_method("textDocument/documentColor") then
+    vim.lsp.buf.document_color(true, args.buf)
+    end
 
     if client.server_capabilities.documentHighlightProvider then
       vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -68,7 +75,7 @@ vim.diagnostic.config {
 
 -- LSP setup
 lsp.config("*", {
-  capabilities = require("blink.cmp").get_lsp_capabilities(),
+  -- capabilities = require("blink.cmp").get_lsp_capabilities(),
   root_markers = { ".git" },
 })
 
