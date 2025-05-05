@@ -12,6 +12,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.inlay_hint.enable(true)
     end
 
+    if client:supports_method("textDocument/documentColor") then
+      vim.lsp.document_color.enable(true, args.buf)
+    end
+
     if client:supports_method "textDocument/declaration" then
       vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { buffer = true })
     end
@@ -24,10 +28,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.diagnostic.jump { count = vim.v.count - 1, float = true }
     end, { desc = "Jump to the previous diagnostic in the current buffer" })
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-
-    if client:supports_method("textDocument/documentColor") then
-    vim.lsp.buf.document_color(true, args.buf)
-    end
 
     if client.server_capabilities.documentHighlightProvider then
       vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
