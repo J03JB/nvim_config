@@ -29,6 +29,7 @@ opt.encoding = "utf-8"
 opt.expandtab = true
 opt.hidden = true -- Buffer switching without saving
 opt.ignorecase = true -- case insensitive search
+opt.laststatus = 3
 opt.smartcase = true -- But sensitice if includes capital letter
 opt.inccommand = "split" --Show live results of substitute
 opt.incsearch = true -- Show results as you search
@@ -88,7 +89,6 @@ vim.g.floating_window_border_dark = {
 	{ "╰", "FloatBorderDark" },
 	{ "│", "FloatBorderDark" },
 }
-
 -- fix common typo in cmd line
 vim.cmd([[
 cnoreabbrev Wq wq
@@ -102,6 +102,7 @@ if vim.fn.has("mac") == 1 then
 else
 	vim.g.python3_host_prog = "/usr/bin/python"
 end
+
 vim.g.clipboard = {
   name = 'OSC 52',
   copy = {
@@ -113,23 +114,6 @@ vim.g.clipboard = {
     ['*'] = require('vim.ui.clipboard.osc52').paste '*',
   },
 }
-
------------------------------------------------------------------------------------------
--- Neovide settings for macOS
------------------------------------------------------------------------------------------
-if vim.g.neovide then
-	vim.g.neovide_confirm_quit = true
-	vim.g.neovide_cursor_animate_command_line = false
-	vim.g.neovide_input_macos_option_is_meta = true
-	vim.g.neovide_input_use_logo = 1
-	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
-	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
-	-- set dir to $HOME when Neovide opens.
-	vim.api.nvim_create_autocmd({ "VimEnter" }, { pattern = "*", command = ":cd $HOME " })
-end
 
 DATA_PATH = vim.fn.stdpath("data")
 CACHE_PATH = vim.fn.stdpath("cache")
