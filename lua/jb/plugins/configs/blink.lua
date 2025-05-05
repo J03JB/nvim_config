@@ -12,7 +12,6 @@ return {
     { "fang2hou/blink-copilot" },
     { "folke/lazydev.nvim" },
     { "mikavilpas/blink-ripgrep.nvim" },
-    { "Kaiser-Yang/blink-cmp-avante" },
   },
   version = "1.*",
   build = "cargo build --release",
@@ -92,45 +91,26 @@ return {
           end,
           -- kind = "Supermaven",
         },
-        codeium = {
-          name = "codeium",
-          module = "blink.compat.source",
-        },
-        avante_commands = {
-          name = "avante_commands",
-          module = "blink.compat.source",
-          score_offset = 90, -- show at a higher priority than lsp
-          opts = {},
-        },
-        avante_files = {
-          name = "avante_files",
-          module = "blink.compat.source",
-          score_offset = 100, -- show at a higher priority than lsp
-          opts = {},
-        },
-        avante_mentions = {
-          name = "avante_mentions",
-          module = "blink.compat.source",
-          score_offset = 1000, -- show at a higher priority than lsp
-          opts = {},
-        },
-
-        copilot = {
-          name = "copilot",
-          module = "blink-copilot",
-          enabled = false,
-          score_offset = 500,
-          async = true,
-          transform_items = function(_, items)
-            local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-            local kind_idx = #CompletionItemKind + 1
-            CompletionItemKind[kind_idx] = "Copilot"
-            for _, item in ipairs(items) do
-              item.kind = kind_idx
-            end
-            return items
-          end,
-        },
+        -- codeium = {
+        --   name = "codeium",
+        --   module = "blink.compat.source",
+        -- },
+        -- copilot = {
+        --   name = "copilot",
+        --   module = "blink-copilot",
+        --   enabled = false,
+        --   score_offset = 500,
+        --   async = true,
+        --   transform_items = function(_, items)
+        --     local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+        --     local kind_idx = #CompletionItemKind + 1
+        --     CompletionItemKind[kind_idx] = "Copilot"
+        --     for _, item in ipairs(items) do
+        --       item.kind = kind_idx
+        --     end
+        --     return items
+        --   end,
+        -- },
         lazydev = {
           name = "lazydev",
           module = "lazydev.integrations.blink",
@@ -141,9 +121,6 @@ return {
       default = {
         "supermaven",
         -- "copilot",
-        "avante_commands",
-        "avante_mentions",
-        "avante_files",
         "lazydev",
         "lsp",
         "path",
