@@ -33,6 +33,15 @@ M.get_visual_selection_rows = function()
 	return start_row, end_row
 end
 
+-- Shift numbered registers up (1 becomes 2, etc.)
+-- autocmd is set up in jb/autocmds.lua
+-- credit: Reddit PieceAdventurous9467
+function M.yank_shift()
+  for i = 9, 1, -1 do
+    vim.fn.setreg(tostring(i), vim.fn.getreg(tostring(i - 1)))
+  end
+end
+
 M.icons = {
 	kind = {
 		Text = " ",

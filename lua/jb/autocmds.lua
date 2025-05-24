@@ -1,3 +1,4 @@
+local utils = require("jb.utils")
 local groups = {
 	filetype = {
 		-- set spell for markdown, txt and git commit
@@ -34,7 +35,8 @@ local groups = {
 		{ "BufWinEnter", "*", [[if &buftype == 'help' | wincmd L | endif]] },
 
 		-- close neovim if quickfix is the last window
-        { "WinEnter", "*", [[  if winnr('$') == 1 && &buftype == "quickfix"|q|endif ]] },
+    { "WinEnter", "*", [[  if winnr('$') == 1 && &buftype == "quickfix"|q|endif ]] },
+    { "TextYankPost", "*",  [[lua if vim.v.event.operator == 'y' then require('jb.utils').yank_shift() end]]  },
 	},
 }
 
