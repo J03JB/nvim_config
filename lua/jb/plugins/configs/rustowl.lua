@@ -3,6 +3,7 @@ return {
   version = "*", -- Latest stable version
   build = "cargo binstall rustowl",
   lazy = false,
+  enabled = false,
   opts = {
     client = {
       on_attach = function(_, buffer)
