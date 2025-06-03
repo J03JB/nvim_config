@@ -3,6 +3,8 @@ return {
 
   dependencies = { "nvim-tree/nvim-web-devicons" },
 
+  enabled = false,
+
   keys = {
     { "<leader>ev", "<cmd>lua require'jb.fzf_custom'.edit_nvim()<cr>",             desc = "Fzf Nvim Config" },
     { "<C-g>",      "<Cmd>lua require'fzf-lua'.grep_project()<CR>",                desc = "Fzf Grep Project" },
