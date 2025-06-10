@@ -23,15 +23,14 @@ map("n", "<BS>",       "ciw")                 -- <BS> to change word in normal m
 map("n", "Y",          "yg$")                 -- Copy to end of line from current position
 map("n", "<leader>yb", "<cmd>%yank<cr>")      -- Copy entire buffer.
 map("n", "<leader>bd", "<cmd>bdelete<CR>")    -- close/remove buffer
-map("n", "<leader>w",  "g~iw")                -- toggle capitalisation
-map("n", "<leader>O",  "moO<ESC>")            -- insert line above
-map("n", "<leader>o",  "moo<ESC>")            -- insert line below
+map("n", "<leader>w",  "g~iw")                -- Capitalize word
 map("n", "<leader>h",  ":nohlsearch<CR>")     -- Clear highlights
 map("n", "J",          ":m+<cr>")             -- move line up
 map("n", "<leader>x",  "<cmd>!chmod +x %<CR>")-- make file executable
 map("n", "U",          "<nop>")               -- unmap 'U'
-map("n", "<leader>y",  [["+y]])               -- copy to system clipboard
-map("n", "<leader>Y",  [["+Y]])               -- copy line to system clipboard
+map("n", "<leader>y",  '"+y')                 -- copy to system clipboard
+map("n", "<leader>Y",  '"+y')                 -- copy line to system clipboard
+map("n", "<leader>p",  '"+p')                 -- paste from system clipboard
 map("n", "<C-h>",      "<C-w>h")              -- ctrl + h to go to left pane
 map("n", "H",          "^")                   -- H to go to start of line
 map("n", "L",          "$")                   -- L to go to end of line
@@ -44,9 +43,9 @@ map("n", "<leader>j",  "<cmd>lprev<CR>zz")    -- go to previous item in loclist
 map("n", "<C-j>",      "<cmd>cnext<CR>zz")    -- go to next item in quickfix
 map("n", "<C-d>",      "<C-d>zz")             -- page down and center
 map("n", "<C-u>",      "<C-u>zz")             -- page up and center
+map("n", "<leader>/",  ":normal gcc<CR>")     -- comment line in normal mode
 map("n", "<leader>xp", ":call setreg('+', getreg('@'))<CR>") -- copy paste register to system clipboard
 map("n", "<F9>",       ":lcd %:p:h<CR>", { silent = false }) -- change to cwd
-map("n", "<leader>/",  ":normal gcc<CR>")         -- comment line in normal mode
 
 map("i", "<c-j>",      "<esc>ji")             -- ctrl + j to down a line in insert mode
 map("i", "<c-k>",      "<esc>ki")             -- ctrl + k to move up a line in insert mode
@@ -63,10 +62,10 @@ map("v", ">",          ">gv")                 -- better indentation
 map("v", "<",          "<gv")                 -- better indentation
 map("v", "J",          ":move '>+1<CR>gv=gv") -- Move selected line / block of text down in visual mode
 map("v", "K",          ":move '<-2<CR>gv=gv") -- Move selected line / block of text up in visual mode
-map("x", "<leader>p",          '"_dP')                -- replace selected text in visual mode. sends to blackhole.
+map("x", "<leader>p",  '"_dP')                -- replace selected text in visual mode. sends to blackhole.
 map("x", "Q",          ":norm @q<CR>")        -- Q in visual mode to repeat macro
 map("x", "<leader>y",  [["+y]])               -- copy to system clipboard in visual mode
-map("x", "<leader>/",  ":normal gcc<CR>")     -- comment line in visual mode
+map("x", "<leader>/",  ":normal gcc<CR>")     -- comment line
 
 
 -- Search and replace word under cursor
