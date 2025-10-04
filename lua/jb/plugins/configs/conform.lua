@@ -8,6 +8,7 @@ return {
     },
     formatters_by_ft = {
       cs = { "csharpier" },
+      html = { "prettier" },
       lua = { "stylua" },
       python = { "autopep8", "black" },
       javascript = { { "prettierd", "prettier" } },

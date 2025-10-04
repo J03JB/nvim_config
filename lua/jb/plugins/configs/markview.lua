@@ -15,7 +15,7 @@ return {
     opts = {
         -- Highlight groups to use
         -- "dynamic" | "light" | "dark"
-        highlight_groups = "dynamic",
+        -- highlight_groups = "dynamic",
         previem = {
             modes = { "n", "no", "c" },
             initial_state = false,
