@@ -4,6 +4,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
 
+    -- custom rename 
+    if client:supports_method "textDocument/rename" then
+      vim.keymap.set("n", "<leader>rr", require("jb.rename").rename)
+    end
+
     if client:supports_method "textDocument/implementation" then
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = true })
     end
@@ -62,9 +67,9 @@ local deez_icons = {
 
 local number_hl = {
   [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-  [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-  [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-  [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+  [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
+  [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
+  [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
 }
 -- Apply diagnostics settings
 vim.diagnostic.config {
