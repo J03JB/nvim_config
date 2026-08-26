@@ -21,9 +21,21 @@ return {
             winblend = 10,
           },
         },
+        win_options = {
+          signcolumn = "yes:2",
+        },
       }
       vim.keymap.set("n", "-", "<cmd>Oil<CR>")
       vim.keymap.set("n", "<leader>e", "<cmd>lua require'oil'.toggle_float()<CR>")
     end,
+  },
+  {
+    "refractalize/oil-git-status.nvim",
+
+    dependencies = {
+      "stevearc/oil.nvim",
+    },
+
+    config = true,
   },
 }

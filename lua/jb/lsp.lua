@@ -17,9 +17,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.inlay_hint.enable(true)
     end
 
-    if client:supports_method("textDocument/documentColor") then
-      vim.lsp.document_color.enable(true, args.buf)
-    end
+    -- if client:supports_method("textDocument/documentColor") then
+    --   vim.lsp.document_color.enable(true, args.buf)
+    -- end
 
     if client:supports_method "textDocument/declaration" then
       vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { buffer = true })

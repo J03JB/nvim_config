@@ -1,4 +1,4 @@
-vim.lsp.config["prismals"] = {
+return {
   root_markers = { ".git", "package.json" },
   cmd = { "prisma-language-server", "--stdio" },
   filetypes = { "prisma" },

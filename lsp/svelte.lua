@@ -1,4 +1,4 @@
-vim.lsp.config["svelte"] = {
+return {
   cmd = { "svelteserver", "--stdio" },
   filetypes = { "svelte" },
 }

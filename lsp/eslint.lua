@@ -1,5 +1,5 @@
 -- Eslint {{{
-vim.lsp.config["eslint"] = {
+return {
 	cmd = { "vscode-eslint-language-server", "--stdio" },
 	root_markers = { "package.json", "package-lock.json" },
 	filetypes = {

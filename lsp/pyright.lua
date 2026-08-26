@@ -1,5 +1,5 @@
 -- Pyright lsp {{{
-vim.lsp.config["pyright"] = {
+return {
 	cmd = { "pyright-langserver", "--stdio" },
 	filetypes = { "python" },
 	settings = {
