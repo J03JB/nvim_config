@@ -12,12 +12,10 @@ local M = {
     lazy = false,
     ---@type snacks.Config
     opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-      bigfile = { enabled = false },
+      bigfile = { enabled = true },
       dashboard = { enabled = false },
       explorer = { enabled = false },
+      gitbrowse = { enabled = true },
       indent = { enabled = false },
       input = { enabled = true },
       picker = { enabled = false },
